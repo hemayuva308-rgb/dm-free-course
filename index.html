@@ -1,0 +1,3135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Marketing Master Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf7ff;
+  --surface: #ffffff;
+  --surface2: #f3eeff;
+  --border: #e4d9f8;
+  --accent: #9333ea;
+  --accent2: #ec4899;
+  --accent3: #7c3aed;
+  --accent-light: #f0e6ff;
+  --pink: #ec4899;
+  --pink-light: #fce7f3;
+  --text: #2d1b4e;
+  --muted: #8b6aaa;
+  --heading: #1a0a36;
+  --tag-bg: rgba(147,51,234,0.1);
+  --tag-color: #9333ea;
+  --gradient: linear-gradient(135deg, #9333ea, #ec4899);
+  --gradient-soft: linear-gradient(135deg, rgba(147,51,234,0.12), rgba(236,72,153,0.08));
+  --shadow: 0 4px 24px rgba(147,51,234,0.12);
+  --shadow-lg: 0 8px 40px rgba(147,51,234,0.18);
+  --locked-bg: #f5f0ff;
+  --locked-border: #d4b8f0;
+  --pass-color: #059669;
+  --fail-color: #dc2626;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── SIDEBAR ── */
+#sidebar {
+  width: 290px;
+  min-width: 290px;
+  background: var(--surface);
+  border-right: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  z-index: 100;
+  transition: transform 0.3s;
+  box-shadow: 2px 0 16px rgba(147,51,234,0.06);
+}
+
+#sidebar::-webkit-scrollbar { width: 4px; }
+#sidebar::-webkit-scrollbar-track { background: transparent; }
+#sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.sidebar-header {
+  padding: 28px 24px 20px;
+  border-bottom: 2px solid var(--border);
+  background: var(--gradient-soft);
+}
+
+.logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient);
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(147,51,234,0.3);
+}
+
+.sidebar-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--heading);
+  line-height: 1.3;
+}
+
+.sidebar-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.progress-bar-wrap {
+  margin-top: 14px;
+  background: var(--border);
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.progress-label {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+nav { padding: 12px 0 24px; flex: 1; }
+
+.nav-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 12px 24px 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 24px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+  font-size: 13px;
+  color: var(--muted);
+  position: relative;
+}
+
+.nav-item:hover:not(.locked) {
+  color: var(--text);
+  background: var(--surface2);
+  border-left-color: var(--border);
+}
+
+.nav-item.active {
+  color: var(--accent);
+  background: rgba(147,51,234,0.08);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+.nav-item.locked {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: var(--locked-bg);
+}
+
+.nav-item.completed .num {
+  background: rgba(5,150,105,0.1);
+  border-color: rgba(5,150,105,0.25);
+  color: var(--pass-color);
+}
+
+.nav-item .num {
+  font-size: 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  min-width: 26px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.nav-item.active .num {
+  background: rgba(147,51,234,0.12);
+  border-color: rgba(147,51,234,0.3);
+  color: var(--accent);
+}
+
+.lock-icon {
+  margin-left: auto;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+/* ── MAIN ── */
+#main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+#main::-webkit-scrollbar { width: 5px; }
+#main::-webkit-scrollbar-track { background: transparent; }
+#main::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+.module-page {
+  display: none;
+  animation: fadeIn 0.4s ease;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.module-page.active { display: block; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── MODULE HERO ── */
+.module-hero {
+  padding: 60px 60px 40px;
+  border-bottom: 2px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--bg) 0%, rgba(240,230,255,0.4) 100%);
+}
+
+.module-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147,51,234,0.12), rgba(236,72,153,0.06) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  border: 1px solid rgba(147,51,234,0.2);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.module-hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  color: var(--heading);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.module-hero p {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  box-shadow: var(--shadow);
+}
+
+.stat-pill .icon { font-size: 14px; }
+.stat-pill strong { color: var(--heading); font-weight: 600; }
+
+/* ── CONTENT AREA ── */
+.module-content {
+  padding: 48px 60px;
+  max-width: 960px;
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover::before { opacity: 1; }
+
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-title .icon {
+  font-size: 18px;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 5px;
+  line-height: 1;
+}
+
+/* ── SECTION TITLES ── */
+h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--heading);
+  margin: 40px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h2::before {
+  content: '';
+  width: 4px;
+  height: 22px;
+  background: var(--gradient);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--heading);
+  margin: 22px 0 10px;
+}
+
+p { line-height: 1.75; color: var(--text); margin-bottom: 12px; font-size: 14.5px; }
+
+/* ── LISTS ── */
+ul, ol { padding-left: 0; list-style: none; margin-bottom: 14px; }
+
+ul li {
+  padding: 5px 0 5px 22px;
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 11px;
+  top: 8px;
+}
+
+ol { counter-reset: item; }
+ol li {
+  counter-increment: item;
+  padding: 6px 0 6px 32px;
+  position: relative;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+ol li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  width: 22px; height: 22px;
+  background: rgba(147,51,234,0.1);
+  border: 1px solid rgba(147,51,234,0.25);
+  color: var(--accent);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+}
+
+/* ── HIGHLIGHT BOXES ── */
+.box {
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 18px 0;
+  border-left: 3px solid;
+}
+
+.box.tip { background: rgba(5,150,105,0.05); border-color: #059669; }
+.box.tip .box-label { color: #059669; }
+.box.warning { background: rgba(236,72,153,0.06); border-color: var(--pink); }
+.box.warning .box-label { color: var(--pink); }
+.box.info { background: rgba(147,51,234,0.06); border-color: var(--accent); }
+.box.info .box-label { color: var(--accent); }
+
+.box-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.box p { margin-bottom: 0; font-size: 14px; }
+
+/* ── TABLES ── */
+.table-wrap { overflow-x: auto; margin: 16px 0 24px; border-radius: 12px; border: 1.5px solid var(--border); box-shadow: var(--shadow); }
+
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+
+thead tr { background: var(--surface2); }
+
+th {
+  padding: 12px 16px;
+  text-align: left;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+td {
+  padding: 11px 16px;
+  border-top: 1.5px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+  background: var(--surface);
+}
+
+tr:hover td { background: rgba(147,51,234,0.03); }
+
+td strong { color: var(--heading); }
+
+/* ── TAGS ── */
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+
+.tag {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.tag.orange { background: rgba(236,72,153,0.08); border-color: rgba(236,72,153,0.2); color: var(--pink); }
+.tag.purple { background: rgba(147,51,234,0.08); border-color: rgba(147,51,234,0.2); color: var(--accent); }
+.tag.green { background: rgba(5,150,105,0.08); border-color: rgba(5,150,105,0.2); color: #059669; }
+
+/* ── STEP FLOW ── */
+.steps { counter-reset: step; margin: 16px 0; }
+
+.step {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.step-num {
+  counter-increment: step;
+  width: 32px; height: 32px;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  color: #fff;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 4px 10px rgba(147,51,234,0.3);
+}
+
+.step-content { flex: 1; }
+.step-content strong { display: block; color: var(--heading); font-size: 14.5px; margin-bottom: 3px; }
+.step-content p { font-size: 13.5px; color: var(--muted); margin: 0; }
+
+/* ── GRID CARDS ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 16px 0; }
+
+.mini-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow);
+}
+
+.mini-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.mini-card .mc-icon { font-size: 22px; margin-bottom: 8px; }
+.mini-card .mc-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: var(--heading); margin-bottom: 6px; }
+.mini-card .mc-desc { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+/* ── CHECKLIST ── */
+.checklist { margin: 10px 0; }
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  margin-bottom: 6px;
+}
+
+.checklist li::before { display: none; }
+
+.check-icon {
+  width: 20px; height: 20px;
+  background: linear-gradient(135deg, rgba(5,150,105,0.15), rgba(5,150,105,0.05));
+  border: 1.5px solid rgba(5,150,105,0.4);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: #059669;
+}
+
+/* ── CODE BLOCK ── */
+.code-block {
+  background: #faf4ff;
+  border: 1.5px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 18px 22px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #5b2d8e;
+  margin: 14px 0;
+  overflow-x: auto;
+  line-height: 1.7;
+}
+
+/* ── SALARY CARD ── */
+.salary-card {
+  background: linear-gradient(135deg, rgba(147,51,234,0.08), rgba(236,72,153,0.05));
+  border: 1.5px solid rgba(147,51,234,0.2);
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin: 12px 0;
+  box-shadow: var(--shadow);
+}
+
+.salary-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: var(--heading); margin-bottom: 8px; }
+.salary-range { font-size: 22px; font-weight: 700; color: var(--accent); font-family: 'Syne', sans-serif; }
+.salary-note { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* ── ROADMAP TIMELINE ── */
+.timeline { margin: 20px 0; position: relative; padding-left: 30px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 8px; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--pink), transparent);
+}
+
+.tl-item { position: relative; margin-bottom: 24px; }
+.tl-dot {
+  position: absolute;
+  left: -26px; top: 3px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gradient);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.tl-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: var(--heading); margin-bottom: 5px; }
+.tl-body { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+/* ── NAVIGATION BOTTOM ── */
+.module-nav {
+  display: flex;
+  gap: 16px;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid var(--border);
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.nav-btn:hover:not(:disabled) { border-color: var(--accent); background: rgba(147,51,234,0.04); box-shadow: var(--shadow-lg); }
+.nav-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.nav-btn.next { justify-content: flex-end; text-align: right; }
+.nav-btn small { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+.nav-btn span { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: var(--heading); }
+.nav-btn .arrow { font-size: 18px; color: var(--accent); flex-shrink: 0; }
+
+/* ── HAMBURGER MOBILE ── */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 16px; left: 16px;
+  z-index: 200;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: var(--shadow);
+}
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 2px solid var(--border); margin: 28px 0; }
+
+/* ── HIGHLIGHT SPAN ── */
+.hl { color: var(--accent); font-weight: 600; }
+.hl2 { color: var(--pink); font-weight: 600; }
+.hl3 { color: #059669; font-weight: 600; }
+
+/* ── HOME PAGE ── */
+.home-hero {
+  padding: 80px 60px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #faf7ff 0%, #f5ecff 50%, #fce7f3 100%);
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(147,51,234,0.1) 0%, rgba(236,72,153,0.05) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.home-hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 800;
+  color: var(--heading);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.home-hero h1 span {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-hero p {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 16px;
+  line-height: 1.7;
+}
+
+.author-credit {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(147,51,234,0.08);
+  border: 1px solid rgba(147,51,234,0.2);
+  border-radius: 8px;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-bottom: 28px;
+  font-family: 'Syne', sans-serif;
+}
+
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 8px 30px rgba(147,51,234,0.35);
+}
+
+.start-btn:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 12px 36px rgba(147,51,234,0.4); }
+
+.modules-grid {
+  padding: 40px 60px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.module-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.module-card.locked-card {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: var(--locked-bg);
+}
+
+.module-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.module-card:hover:not(.locked-card) { border-color: rgba(147,51,234,0.3); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.module-card:hover:not(.locked-card)::after { transform: scaleX(1); }
+
+.mc-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.mc-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--heading);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.mc-emoji { font-size: 24px; margin-bottom: 10px; }
+
+.lock-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: rgba(147,51,234,0.1);
+  border: 1px solid rgba(147,51,234,0.2);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ══════════════════════════════════
+   QUIZ / TEST SECTION STYLES
+══════════════════════════════════ */
+.quiz-section {
+  margin-top: 50px;
+  border-top: 3px solid var(--border);
+  padding-top: 40px;
+}
+
+.quiz-header {
+  background: linear-gradient(135deg, rgba(147,51,234,0.08), rgba(236,72,153,0.05));
+  border: 1.5px solid rgba(147,51,234,0.2);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quiz-icon {
+  width: 52px; height: 52px;
+  background: var(--gradient);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(147,51,234,0.3);
+}
+
+.quiz-header-text h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--heading);
+  margin: 0 0 4px;
+}
+
+.quiz-header-text p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.quiz-question {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+}
+
+.quiz-question .q-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  background: var(--gradient);
+  color: #fff;
+  border-radius: 8px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 8px rgba(147,51,234,0.25);
+}
+
+.quiz-question p.q-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--heading);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: var(--bg);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.quiz-option:hover:not(.answered) {
+  border-color: var(--accent);
+  background: rgba(147,51,234,0.04);
+}
+
+.quiz-option.selected {
+  border-color: var(--accent);
+  background: rgba(147,51,234,0.08);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.quiz-option.correct {
+  border-color: #059669;
+  background: rgba(5,150,105,0.08);
+  color: #059669;
+  font-weight: 600;
+}
+
+.quiz-option.wrong {
+  border-color: var(--fail-color);
+  background: rgba(220,38,38,0.08);
+  color: var(--fail-color);
+}
+
+.quiz-option-radio {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-option.selected .quiz-option-radio { border-color: var(--accent); background: var(--accent); }
+.quiz-option.correct .quiz-option-radio { border-color: #059669; background: #059669; }
+.quiz-option.wrong .quiz-option-radio { border-color: var(--fail-color); background: var(--fail-color); }
+
+.quiz-option-radio::after {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+}
+.quiz-option.selected .quiz-option-radio::after,
+.quiz-option.correct .quiz-option-radio::after,
+.quiz-option.wrong .quiz-option-radio::after { opacity: 1; }
+
+.quiz-submit-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gradient);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 6px 20px rgba(147,51,234,0.3);
+}
+
+.quiz-submit-btn:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.quiz-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.quiz-result {
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: 16px;
+  text-align: center;
+  display: none;
+}
+
+.quiz-result.pass {
+  background: linear-gradient(135deg, rgba(5,150,105,0.08), rgba(5,150,105,0.04));
+  border: 2px solid rgba(5,150,105,0.3);
+}
+
+.quiz-result.fail {
+  background: linear-gradient(135deg, rgba(220,38,38,0.06), rgba(220,38,38,0.03));
+  border: 2px solid rgba(220,38,38,0.25);
+}
+
+.quiz-result-icon { font-size: 40px; margin-bottom: 12px; }
+.quiz-result h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.quiz-result.pass h3 { color: #059669; }
+.quiz-result.fail h3 { color: var(--fail-color); }
+
+.quiz-result p { font-size: 15px; color: var(--muted); margin-bottom: 6px; }
+
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.pass .score-badge { background: rgba(5,150,105,0.12); color: #059669; border: 1.5px solid rgba(5,150,105,0.3); }
+.fail .score-badge { background: rgba(220,38,38,0.1); color: var(--fail-color); border: 1.5px solid rgba(220,38,38,0.25); }
+
+.retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.2s;
+  color: var(--text);
+}
+
+.retry-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── LOCKED OVERLAY ── */
+.locked-overlay {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.locked-overlay-icon { font-size: 56px; margin-bottom: 20px; }
+.locked-overlay h2 { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; color: var(--heading); margin-bottom: 12px; border: none; justify-content: center; }
+.locked-overlay h2::before { display: none; }
+.locked-overlay p { font-size: 15px; color: var(--muted); max-width: 460px; margin: 0 auto 24px; }
+
+/* ── FINAL TEST / RESULTS DASHBOARD ── */
+.results-dashboard {
+  background: linear-gradient(135deg, rgba(147,51,234,0.07), rgba(236,72,153,0.05));
+  border: 2px solid rgba(147,51,234,0.2);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.results-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--heading);
+  margin-bottom: 8px;
+}
+
+.results-score-circle {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 24px auto;
+  border: 5px solid;
+  position: relative;
+}
+
+.results-score-circle.excellent { border-color: #059669; background: rgba(5,150,105,0.08); }
+.results-score-circle.good { border-color: var(--accent); background: rgba(147,51,234,0.08); }
+.results-score-circle.average { border-color: #f59e0b; background: rgba(245,158,11,0.08); }
+.results-score-circle.poor { border-color: var(--fail-color); background: rgba(220,38,38,0.08); }
+
+.score-pct {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.results-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.result-stat {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 24px;
+  min-width: 120px;
+  box-shadow: var(--shadow);
+}
+
+.result-stat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.result-stat-key {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.grade-A { background: rgba(5,150,105,0.12); color: #059669; border: 2px solid rgba(5,150,105,0.3); }
+.grade-B { background: rgba(147,51,234,0.1); color: var(--accent); border: 2px solid rgba(147,51,234,0.25); }
+.grade-C { background: rgba(245,158,11,0.1); color: #d97706; border: 2px solid rgba(245,158,11,0.25); }
+.grade-D { background: rgba(220,38,38,0.08); color: var(--fail-color); border: 2px solid rgba(220,38,38,0.2); }
+
+/* ── FREE/PAID BADGES ── */
+.badge-free {
+  display: inline-block;
+  background: rgba(5,150,105,0.1);
+  border: 1px solid rgba(5,150,105,0.3);
+  color: #059669;
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+}
+
+.badge-paid {
+  display: inline-block;
+  background: rgba(236,72,153,0.1);
+  border: 1px solid rgba(236,72,153,0.3);
+  color: var(--pink);
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  #sidebar { position: fixed; left: 0; top: 0; transform: translateX(-100%); }
+  #sidebar.open { transform: translateX(0); box-shadow: 4px 0 30px rgba(147,51,234,0.2); }
+  .hamburger { display: block; }
+  .module-hero, .module-content, .home-hero { padding-left: 24px; padding-right: 24px; }
+  .modules-grid { padding: 24px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .results-stats-row { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-badge">DM Master</div>
+    <div class="sidebar-title">Digital Marketing<br>Complete Course</div>
+    <div class="sidebar-subtitle">Zero → Advanced · Tamil Friendly</div>
+    <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="progress-label" id="progressLabel">0 / 21 completed</div>
+  </div>
+  <nav id="sidebarNav">
+    <div class="nav-section-label">Start Here</div>
+    <div class="nav-item active" id="nav-home" onclick="showPage('home')"><span class="num">🏠</span>Course Overview</div>
+    <div class="nav-section-label">Core Modules (1-12)</div>
+    <div class="nav-item" id="nav-m1" onclick="navClick('m1')"><span class="num">01</span>Intro to Digital Marketing</div>
+    <div class="nav-item" id="nav-m2" onclick="navClick('m2')"><span class="num">02</span>Content Marketing</div>
+    <div class="nav-item" id="nav-m3" onclick="navClick('m3')"><span class="num">03</span>Social Media Marketing</div>
+    <div class="nav-item" id="nav-m4" onclick="navClick('m4')"><span class="num">04</span>SEO</div>
+    <div class="nav-item" id="nav-m5" onclick="navClick('m5')"><span class="num">05</span>Google Ads (SEM)</div>
+    <div class="nav-item" id="nav-m6" onclick="navClick('m6')"><span class="num">06</span>Meta Ads</div>
+    <div class="nav-item" id="nav-m7" onclick="navClick('m7')"><span class="num">07</span>Email Marketing</div>
+    <div class="nav-item" id="nav-m8" onclick="navClick('m8')"><span class="num">08</span>Affiliate Marketing</div>
+    <div class="nav-item" id="nav-m9" onclick="navClick('m9')"><span class="num">09</span>Ecommerce Marketing</div>
+    <div class="nav-item" id="nav-m10" onclick="navClick('m10')"><span class="num">10</span>Analytics & Data</div>
+    <div class="nav-item" id="nav-m11" onclick="navClick('m11')"><span class="num">11</span>AI in Marketing</div>
+    <div class="nav-item" id="nav-m12" onclick="navClick('m12')"><span class="num">12</span>Freelancing</div>
+    <div class="nav-section-label">Career & Tools (Locked)</div>
+    <div class="nav-item locked" id="nav-m13" onclick="navClick('m13')"><span class="num">13</span>Career Paths<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-m14" onclick="navClick('m14')"><span class="num">14</span>Tools Master List<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-m15" onclick="navClick('m15')"><span class="num">15</span>Freelancing Workflow<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-m16" onclick="navClick('m16')"><span class="num">16</span>20 Case Studies<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-m17" onclick="navClick('m17')"><span class="num">17</span>Learning Roadmap<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-m18" onclick="navClick('m18')"><span class="num">18</span>Interview Prep<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-m19" onclick="navClick('m19')"><span class="num">19</span>Advanced Marketing<span class="lock-icon">🔒</span></div>
+    <div class="nav-section-label">Final</div>
+    <div class="nav-item locked" id="nav-summary" onclick="navClick('summary')"><span class="num">📋</span>Course Summary<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-finaltest" onclick="navClick('finaltest')"><span class="num">⭐</span>Final Test<span class="lock-icon">🔒</span></div>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main">
+
+<!-- ══════════════════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════════════════ -->
+<div id="page-home" class="module-page active">
+  <div class="home-hero">
+    <div class="module-tag"> Complete Course · Free · Tamil-Friendly</div>
+    <h1>Digital Marketing<br><span>Master Guide</span></h1>
+    <p>Zero knowledge இருந்து Advanced level வரை — Real examples, Tools, Workflows, Freelancing எல்லாமே ஒரே இடத்தில்.</p>
+    <p class="author-credit"> Author: Hemamalini Yuvaraj</p>
+    <button class="start-btn" onclick="showPage('m1')">▶ Start Learning →</button>
+  </div>
+  <div class="modules-grid" id="homeGrid">
+    <div class="module-card" id="card-m1" onclick="navClick('m1')"><div class="mc-emoji">🌐</div><div class="mc-num">Module 01</div><div class="mc-name">Intro to Digital Marketing</div></div>
+    <div class="module-card" id="card-m2" onclick="navClick('m2')"><div class="mc-emoji">✍️</div><div class="mc-num">Module 02</div><div class="mc-name">Content Marketing</div></div>
+    <div class="module-card" id="card-m3" onclick="navClick('m3')"><div class="mc-emoji">📱</div><div class="mc-num">Module 03</div><div class="mc-name">Social Media Marketing</div></div>
+    <div class="module-card" id="card-m4" onclick="navClick('m4')"><div class="mc-emoji">🔍</div><div class="mc-num">Module 04</div><div class="mc-name">SEO — Search Engine Optimization</div></div>
+    <div class="module-card" id="card-m5" onclick="navClick('m5')"><div class="mc-emoji">📢</div><div class="mc-num">Module 05</div><div class="mc-name">Google Ads & SEM</div></div>
+    <div class="module-card" id="card-m6" onclick="navClick('m6')"><div class="mc-emoji">🎯</div><div class="mc-num">Module 06</div><div class="mc-name">Meta Ads (Facebook & Instagram)</div></div>
+    <div class="module-card" id="card-m7" onclick="navClick('m7')"><div class="mc-emoji">📧</div><div class="mc-num">Module 07</div><div class="mc-name">Email Marketing</div></div>
+    <div class="module-card" id="card-m8" onclick="navClick('m8')"><div class="mc-emoji">🔗</div><div class="mc-num">Module 08</div><div class="mc-name">Affiliate Marketing</div></div>
+    <div class="module-card" id="card-m9" onclick="navClick('m9')"><div class="mc-emoji">🛒</div><div class="mc-num">Module 09</div><div class="mc-name">Ecommerce Marketing</div></div>
+    <div class="module-card" id="card-m10" onclick="navClick('m10')"><div class="mc-emoji">📊</div><div class="mc-num">Module 10</div><div class="mc-name">Analytics & Data Tracking</div></div>
+    <div class="module-card" id="card-m11" onclick="navClick('m11')"><div class="mc-emoji">🤖</div><div class="mc-num">Module 11</div><div class="mc-name">AI in Digital Marketing</div></div>
+    <div class="module-card" id="card-m12" onclick="navClick('m12')"><div class="mc-emoji">💼</div><div class="mc-num">Module 12</div><div class="mc-name">Freelancing & Client Work</div></div>
+    <div class="module-card locked-card" id="card-m13" onclick="navClick('m13')"><div class="lock-badge">🔒</div><div class="mc-emoji">💰</div><div class="mc-num">Module 13</div><div class="mc-name">Digital Marketing Careers</div></div>
+    <div class="module-card locked-card" id="card-m14" onclick="navClick('m14')"><div class="lock-badge">🔒</div><div class="mc-emoji">🛠️</div><div class="mc-num">Module 14</div><div class="mc-name">Tools Master List</div></div>
+    <div class="module-card locked-card" id="card-m15" onclick="navClick('m15')"><div class="lock-badge">🔒</div><div class="mc-emoji">⚙️</div><div class="mc-num">Module 15</div><div class="mc-name">Freelancing Workflow</div></div>
+    <div class="module-card locked-card" id="card-m16" onclick="navClick('m16')"><div class="lock-badge">🔒</div><div class="mc-emoji">📖</div><div class="mc-num">Module 16</div><div class="mc-name">20 Real Case Studies</div></div>
+    <div class="module-card locked-card" id="card-m17" onclick="navClick('m17')"><div class="lock-badge">🔒</div><div class="mc-emoji">🗺️</div><div class="mc-num">Module 17</div><div class="mc-name">Learning Roadmap</div></div>
+    <div class="module-card locked-card" id="card-m18" onclick="navClick('m18')"><div class="lock-badge">🔒</div><div class="mc-emoji">🎤</div><div class="mc-num">Module 18</div><div class="mc-name">Interview Prep</div></div>
+    <div class="module-card locked-card" id="card-m19" onclick="navClick('m19')"><div class="lock-badge">🔒</div><div class="mc-emoji">🚀</div><div class="mc-num">Module 19</div><div class="mc-name">Advanced Marketing</div></div>
+    <div class="module-card locked-card" id="card-summary" onclick="navClick('summary')"><div class="lock-badge">🔒</div><div class="mc-emoji">📋</div><div class="mc-num">Summary</div><div class="mc-name">Course Summary</div></div>
+    <div class="module-card locked-card" id="card-finaltest" onclick="navClick('finaltest')"><div class="lock-badge">🔒</div><div class="mc-emoji">⭐</div><div class="mc-num">Final</div><div class="mc-name">Final Cumulative Test</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     MODULE 1 — INTRO TO DIGITAL MARKETING
+══════════════════════════════════════════════════ -->
+<div id="page-m1" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🌐 Module 01 · Foundation</div>
+    <h1>Introduction to Digital Marketing</h1>
+    <p>Digital Marketing என்றால் என்ன, ஏன் கற்கணும், எப்படி businesses use பண்றாங்க — எல்லாமே simple-ஆ இங்க தெரியும்.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">⏱️</span><strong>Beginner</strong> Level</div>
+      <div class="stat-pill"><span class="icon">📚</span><strong>Foundation</strong> Module</div>
+      <div class="stat-pill"><span class="icon">🎯</span><strong>Core Concepts</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+
+    <h2>Digital Marketing என்றால் என்ன?</h2>
+    <p><span class="hl">Digital Marketing</span> என்பது internet, mobile phones, social media, websites போன்ற digital channels-ஐ பயன்படுத்தி products அல்லது services-ஐ promote பண்றது. சாதாரண மொழியில் சொல்லனும்னா — உங்க product-ஐ online-ல advertise பண்றது.</p>
+
+    <div class="box info">
+      <div class="box-label">💡 Simple Example</div>
+      <p>Zomato Instagram-ல funny meme post பண்றாங்க → அது free traffic. Google-ல "food near me" search பண்ண Zomato ad வருது → அது paid traffic. இரண்டுமே Digital Marketing!</p>
+    </div>
+
+    <h2>Traditional vs Digital Marketing</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Feature</th><th>Traditional Marketing</th><th>Digital Marketing</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Medium</strong></td><td>TV, Radio, Newspaper, Pamphlets</td><td>Google, Instagram, YouTube, Email</td></tr>
+          <tr><td><strong>Cost</strong></td><td>Very High (TV ad = ₹1 lakh+)</td><td>Low (FB ad = ₹100 से शुरू)</td></tr>
+          <tr><td><strong>Targeting</strong></td><td>Broad (everyone sees it)</td><td>Precise (age, city, interest-wise)</td></tr>
+          <tr><td><strong>Tracking</strong></td><td>Hard to measure results</td><td>Real-time analytics available</td></tr>
+          <tr><td><strong>Reach</strong></td><td>Local / National</td><td>Global 🌍</td></tr>
+          <tr><td><strong>Speed</strong></td><td>Slow (weeks to prepare)</td><td>Fast (launch in minutes)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Digital Marketing Ecosystem</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">🔍</div><div class="mc-title">SEO</div><div class="mc-desc">Google-ல free-ஆ rank ஆவது. Blog, website optimize பண்றது.</div></div>
+      <div class="mini-card"><div class="mc-icon">📢</div><div class="mc-title">SEM / Paid Ads</div><div class="mc-desc">Google, Facebook-ல பணம் கொடுத்து ads run பண்றது.</div></div>
+      <div class="mini-card"><div class="mc-icon">📱</div><div class="mc-title">Social Media</div><div class="mc-desc">Instagram, LinkedIn, YouTube-ல audience build பண்றது.</div></div>
+      <div class="mini-card"><div class="mc-icon">✍️</div><div class="mc-title">Content Marketing</div><div class="mc-desc">Blogs, Reels, Videos மூலம் value கொடுத்து attract பண்றது.</div></div>
+      <div class="mini-card"><div class="mc-icon">📧</div><div class="mc-title">Email Marketing</div><div class="mc-desc">Subscribers-க்கு direct email அனுப்பி sell பண்றது.</div></div>
+      <div class="mini-card"><div class="mc-icon">🤝</div><div class="mc-title">Affiliate Marketing</div><div class="mc-desc">Others' product promote பண்ணி commission earn பண்றது.</div></div>
+    </div>
+
+    <h2>Marketing Funnel — Customer Journey</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>🔭 Awareness (Tofu)</strong><p>Customer உங்களை பத்தி முதல்ல கேக்கிறாங்க. Instagram ad, YouTube video மூலம்.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>🤔 Interest (Mofu)</strong><p>Product பத்தி more information தேடுறாங்க. Website visit, blog read பண்றாங்க.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>💭 Consideration</strong><p>Compare பண்றாங்க. Reviews படிக்கிறாங்க. Free demo try பண்றாங்க.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>🛒 Purchase (Bofu)</strong><p>Buy பண்றாங்க! Conversion happen ஆகுது.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><strong>❤️ Loyalty & Advocacy</strong><p>Happy customer → repeat purchase + friend-க்கு recommend பண்றாங்க.</p></div></div>
+    </div>
+
+    <h2>Key Terms — Beginner Must Know</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Term</th><th>Simple Meaning</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Lead</strong></td><td>Interested contact (phone/email)</td><td>Someone who filled your form</td></tr>
+          <tr><td><strong>Conversion</strong></td><td>Visitor → Customer ஆவது</td><td>Ad பாத்துட்டு buy பண்றது</td></tr>
+          <tr><td><strong>ROI</strong></td><td>Return on Investment</td><td>₹1000 spend → ₹5000 earn = 5x ROI</td></tr>
+          <tr><td><strong>CTA</strong></td><td>Call to Action</td><td>"Buy Now", "Subscribe", "Click Here"</td></tr>
+          <tr><td><strong>Organic</strong></td><td>Free traffic</td><td>SEO, social media posts</td></tr>
+          <tr><td><strong>Paid</strong></td><td>Paid ads traffic</td><td>Google Ads, Meta Ads</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box warning">
+      <div class="box-label">⚠️ Beginner Mistakes — Avoid These</div>
+      <ul>
+        <li>Target audience define பண்ணாம marketing start பண்றது</li>
+        <li>Results immediately expect பண்றது (SEO takes 3-6 months)</li>
+        <li>Data/analytics பார்க்காம decisions எடுக்கிறது</li>
+      </ul>
+    </div>
+
+    <!-- QUIZ MODULE 1 -->
+    <div class="quiz-section" id="quiz-m1">
+      <div class="quiz-header">
+        <div class="quiz-icon">📝</div>
+        <div class="quiz-header-text">
+          <h3>Module 1 Chapter Test</h3>
+          <p>80% or above pass ஆனாலே Module 2 unlock ஆகும். கவனமாக படிச்சு answer பண்ணுங்க!</p>
+        </div>
+      </div>
+      <div id="quiz-m1-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m1-btn" onclick="submitQuiz('m1')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m1-result"></div>
+    </div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('home')"><span class="arrow">←</span><div><small>Back to</small><span>Home</span></div></button>
+      <button class="nav-btn next" id="btn-next-m1" onclick="navClick('m2')" disabled><div><small>Next Module</small><span>Content Marketing</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 2 — CONTENT MARKETING -->
+<div id="page-m2" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">✍️ Module 02 · Content</div>
+    <h1>Content Marketing</h1>
+    <p>Content is King! Storytelling, Copywriting, Viral Psychology — எல்லாமே இந்த module-ல கற்றுக்கோவோம்.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">⏱️</span><strong>Beginner→Mid</strong> Level</div>
+      <div class="stat-pill"><span class="icon">🛠️</span><strong>Canva, ChatGPT, CapCut</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Content Marketing என்றால் என்ன?</h2>
+    <p>Direct-ஆ "Buy My Product!" என்று சொல்லாம, <span class="hl">valuable content</span> மூலம் audience-ஐ attract பண்ணி, trust build பண்ணி, பிறகு sell பண்றது Content Marketing.</p>
+    <div class="box info"><div class="box-label">💡 Real Example</div><p>Philips blade விக்கணும்னா — "Men's grooming tips for Chennai summer" என்று blog எழுதுவாங்க. Article படிக்கும்போது naturally Philips blade recommend ஆகும். அது Content Marketing!</p></div>
+    <h2>Content Pillars Framework</h2>
+    <div class="grid-3">
+      <div class="mini-card"><div class="mc-icon">🎓</div><div class="mc-title">Educational</div><div class="mc-desc">How-to guides, tips, tutorials. Trust build ஆகும்.</div></div>
+      <div class="mini-card"><div class="mc-icon">😂</div><div class="mc-title">Entertainment</div><div class="mc-desc">Memes, funny content. Reach & shares கிடைக்கும்.</div></div>
+      <div class="mini-card"><div class="mc-icon">🙌</div><div class="mc-title">Inspirational</div><div class="mc-desc">Success stories, quotes. Emotional connection.</div></div>
+      <div class="mini-card"><div class="mc-icon">🛒</div><div class="mc-title">Promotional</div><div class="mc-desc">Product features, offers. Direct sales.</div></div>
+      <div class="mini-card"><div class="mc-icon">🤝</div><div class="mc-title">Community</div><div class="mc-desc">User stories, polls, Q&A. Engagement boost.</div></div>
+    </div>
+    <h2>Copywriting Hooks</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Hook Type</th><th>Formula</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Problem Hook</strong></td><td>"Are you struggling with ___?"</td><td>"Social media-ல post போட்டாலும் reach இல்லையா?"</td></tr>
+          <tr><td><strong>Number Hook</strong></td><td>"X ways to ___"</td><td>"5 ways to get 1000 followers in 30 days"</td></tr>
+          <tr><td><strong>Secret Hook</strong></td><td>"Nobody tells you about ___"</td><td>"Most marketers don't tell you this..."</td></tr>
+          <tr><td><strong>Story Hook</strong></td><td>"I was broke until I..."</td><td>"6 months ago I had 0 clients. Today I have 12."</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>Viral Content Psychology — STEPPS</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">🌟</div><div class="mc-title">Social Currency</div><div class="mc-desc">People share things that make them look good / smart.</div></div>
+      <div class="mini-card"><div class="mc-icon">❤️</div><div class="mc-title">Emotion</div><div class="mc-desc">High-arousal emotions (awe, anger, excitement) drive sharing.</div></div>
+      <div class="mini-card"><div class="mc-icon">💎</div><div class="mc-title">Practical Value</div><div class="mc-desc">Useful tips, hacks people want to share.</div></div>
+      <div class="mini-card"><div class="mc-icon">📖</div><div class="mc-title">Stories</div><div class="mc-desc">Narratives carry messages, people remember stories.</div></div>
+    </div>
+    <h2>AI Content Creation Workflow</h2>
+    <div class="code-block">
+Step 1: ChatGPT/Claude → Topic ideas + Hook generate பண்ணு
+Step 2: ChatGPT → Caption + Script write பண்ணு  
+Step 3: Canva AI → Design / Carousel create பண்ணு
+Step 4: CapCut → Video edit + subtitles add பண்ணு
+Step 5: Buffer/Later → Schedule posts plan பண்ணு
+Time saved: 4 hours → 45 minutes!</div>
+    <div class="box warning"><div class="box-label">⚠️ Avoid</div><ul><li>Value இல்லாம just promotional content post பண்றது</li><li>Posting inconsistently (algorithm penalize பண்ணும்)</li><li>CTA இல்லாம post end பண்றது</li></ul></div>
+
+    <div class="quiz-section" id="quiz-m2">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 2 Chapter Test</h3><p>80% or above pass ஆனாலே Module 3 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m2-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m2-btn" onclick="submitQuiz('m2')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m2-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m1')"><span class="arrow">←</span><div><small>Prev</small><span>Intro to DM</span></div></button>
+      <button class="nav-btn next" id="btn-next-m2" onclick="navClick('m3')" disabled><div><small>Next Module</small><span>Social Media Marketing</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 3 — SMM -->
+<div id="page-m3" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">📱 Module 03 · SMM</div>
+    <h1>Social Media Marketing</h1>
+    <p>Instagram, LinkedIn, YouTube, Facebook — platform-by-platform strategies, algorithms, growth hacks எல்லாமே இங்க.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">📊</span><strong>Engagement & Growth</strong></div>
+      <div class="stat-pill"><span class="icon">🤳</span><strong>Multi-Platform</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Platform Overview — 2025</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Platform</th><th>Best For</th><th>Content Type</th><th>Audience</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Instagram</strong></td><td>Brand building, Ecommerce</td><td>Reels, Carousels, Stories</td><td>18-35, Urban India</td></tr>
+          <tr><td><strong>YouTube</strong></td><td>Long-form, Education, SEO</td><td>Videos, Shorts</td><td>All ages</td></tr>
+          <tr><td><strong>LinkedIn</strong></td><td>B2B, Jobs, Personal branding</td><td>Articles, Posts, Videos</td><td>Professionals 25+</td></tr>
+          <tr><td><strong>Facebook</strong></td><td>Local business, Ads, Groups</td><td>Posts, Videos, Groups</td><td>35+ India</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>Instagram Growth Strategy</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Niche Clarity</strong><p>உனக்கு என்ன topic பத்தி post பண்ண comfortable? Define பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Profile Optimize</strong><p>Bio-ல keyword, CTA, link வை. Profile photo professional ஆ வை.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Content Calendar</strong><p>Week-க்கு 3-5 Reels + 2 Carousels consistent posting.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Engagement</strong><p>Comments reply பண்ணு. Other accounts-ல engage பண்ணு. Stories daily post பண்ணு.</p></div></div>
+    </div>
+    <h2>LinkedIn Personal Branding</h2>
+    <ul>
+      <li><span class="hl">Headline</span> — "Digital Marketer | Helping Chennai businesses get more leads"</li>
+      <li><span class="hl">About section</span> — Story format + skills + contact info</li>
+      <li><span class="hl">Content:</span> Professional insights, case studies, industry news</li>
+      <li><span class="hl">Engage:</span> Comment on posts from industry leaders daily</li>
+    </ul>
+    <div class="box tip"><div class="box-label">✅ Instagram Algorithm Hack</div><p>First 30 minutes-ல maximum engagement வந்தா Reel viral ஆகும். Post பண்ண immediately — friends-கிட்ட share பண்ணி comments, saves கேளு!</p></div>
+
+    <div class="quiz-section" id="quiz-m3">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 3 Chapter Test</h3><p>80% or above pass ஆனாலே Module 4 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m3-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m3-btn" onclick="submitQuiz('m3')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m3-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m2')"><span class="arrow">←</span><div><small>Prev</small><span>Content Marketing</span></div></button>
+      <button class="nav-btn next" id="btn-next-m3" onclick="navClick('m4')" disabled><div><small>Next Module</small><span>SEO</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 4 — SEO -->
+<div id="page-m4" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🔍 Module 04 · SEO</div>
+    <h1>SEO — Search Engine Optimization</h1>
+    <p>Google-ல first page-ல rank ஆவது, keyword research, on-page, off-page, technical SEO — long-term free traffic strategy.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">📈</span><strong>Long-term Traffic</strong></div>
+      <div class="stat-pill"><span class="icon">🆓</span><strong>Free Organic</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>How Google Ranking Works</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Crawl</strong><p>Google bots உன் website visit பண்ணி content read பண்ணும்.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Index</strong><p>Content Google's database-ல store ஆகும்.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Rank</strong><p>200+ factors based-ஆ Google rank decide பண்ணும்.</p></div></div>
+    </div>
+    <h2>SEO Types</h2>
+    <div class="grid-3">
+      <div class="mini-card"><div class="mc-icon">📄</div><div class="mc-title">On-Page SEO</div><div class="mc-desc">Title tags, Meta descriptions, Headings (H1-H6), Keyword placement, Image alt text, Internal linking.</div></div>
+      <div class="mini-card"><div class="mc-icon">🔗</div><div class="mc-title">Off-Page SEO</div><div class="mc-desc">Backlinks, Guest posts, Social signals, Brand mentions. Authority build ஆகும்.</div></div>
+      <div class="mini-card"><div class="mc-icon">⚙️</div><div class="mc-title">Technical SEO</div><div class="mc-desc">Site speed, Mobile-friendly, SSL, Sitemap, Schema markup. Foundation important.</div></div>
+    </div>
+    <h2>Keyword Research Strategy</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Keyword Type</th><th>Example</th><th>Difficulty</th><th>Traffic</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Short-tail</strong></td><td>"digital marketing"</td><td>Very High</td><td>High</td></tr>
+          <tr><td><strong>Long-tail</strong></td><td>"digital marketing course Chennai"</td><td>Low-Medium</td><td>Medium</td></tr>
+          <tr><td><strong>Local</strong></td><td>"SEO agency in Madurai"</td><td>Low</td><td>Targeted</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box info"><div class="box-label">💡 Free SEO Tools</div><ul><li>Google Search Console — free, official Google tool</li><li>Ubersuggest — keyword ideas, difficulty score</li><li>AnswerThePublic — question-based keywords</li><li>Ahrefs Free Version — basic backlink analysis</li></ul></div>
+
+    <div class="quiz-section" id="quiz-m4">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 4 Chapter Test</h3><p>80% or above pass ஆனாலே Module 5 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m4-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m4-btn" onclick="submitQuiz('m4')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m4-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m3')"><span class="arrow">←</span><div><small>Prev</small><span>Social Media</span></div></button>
+      <button class="nav-btn next" id="btn-next-m4" onclick="navClick('m5')" disabled><div><small>Next Module</small><span>Google Ads</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 5 — GOOGLE ADS -->
+<div id="page-m5" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">📢 Module 05 · Paid Search</div>
+    <h1>Google Ads & SEM</h1>
+    <p>Search Ads, Display Ads, YouTube Ads, Quality Score, Bidding strategies — Google Ads master பண்றோம்.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">⚡</span><strong>Instant Results</strong></div>
+      <div class="stat-pill"><span class="icon">🎯</span><strong>Intent-Based Targeting</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Types of Google Ads</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">🔍</div><div class="mc-title">Search Ads</div><div class="mc-desc">Google-ல search பண்றவங்களுக்கு text ads. High intent audience. "Near me" queries best.</div></div>
+      <div class="mini-card"><div class="mc-icon">🖼️</div><div class="mc-title">Display Ads</div><div class="mc-desc">Websites-ல banner ads. Brand awareness. Retargeting campaigns-க்கு powerful.</div></div>
+      <div class="mini-card"><div class="mc-icon">▶️</div><div class="mc-title">YouTube Ads</div><div class="mc-desc">Video ads before/during YouTube videos. Skippable, Non-skippable, Bumper ads.</div></div>
+      <div class="mini-card"><div class="mc-icon">🛒</div><div class="mc-title">Shopping Ads</div><div class="mc-desc">Product images + price show ஆகும். Ecommerce-க்கு perfect. GMC required.</div></div>
+    </div>
+    <h2>Quality Score — Most Important Metric</h2>
+    <div class="box info"><div class="box-label">💡 Quality Score = CTR + Ad Relevance + Landing Page Quality</div><p>High Quality Score (7-10) = Lower CPC + Better ad position. Low Quality Score = Pay more, show less. Better ad copy + landing page = money saved!</p></div>
+    <h2>Bidding Strategies</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Strategy</th><th>When to Use</th><th>Good For</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Maximize Clicks</strong></td><td>Beginners, traffic-drive</td><td>Website traffic</td></tr>
+          <tr><td><strong>Target CPA</strong></td><td>When CPA goal clear</td><td>Lead generation</td></tr>
+          <tr><td><strong>Target ROAS</strong></td><td>Ecommerce with revenue data</td><td>Sales optimization</td></tr>
+          <tr><td><strong>Manual CPC</strong></td><td>Full control needed</td><td>Experienced users</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-section" id="quiz-m5">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 5 Chapter Test</h3><p>80% or above pass ஆனாலே Module 6 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m5-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m5-btn" onclick="submitQuiz('m5')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m5-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m4')"><span class="arrow">←</span><div><small>Prev</small><span>SEO</span></div></button>
+      <button class="nav-btn next" id="btn-next-m5" onclick="navClick('m6')" disabled><div><small>Next Module</small><span>Meta Ads</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 6 — META ADS -->
+<div id="page-m6" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🎯 Module 06 · Meta Ads</div>
+    <h1>Meta Ads (Facebook & Instagram)</h1>
+    <p>Audience targeting, Campaign structure, A/B testing, Pixel — Meta platform-ல ads master பண்றோம்.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">👥</span><strong>Audience Targeting</strong></div>
+      <div class="stat-pill"><span class="icon">🔄</span><strong>Retargeting Power</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Campaign Structure</h2>
+    <div class="code-block">Campaign Level → Objective select பண்ணு (Awareness/Traffic/Sales)
+  Ad Set Level → Audience, Budget, Placement set பண்ணு
+    Ad Level → Creative (Image/Video), Copy, CTA</div>
+    <h2>Audience Targeting Types</h2>
+    <div class="grid-3">
+      <div class="mini-card"><div class="mc-icon">🎯</div><div class="mc-title">Interest-Based</div><div class="mc-desc">Age, city, interests மூலம் target. Beginners start here.</div></div>
+      <div class="mini-card"><div class="mc-icon">👥</div><div class="mc-title">Custom Audience</div><div class="mc-desc">Website visitors, email list, Instagram followers-ஐ retarget.</div></div>
+      <div class="mini-card"><div class="mc-icon">🔍</div><div class="mc-title">Lookalike Audience</div><div class="mc-desc">Best customers போல இருக்கிற new people-ஐ Meta AI find பண்ணும்.</div></div>
+    </div>
+    <h2>Meta Pixel</h2>
+    <div class="box info"><div class="box-label">💡 What is Meta Pixel?</div><p>Website-ல install பண்றா ஒரு code. Who visited, what they did, who bought — track பண்ணி retargeting & lookalike audiences create பண்ணலாம். <strong>Ecommerce-க்கு Essential!</strong></p></div>
+    <h2>Funnel Strategy</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Audience</th><th>Ad Type</th><th>Goal</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Top</strong></td><td>Cold — Interest based</td><td>Video, Brand story</td><td>Reach, Views</td></tr>
+          <tr><td><strong>Middle</strong></td><td>Warm — Video viewers</td><td>Testimonial, Product</td><td>Website visits</td></tr>
+          <tr><td><strong>Bottom</strong></td><td>Hot — Cart abandoners</td><td>Offer, Urgency</td><td>Purchase</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="quiz-section" id="quiz-m6">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 6 Chapter Test</h3><p>80% or above pass ஆனாலே Module 7 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m6-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m6-btn" onclick="submitQuiz('m6')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m6-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m5')"><span class="arrow">←</span><div><small>Prev</small><span>Google Ads</span></div></button>
+      <button class="nav-btn next" id="btn-next-m6" onclick="navClick('m7')" disabled><div><small>Next Module</small><span>Email Marketing</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 7 — EMAIL MARKETING -->
+<div id="page-m7" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">📧 Module 07 · Email</div>
+    <h1>Email Marketing</h1>
+    <p>List building, automation, copywriting, funnels — email மூலம் ₹1 spend பண்ண ₹42 return கிடைக்கும்!</p>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon">📈</span><strong>42x ROI (Average)</strong></div><div class="stat-pill"><span class="icon">🤖</span><strong>Automation</strong></div></div>
+  </div>
+  <div class="module-content">
+    <h2>Why Email Marketing?</h2>
+    <p>Social media-ல algorithm change ஆனா reach போயிடும். ஆனா email list உங்களுக்கே சொந்தம். <span class="hl">Email is the only owned channel.</span></p>
+    <h2>Email Sequence — Welcome Series</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Email 1 (Day 0) — Welcome!</div><div class="tl-body">Lead magnet deliver பண்ணு. Introduce yourself. What to expect.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Email 2 (Day 2) — Your Story</div><div class="tl-body">Behind-the-scenes. Personal story share பண்ணு. Trust build.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Email 3 (Day 4) — Value</div><div class="tl-body">Free tips, guide, resource share பண்ணு. Goodwill create பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Email 4 (Day 6) — Social Proof</div><div class="tl-body">Testimonials, case studies, results show பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Email 5 (Day 8) — Offer</div><div class="tl-body">Product/service introduce பண்ணு. Special welcome discount offer பண்ணு.</div></div>
+    </div>
+    <h2>Email Metrics</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Metric</th><th>Good Benchmark</th><th>How to Improve</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Open Rate</strong></td><td>20-25%</td><td>Better subject lines</td></tr>
+          <tr><td><strong>Click Rate</strong></td><td>2-5%</td><td>Clearer CTA, relevant content</td></tr>
+          <tr><td><strong>Unsubscribe Rate</strong></td><td>&lt;0.5%</td><td>Better segmentation</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tags">
+      <span class="tag orange">Mailchimp (Free)</span><span class="tag purple">ConvertKit</span><span class="tag green">Brevo (India popular)</span>
+    </div>
+
+    <div class="quiz-section" id="quiz-m7">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 7 Chapter Test</h3><p>80% or above pass ஆனாலே Module 8 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m7-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m7-btn" onclick="submitQuiz('m7')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m7-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m6')"><span class="arrow">←</span><div><small>Prev</small><span>Meta Ads</span></div></button>
+      <button class="nav-btn next" id="btn-next-m7" onclick="navClick('m8')" disabled><div><small>Next Module</small><span>Affiliate Marketing</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 8 — AFFILIATE -->
+<div id="page-m8" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🔗 Module 08 · Passive Income</div>
+    <h1>Affiliate Marketing</h1>
+    <p>Products promote பண்ணி commission earn பண்றது — Amazon, Flipkart, digital products எல்லாமே.</p>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon">💰</span><strong>Passive Income</strong></div><div class="stat-pill"><span class="icon">🚫</span><strong>No Product Needed</strong></div></div>
+  </div>
+  <div class="module-content">
+    <h2>How Affiliate Marketing Works</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Join Program</strong><p>Amazon Associates, ShareASale, ClickBank-ல register பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Unique Link</strong><p>ஒவ்வொரு product-க்கும் unique tracking link கிடைக்கும்.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Promote</strong><p>Blog, YouTube, Instagram, Email மூலம் share பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Earn Commission</strong><p>Your link மூலம் purchase ஆனா commission credit ஆகும்.</p></div></div>
+    </div>
+    <h2>Popular Programs (India)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Program</th><th>Commission</th><th>Niche</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Amazon Associates</strong></td><td>0.5% - 10%</td><td>All products</td></tr>
+          <tr><td><strong>Flipkart Affiliate</strong></td><td>2% - 15%</td><td>Electronics, Fashion</td></tr>
+          <tr><td><strong>HostGator/Bluehost</strong></td><td>₹1,000 - ₹5,000/sale</td><td>Web hosting</td></tr>
+          <tr><td><strong>Udemy</strong></td><td>15-30%</td><td>Online courses</td></tr>
+          <tr><td><strong>ClickBank</strong></td><td>50-75%</td><td>Digital products</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box tip"><div class="box-label">✅ Beginner Strategy</div><p>முதல்ல Amazon Associates join பண்ணு → ஒரு niche select பண்ணு → YouTube review videos + blog எழுது → Organic SEO traffic மூலம் passive income. ₹10,000-30,000/month possible within 6-12 months!</p></div>
+
+    <div class="quiz-section" id="quiz-m8">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 8 Chapter Test</h3><p>80% or above pass ஆனாலே Module 9 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m8-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m8-btn" onclick="submitQuiz('m8')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m8-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m7')"><span class="arrow">←</span><div><small>Prev</small><span>Email Marketing</span></div></button>
+      <button class="nav-btn next" id="btn-next-m8" onclick="navClick('m9')" disabled><div><small>Next Module</small><span>Ecommerce</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 9 — ECOMMERCE -->
+<div id="page-m9" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🛒 Module 09 · Ecommerce</div>
+    <h1>Ecommerce Marketing</h1>
+    <p>Product photos, Shopify, Amazon, conversion optimization, cart abandonment — online store grow பண்றது.</p>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon">📦</span><strong>Product Marketing</strong></div><div class="stat-pill"><span class="icon">💳</span><strong>CRO</strong></div></div>
+  </div>
+  <div class="module-content">
+    <h2>Ecommerce Funnel</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Discovery</strong><p>Google search, Instagram ad, influencer post மூலம் product discover ஆகுது.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Product Page</strong><p>Great photos, compelling description, reviews, trust badges.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Cart & Purchase</strong><p>Easy checkout, multiple payment options. Secure payment, instant confirmation.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Retention</strong><p>Post-purchase emails, loyalty program, upsell/cross-sell.</p></div></div>
+    </div>
+    <h2>Cart Abandonment Recovery</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Method</th><th>When</th><th>Message</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Email 1</strong></td><td>1 hour after abandonment</td><td>"You left something behind! Complete your order."</td></tr>
+          <tr><td><strong>Email 2</strong></td><td>24 hours later</td><td>"Still thinking? Here's what others say..."</td></tr>
+          <tr><td><strong>Email 3</strong></td><td>3 days later</td><td>"Last chance — 10% off for next 24 hours"</td></tr>
+          <tr><td><strong>Retargeting Ad</strong></td><td>Ongoing</td><td>Product they viewed shown in FB/Instagram ads</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>Amazon Ranking Factors</h2>
+    <ul>
+      <li><span class="hl">Sales velocity</span> — More sales = higher rank</li>
+      <li><span class="hl">Reviews & Rating</span> — 4+ stars essential</li>
+      <li><span class="hl">Keyword optimization</span> — Title, bullets, backend keywords</li>
+      <li><span class="hl">Price competitiveness</span> — Buy Box win பண்றது</li>
+    </ul>
+
+    <div class="quiz-section" id="quiz-m9">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 9 Chapter Test</h3><p>80% or above pass ஆனாலே Module 10 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m9-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m9-btn" onclick="submitQuiz('m9')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m9-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m8')"><span class="arrow">←</span><div><small>Prev</small><span>Affiliate Marketing</span></div></button>
+      <button class="nav-btn next" id="btn-next-m9" onclick="navClick('m10')" disabled><div><small>Next Module</small><span>Analytics</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 10 — ANALYTICS -->
+<div id="page-m10" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">📊 Module 10 · Data</div>
+    <h1>Analytics & Data Tracking</h1>
+    <p>Google Analytics 4, Heatmaps, KPIs, Data interpretation — data-driven decisions எப்படி எடுக்கணும்.</p>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon">📈</span><strong>Data-Driven Decisions</strong></div><div class="stat-pill"><span class="icon">🆓</span><strong>Free Tools Available</strong></div></div>
+  </div>
+  <div class="module-content">
+    <h2>Google Analytics 4 Key Metrics</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Metric</th><th>What It Tells You</th><th>Good Benchmark</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Users</strong></td><td>Unique visitors count</td><td>Depends on business</td></tr>
+          <tr><td><strong>Bounce Rate</strong></td><td>% who leave without action</td><td>&lt;60% is good</td></tr>
+          <tr><td><strong>Avg Session Duration</strong></td><td>Time spent on site</td><td>2+ minutes good</td></tr>
+          <tr><td><strong>Conversion Rate</strong></td><td>% of visitors who convert</td><td>2-5% ecommerce</td></tr>
+          <tr><td><strong>Traffic Source</strong></td><td>Where visitors come from</td><td>Diversified is healthy</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>Marketing KPIs</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">💰</div><div class="mc-title">Revenue KPIs</div><div class="mc-desc">Total revenue, AOV, CLV, ROAS.</div></div>
+      <div class="mini-card"><div class="mc-icon">📢</div><div class="mc-title">Ads KPIs</div><div class="mc-desc">CTR, CPC, CPM, CPA, ROAS, Quality Score.</div></div>
+    </div>
+    <div class="box info"><div class="box-label">💡 Free Tools</div><ul><li><span class="hl">Google Analytics 4</span> — full website analytics</li><li><span class="hl">Google Search Console</span> — SEO performance</li><li><span class="hl">Microsoft Clarity</span> — Free heatmaps + recordings</li></ul></div>
+
+    <div class="quiz-section" id="quiz-m10">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 10 Chapter Test</h3><p>80% or above pass ஆனாலே Module 11 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m10-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m10-btn" onclick="submitQuiz('m10')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m10-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m9')"><span class="arrow">←</span><div><small>Prev</small><span>Ecommerce</span></div></button>
+      <button class="nav-btn next" id="btn-next-m10" onclick="navClick('m11')" disabled><div><small>Next Module</small><span>AI in Marketing</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 11 — AI IN MARKETING -->
+<div id="page-m11" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🤖 Module 11 · Future Skills</div>
+    <h1>AI in Digital Marketing</h1>
+    <p>ChatGPT, Claude, Midjourney, Runway — AI use பண்ணி 10x faster work பண்றது. Future marketers இன்றே இந்த skills கற்க வேண்டும்.</p>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon">⚡</span><strong>10x Productivity</strong></div><div class="stat-pill"><span class="icon">🔮</span><strong>Future-Proof Skills</strong></div></div>
+  </div>
+  <div class="module-content">
+    <h2>AI Tools by Category</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Category</th><th>AI Tool</th><th>Use Case</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Copywriting</strong></td><td>ChatGPT, Claude, Jasper</td><td>Ads, emails, blogs, captions</td></tr>
+          <tr><td><strong>Image Creation</strong></td><td>Midjourney, DALL-E, Adobe Firefly</td><td>Ad creatives, social media images</td></tr>
+          <tr><td><strong>Video</strong></td><td>Runway, Sora, HeyGen</td><td>Product videos, talking head videos</td></tr>
+          <tr><td><strong>SEO</strong></td><td>Surfer SEO, Semrush AI</td><td>Content optimization</td></tr>
+          <tr><td><strong>Automation</strong></td><td>Zapier, Make.com, n8n</td><td>Workflow automation</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>AI Prompt Examples for Marketers</h2>
+    <div class="code-block">Content: "I'm a digital marketing coach in Chennai. Create 7 Instagram post ideas targeting beginners who want to learn digital marketing. For each: hook, 3 key points, CTA, hashtags."</div>
+    <div class="code-block">Ad Copy: "Write 5 Facebook ad headlines for a digital marketing course ₹4,999. Target: 20-30 year old freshers in Tamil Nadu. Format: pain point + solution + CTA."</div>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">⚠️</div><div class="mc-title">Affected Jobs</div><div class="mc-desc">Basic copywriting, data entry, simple graphic design, generic social media management.</div></div>
+      <div class="mini-card"><div class="mc-icon">🚀</div><div class="mc-title">Growing Jobs</div><div class="mc-desc">AI Prompt Engineer, Performance Marketer, AI Content Director, Marketing Strategist.</div></div>
+    </div>
+    <div class="box tip"><div class="box-label">✅ Career Advice</div><p>AI tools use பண்ணி work speed up பண்றதை கற்றுக்கோ. <strong>AI உன் job எடுக்காது — AI use பண்ற marketer உன் job எடுப்பான்!</strong></p></div>
+
+    <div class="quiz-section" id="quiz-m11">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 11 Chapter Test</h3><p>80% or above pass ஆனாலே Module 12 unlock ஆகும்!</p></div></div>
+      <div id="quiz-m11-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m11-btn" onclick="submitQuiz('m11')" disabled>Submit Test →</button>
+      <div class="quiz-result" id="quiz-m11-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m10')"><span class="arrow">←</span><div><small>Prev</small><span>Analytics</span></div></button>
+      <button class="nav-btn next" id="btn-next-m11" onclick="navClick('m12')" disabled><div><small>Next Module</small><span>Freelancing</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 12 — FREELANCING -->
+<div id="page-m12" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">💼 Module 12 · Income · MOST IMPORTANT</div>
+    <h1>Freelancing & Client Work</h1>
+    <p>First client கிடைப்பது, pricing, proposal, cold DM — zero-க்கு freelancing start பண்ணி monthly income earn பண்றது complete guide.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">🚀</span><strong>Start from Zero</strong></div>
+      <div class="stat-pill"><span class="icon">💰</span><strong>₹30K-1L/month Possible</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Freelancing Roadmap</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 1 — Skills Build</div><div class="tl-body">ஒரே ஒரு service focus: SMM or SEO or Meta Ads. Free courses complete. 3 practice projects பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 2 — Portfolio</div><div class="tl-body">Case studies, sample work, before/after results. Client இல்லாம portfolio possible!</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 2-3 — First Client</div><div class="tl-body">Local businesses, family/friends business-க்கு free/discounted service. Testimonial பெறு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 4-6 — Scale</div><div class="tl-body">2-3 retainer clients secure. Pricing increase. Tools automate.</div></div>
+    </div>
+    <h2>Service Pricing</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Service</th><th>Starter</th><th>Growth</th><th>Premium</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Social Media Mgmt</strong></td><td>₹5,000/mo</td><td>₹12,000/mo</td><td>₹25,000/mo</td></tr>
+          <tr><td><strong>Meta Ads</strong></td><td>₹8,000/mo</td><td>₹15,000/mo</td><td>₹30,000/mo</td></tr>
+          <tr><td><strong>SEO</strong></td><td>₹6,000/mo</td><td>₹15,000/mo</td><td>₹35,000/mo</td></tr>
+          <tr><td><strong>Content Writing</strong></td><td>₹500/article</td><td>₹1,500/article</td><td>₹3,000+/article</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>Client Onboarding</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Discovery Call</strong><p>Business goals, budget, timeline discuss.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Proposal Send</strong><p>Services, deliverables, pricing clearly document.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Contract Sign</strong><p>Payment terms, revision policy, ownership rights.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>50% Advance</strong><p>Never start work without advance payment!</p></div></div>
+    </div>
+    <div class="box warning"><div class="box-label">⚠️ Critical Mistakes</div><ul>
+      <li>Contract இல்லாம work start பண்றது</li>
+      <li>Advance payment இல்லாம work பண்றது</li>
+      <li>Undercharging — too low price = clients don't value work</li>
+      <li>One client-ல மட்டும் depend பண்றது</li>
+    </ul></div>
+
+    <div class="quiz-section" id="quiz-m12">
+      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 12 Chapter Test — FINAL CORE TEST</h3><p>80% pass ஆனாலே Career & Tools section (Modules 13-19) unlock ஆகும்!</p></div></div>
+      <div id="quiz-m12-questions"></div>
+      <button class="quiz-submit-btn" id="quiz-m12-btn" onclick="submitQuiz('m12')" disabled>Submit Test & Unlock Career Modules →</button>
+      <div class="quiz-result" id="quiz-m12-result"></div>
+    </div>
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m11')"><span class="arrow">←</span><div><small>Prev</small><span>AI in Marketing</span></div></button>
+      <button class="nav-btn next" id="btn-next-m12" onclick="navClick('m13')" disabled><div><small>Next</small><span>Career Paths (Locked)</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 13 — CAREER PATHS -->
+<div id="page-m13" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">💰 Module 13 · Career</div>
+    <h1>Digital Marketing Careers</h1>
+    <p>Career paths, salary insights, job market trends, interview strategies — Tamil-ல complete career guidance.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">💼</span><strong>Job Roles</strong></div>
+      <div class="stat-pill"><span class="icon">💰</span><strong>Salary Guide</strong></div>
+      <div class="stat-pill"><span class="icon">📈</span><strong>Growth Trends</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>டிஜிட்டல் மார்க்கெட்டிங் Career Paths</h2>
+
+    <div class="salary-card">
+      <div class="salary-role">🎯 Performance Marketing Manager</div>
+      <div class="salary-range">₹6L - ₹18L per year</div>
+      <div class="salary-note">Demand: Very High | Google Ads + Meta Ads specialist. MNCs, D2C brands hire பண்றாங்க.</div>
+    </div>
+    <div class="salary-card">
+      <div class="salary-role">🔍 SEO Specialist / Manager</div>
+      <div class="salary-range">₹4L - ₹12L per year</div>
+      <div class="salary-note">Demand: High | Content + Technical SEO. Remote work opportunities available.</div>
+    </div>
+    <div class="salary-card">
+      <div class="salary-role">📱 Social Media Manager</div>
+      <div class="salary-range">₹3L - ₹9L per year</div>
+      <div class="salary-note">Demand: High | Instagram, LinkedIn, YouTube management. Agency or in-house.</div>
+    </div>
+    <div class="salary-card">
+      <div class="salary-role">✍️ Content Marketer / Copywriter</div>
+      <div class="salary-range">₹3L - ₹10L per year</div>
+      <div class="salary-note">Demand: Growing | AI tools knowledge = higher salary.</div>
+    </div>
+    <div class="salary-card">
+      <div class="salary-role">📊 Digital Marketing Manager</div>
+      <div class="salary-range">₹8L - ₹25L per year</div>
+      <div class="salary-note">Demand: Very High | Full strategy ownership. 3-5 years experience needed.</div>
+    </div>
+
+    <h2>Career Start பண்ண Step-by-Step</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">படி 1: ஒரு skill master பண்ணு (Month 1-3)</div><div class="tl-body">SEO or Meta Ads or Content Marketing — ஒரே ஒரு area deep dive. Free certifications (Google, HubSpot, Meta Blueprint).</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">படி 2: Portfolio Build (Month 3-6)</div><div class="tl-body">2-3 real projects (free clients ok). Results document பண்ணு. LinkedIn profile optimize பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">படி 3: Job Apply (Month 6-9)</div><div class="tl-body">Naukri, LinkedIn, Internshala-ல apply பண்ணு. Agencies, startups target பண்ணு. Digital marketing agencies-ல internship கேளு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">படி 4: Interview Crack (Month 9-12)</div><div class="tl-body">Case studies practice. Tools demo ready வை. Salary negotiate பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">படி 5: Grow & Scale (Year 2-3)</div><div class="tl-body">Specialist → Manager → Director path. Continuous learning, networking. Salary 2x in 3 years possible!</div></div>
+    </div>
+
+    <h2>2025-2026 Job Market Trends</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">🔥</div><div class="mc-title">Hottest Skills</div><div class="mc-desc">Performance Marketing, AI-powered marketing, Data Analytics, Video Marketing, WhatsApp Marketing.</div></div>
+      <div class="mini-card"><div class="mc-icon">💼</div><div class="mc-title">Top Hiring Companies</div><div class="mc-desc">D2C brands, EdTech startups, HealthTech, Fintech, E-commerce giants (Meesho, Nykaa, Blinkit).</div></div>
+      <div class="mini-card"><div class="mc-icon">🌍</div><div class="mc-title">Remote Work</div><div class="mc-desc">60%+ digital marketing jobs allow remote/hybrid. Global clients-க்கு work பண்ண possibility.</div></div>
+      <div class="mini-card"><div class="mc-icon">📈</div><div class="mc-title">Salary Growth</div><div class="mc-desc">Performance marketers-க்கு 25-35% annual salary growth typical in growing companies.</div></div>
+    </div>
+
+    <h2>Interview Preparation Guide</h2>
+    <h3>Technical Questions Practice</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Question</th><th>Expected Answer Focus</th></tr></thead>
+        <tbody>
+          <tr><td>"What is ROAS and how do you improve it?"</td><td>Formula: Revenue/Ad Spend. Improve via better targeting, creatives, landing pages.</td></tr>
+          <tr><td>"Explain the difference between reach and impressions"</td><td>Reach = unique people. Impressions = total views. Frequency = Impressions/Reach.</td></tr>
+          <tr><td>"How would you run a campaign for a new product launch?"</td><td>Funnel strategy: Awareness → Consideration → Conversion. Budget allocation.</td></tr>
+          <tr><td>"What tools do you use for SEO?"</td><td>GA4, GSC, Semrush/Ahrefs, Screaming Frog, Yoast.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box tip"><div class="box-label">✅ Interview Pro Tips</div><ul>
+      <li>Portfolio link share பண்ணு — "ஒரு real project செய்தேன்" example ready வை</li>
+      <li>Numbers பேசு — "10% CTR improvement, 30% CPA reduction" type results</li>
+      <li>Tools hands-on knowledge demo பண்ண ready ஆ இரு</li>
+      <li>Industry news updated-ஆ இரு — recent Google algorithm update பத்தி கேட்பாங்க</li>
+    </ul></div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m12')"><span class="arrow">←</span><div><small>Prev</small><span>Freelancing</span></div></button>
+      <button class="nav-btn next" onclick="showPage('m14')"><div><small>Next</small><span>Tools Master List</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 14 — TOOLS MASTER LIST -->
+<div id="page-m14" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🛠️ Module 14 · Tools</div>
+    <h1>Digital Marketing Tools Master List</h1>
+    <p>Free vs Paid tools, category-wise breakdown — ஒவ்வொரு marketer-உம் master பண்ண வேண்டிய tools comprehensive list.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">🆓</span><strong>Free Tools Available</strong></div>
+      <div class="stat-pill"><span class="icon">💸</span><strong>Paid Tools Guide</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>SEO Tools</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Tool</th><th>Type</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Google Search Console</strong><span class="badge-free">FREE</span></td><td>Analytics</td><td>Search performance, keyword tracking</td></tr>
+        <tr><td><strong>Google Analytics 4</strong><span class="badge-free">FREE</span></td><td>Analytics</td><td>Website traffic analysis</td></tr>
+        <tr><td><strong>Ubersuggest</strong><span class="badge-free">FREE</span></td><td>Keyword Research</td><td>Keyword ideas, competition analysis</td></tr>
+        <tr><td><strong>Semrush</strong><span class="badge-paid">PAID ₹8,000+/mo</span></td><td>All-in-one SEO</td><td>Deep SEO, competitor research</td></tr>
+        <tr><td><strong>Ahrefs</strong><span class="badge-paid">PAID ₹7,000+/mo</span></td><td>Backlink Analysis</td><td>Backlinks, keyword research</td></tr>
+        <tr><td><strong>Screaming Frog</strong><span class="badge-free">FREE (limited)</span></td><td>Technical SEO</td><td>Website crawl, audit</td></tr>
+        <tr><td><strong>Yoast SEO</strong><span class="badge-free">FREE</span></td><td>WordPress Plugin</td><td>On-page optimization</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Social Media Management Tools</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Tool</th><th>Type</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Meta Business Suite</strong><span class="badge-free">FREE</span></td><td>FB+IG Management</td><td>Facebook, Instagram scheduling</td></tr>
+        <tr><td><strong>Buffer</strong><span class="badge-free">FREE (3 channels)</span></td><td>Scheduling</td><td>Multi-platform scheduling</td></tr>
+        <tr><td><strong>Hootsuite</strong><span class="badge-paid">PAID ₹1,600+/mo</span></td><td>All-in-one SMM</td><td>Team collaboration, analytics</td></tr>
+        <tr><td><strong>Later</strong><span class="badge-free">FREE (limited)</span></td><td>Visual Planning</td><td>Instagram visual calendar</td></tr>
+        <tr><td><strong>Canva</strong><span class="badge-free">FREE</span></td><td>Design</td><td>Social media graphics, carousels</td></tr>
+        <tr><td><strong>CapCut</strong><span class="badge-free">FREE</span></td><td>Video Editing</td><td>Reels, YouTube Shorts editing</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Email Marketing Tools</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Tool</th><th>Type</th><th>Free Limit</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Mailchimp</strong><span class="badge-free">FREE</span></td><td>Email Platform</td><td>500 contacts, 1000 emails/month</td></tr>
+        <tr><td><strong>Brevo (Sendinblue)</strong><span class="badge-free">FREE</span></td><td>Email + SMS</td><td>300 emails/day free — India popular</td></tr>
+        <tr><td><strong>ConvertKit</strong><span class="badge-free">FREE (1000 subs)</span></td><td>Creator-focused</td><td>1000 subscribers free</td></tr>
+        <tr><td><strong>HubSpot</strong><span class="badge-free">FREE CRM</span></td><td>CRM + Email</td><td>Free CRM with basic email</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Content Creation Tools</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Tool</th><th>Type</th><th>Best Use</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ChatGPT</strong><span class="badge-free">FREE</span></td><td>AI Writing</td><td>Captions, ads, blogs, scripts</td></tr>
+        <tr><td><strong>Claude (Anthropic)</strong><span class="badge-free">FREE</span></td><td>AI Writing</td><td>Long-form content, analysis</td></tr>
+        <tr><td><strong>Midjourney</strong><span class="badge-paid">PAID $10/mo</span></td><td>AI Image</td><td>Ad creatives, thumbnails</td></tr>
+        <tr><td><strong>Adobe Firefly</strong><span class="badge-free">FREE (limited)</span></td><td>AI Image</td><td>Background removal, image editing</td></tr>
+        <tr><td><strong>Notion</strong><span class="badge-free">FREE</span></td><td>Project Mgmt</td><td>Content calendar, client management</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Paid Ads Tools</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Tool</th><th>Type</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Google Ads</strong><span class="badge-paid">PAID (ad spend)</span></td><td>Search/Display</td><td>Free to use, pay per click/impression</td></tr>
+        <tr><td><strong>Meta Ads Manager</strong><span class="badge-paid">PAID (ad spend)</span></td><td>FB/IG Ads</td><td>Free platform, pay for ad delivery</td></tr>
+        <tr><td><strong>SpyFu</strong><span class="badge-paid">PAID $39+/mo</span></td><td>Competitor Ads</td><td>See competitor's ad keywords, budgets</td></tr>
+        <tr><td><strong>AdEspresso</strong><span class="badge-paid">PAID</span></td><td>A/B Testing</td><td>Meta Ads A/B testing tool</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Analytics & Reporting Tools</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Tool</th><th>Type</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Google Looker Studio</strong><span class="badge-free">FREE</span></td><td>Dashboard</td><td>Beautiful client reports create பண்ணலாம்</td></tr>
+        <tr><td><strong>Microsoft Clarity</strong><span class="badge-free">FREE</span></td><td>Heatmaps</td><td>Session recordings, heatmaps, free</td></tr>
+        <tr><td><strong>Hotjar</strong><span class="badge-free">FREE (limited)</span></td><td>Heatmaps + Polls</td><td>User behavior analysis</td></tr>
+        <tr><td><strong>Databox</strong><span class="badge-paid">PAID</span></td><td>KPI Dashboard</td><td>Multi-source data dashboard</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box tip"><div class="box-label">✅ Beginner Tool Stack (Free)</div><p>Start here: <span class="hl">Canva + ChatGPT + Meta Business Suite + Buffer + Google Analytics + Mailchimp</span> — இவை மட்டும் use பண்ணினாலே 90% of tasks complete ஆகும். Free tools master பண்ணு, பிறகு paid tools learn பண்ணு!</p></div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m13')"><span class="arrow">←</span><div><small>Prev</small><span>Career Paths</span></div></button>
+      <button class="nav-btn next" onclick="showPage('m15')"><div><small>Next</small><span>Freelancing Workflow</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 15 — FREELANCING WORKFLOW -->
+<div id="page-m15" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">⚙️ Module 15 · Workflow</div>
+    <h1>Freelancing Workflow & Client Reporting</h1>
+    <p>Client onboarding, monthly reporting templates, project management, scaling strategies — professional freelancer ஆவதற்கான complete workflow.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">📋</span><strong>Templates</strong></div>
+      <div class="stat-pill"><span class="icon">🔄</span><strong>Workflows</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Freelancing Business Workflow — முழு Process</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Lead Generation</strong><p>Cold DM (Instagram/LinkedIn), Referrals, Fiverr/Upwork, Personal branding மூலம் leads generate பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Discovery Call (30 min)</strong><p>Business goals, current problems, budget, competitors, timeline — எல்லாமே clearly note எடு.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Proposal Create & Send</strong><p>Services, deliverables, timeline, pricing, ROI projection — professional PDF format.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Contract & Payment</strong><p>Simple agreement sign பண்ணு. 50% advance collect. Work start பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><strong>Onboarding</strong><p>Social media access, brand kit, existing assets, competitors list, content preferences — collect பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">6</div><div class="step-content"><strong>Execution</strong><p>Content calendar create. Weekly check-ins. Transparent communication. Notion/Trello use பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">7</div><div class="step-content"><strong>Monthly Report</strong><p>Results show பண்ணு. Wins highlight பண்ணு. Next month plan share பண்ணு. Balance payment collect.</p></div></div>
+      <div class="step"><div class="step-num">8</div><div class="step-content"><strong>Renew / Upsell</strong><p>Service upgrade offer. "Your social media grew 40%, should we add Google Ads?" — natural upsell.</p></div></div>
+    </div>
+
+    <h2>Monthly Client Report Template</h2>
+    <div class="card">
+      <div class="card-title"><span class="icon">📊</span>Monthly Report Template Structure</div>
+      <div class="code-block">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[CLIENT NAME] — Digital Marketing Report
+[Month Year]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. EXECUTIVE SUMMARY
+   • Month-ல என்ன achieve ஆனது
+   • Top 3 wins
+   • Areas for improvement
+
+2. SOCIAL MEDIA PERFORMANCE
+   • Instagram: Followers +X%, Reach: X, Engagement: X%
+   • Top performing post & why it worked
+
+3. ADS PERFORMANCE (if applicable)
+   • Total Spend: ₹XXXX
+   • Leads Generated: XX
+   • Cost Per Lead: ₹XXX
+   • ROAS: X.X
+
+4. WEBSITE / SEO (if applicable)
+   • Organic traffic: +X%
+   • Top keywords ranking
+   • Backlinks gained: X
+
+5. NEXT MONTH PLAN
+   • Strategy changes
+   • New campaigns
+   • Content themes
+
+Prepared by: [Your Name]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+    </div>
+
+    <h2>Client Onboarding Form (Gather These)</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Information</th><th>Why Needed</th></tr></thead>
+      <tbody>
+        <tr><td>Business Name & Logo files</td><td>Branding consistency</td></tr>
+        <tr><td>Social media login access (or partner access)</td><td>Direct management</td></tr>
+        <tr><td>Target audience (age, location, interests)</td><td>Content & ad targeting</td></tr>
+        <tr><td>Top 3 competitors</td><td>Competitive analysis</td></tr>
+        <tr><td>Brand tone (formal/casual/fun)</td><td>Content voice</td></tr>
+        <tr><td>Products/Services + USP</td><td>Content creation</td></tr>
+        <tr><td>Monthly budget (ads)</td><td>Campaign planning</td></tr>
+        <tr><td>Previous marketing results/data</td><td>Baseline comparison</td></tr>
+        <tr><td>Communication preference & frequency</td><td>Relationship management</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Payment & Contract Terms</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">🇮🇳</div><div class="mc-title">Domestic Payment</div><div class="mc-desc">UPI (GPay, PhonePe), Bank Transfer, Razorpay invoice. Fast, free, easy. Always get receipt.</div></div>
+      <div class="mini-card"><div class="mc-icon">🌍</div><div class="mc-title">International Payment</div><div class="mc-desc">Wise (best rates), PayPal, Payoneer, Fiverr Revenue Card. Wise-ஐ prefer பண்ணு — lowest fees.</div></div>
+    </div>
+
+    <h2>Cold DM Template (Instagram)</h2>
+    <div class="code-block">"Hi [Business Name]! 👋
+
+[Business]-ஓட Instagram page பாத்தேன் — நல்லா இருக்கு!
+
+Small tweaks மூலம் உங்க reach and customer enquiries double ஆகும் opportunity இருக்கு.
+
+I specialize in Social Media Marketing for local businesses in [City]. Quick 5-min call போடலாமா?
+
+No commitment needed — just share what's working for similar businesses. 🙌"</div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m14')"><span class="arrow">←</span><div><small>Prev</small><span>Tools List</span></div></button>
+      <button class="nav-btn next" onclick="showPage('m16')"><div><small>Next</small><span>Case Studies</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 16 — 20 CASE STUDIES -->
+<div id="page-m16" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">📖 Module 16 · Real Examples</div>
+    <h1>20 Digital Marketing Case Studies</h1>
+    <p>Real-world examples — India & global brands எப்படி digital marketing use பண்ணி succeed ஆனாங்க என்று Tamil-ல விரிவாக.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">🇮🇳</span><strong>India Focus</strong></div>
+      <div class="stat-pill"><span class="icon">🌍</span><strong>Global Examples</strong></div>
+      <div class="stat-pill"><span class="icon">📊</span><strong>20 Cases</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+
+    <div class="grid-2">
+      <div class="card"><div class="card-title"><span class="icon">🍕</span>1. Zomato — Meme Marketing</div>
+        <p><strong>Strategy:</strong> Twitter/X-ல savage, funny, relatable memes post பண்றது.</p>
+        <p><strong>Result:</strong> Zero ad spend-ல millions of impressions. Brand young audience-க்கு super relatable ஆனது.</p>
+        <p><strong>Lesson:</strong> Brand personality + humor = organic viral reach.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🛒</span>2. Meesho — Tier-2 Targeting</div>
+        <p><strong>Strategy:</strong> Small town India-ல vernacular language ads, WhatsApp marketing, Facebook groups.</p>
+        <p><strong>Result:</strong> 150M+ users, mostly from non-metro cities.</p>
+        <p><strong>Lesson:</strong> Underserved markets + local language = massive growth.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">💄</span>3. Nykaa — Content Commerce</div>
+        <p><strong>Strategy:</strong> YouTube tutorials, beauty blogs, influencer collaborations, email newsletters.</p>
+        <p><strong>Result:</strong> ₹5,000 Cr+ revenue, content-driven brand loyalty.</p>
+        <p><strong>Lesson:</strong> Educational content → trust → purchase.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🚗</span>4. Ola — Referral Marketing</div>
+        <p><strong>Strategy:</strong> "Refer a friend, both get free rides" viral loop + aggressive app install ads.</p>
+        <p><strong>Result:</strong> Rapid user acquisition at low CAC in Indian market.</p>
+        <p><strong>Lesson:</strong> Referral incentives reduce acquisition cost drastically.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🎓</span>5. BYJU'S — Video Ad Strategy</div>
+        <p><strong>Strategy:</strong> Long YouTube ads with emotional storytelling. Parent-targeted Facebook ads.</p>
+        <p><strong>Result:</strong> India's most valued edtech, ₹1.5L Cr valuation at peak.</p>
+        <p><strong>Lesson:</strong> Emotional ads that address parent fears → high conversion in education.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🏠</span>6. OYO Rooms — Performance Marketing</div>
+        <p><strong>Strategy:</strong> Location-based search ads, retargeting website visitors, dynamic pricing ads.</p>
+        <p><strong>Result:</strong> 80+ countries, millions of bookings through digital channels.</p>
+        <p><strong>Lesson:</strong> Geo-targeted + intent-based advertising = high ROI in hospitality.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🏋️</span>7. Cult.fit — Instagram Community</div>
+        <p><strong>Strategy:</strong> Instagram fitness challenges, user-generated content, paid partnerships with fitness influencers.</p>
+        <p><strong>Result:</strong> Strong community of 5M+ Instagram followers, organic brand ambassadors.</p>
+        <p><strong>Lesson:</strong> Community-led marketing > paid advertising alone.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">💰</span>8. Zerodha — Content-First FinTech</div>
+        <p><strong>Strategy:</strong> Free education (Varsity), blogs, YouTube — zero traditional advertising.</p>
+        <p><strong>Result:</strong> India's largest broker with ₹0 marketing budget for years.</p>
+        <p><strong>Lesson:</strong> Genuinely helpful content = the best marketing for trust-based industries.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🍫</span>9. Cadbury — Personalization Campaign</div>
+        <p><strong>Strategy:</strong> "Not Just a Cadbury Ad" — AI tool used to insert local shop owner's face & name in ads.</p>
+        <p><strong>Result:</strong> 90%+ engagement increase. Thousands of local businesses featured.</p>
+        <p><strong>Lesson:</strong> Hyper-personalization at scale = massive engagement.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🌊</span>10. Amul — Real-Time Marketing</div>
+        <p><strong>Strategy:</strong> Amul Girl topical ads on every trending news event — posted within hours.</p>
+        <p><strong>Result:</strong> 70+ years of relevance, massive organic reach without paid social.</p>
+        <p><strong>Lesson:</strong> Real-time, relevant content = sustained organic brand presence.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">💻</span>11. Dropbox — Product-Led Growth</div>
+        <p><strong>Strategy:</strong> "Refer friends, get free storage" — built viral loop into product itself.</p>
+        <p><strong>Result:</strong> 3900% growth in 15 months, 4M users in just 12 months.</p>
+        <p><strong>Lesson:</strong> Viral coefficient > 1 = exponential organic growth without ad spend.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🎵</span>12. Spotify India — Podcast Marketing</div>
+        <p><strong>Strategy:</strong> "India ko sunao" campaign, vernacular podcast discovery, hyper-local content.</p>
+        <p><strong>Result:</strong> 100M+ Indian users, beating JioSaavn in urban markets.</p>
+        <p><strong>Lesson:</strong> Localization + original content partnerships = market penetration.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">📱</span>13. OnePlus — Community Marketing</div>
+        <p><strong>Strategy:</strong> "Invite-only" launch, fan forums, Reddit engagement, influencer seeding.</p>
+        <p><strong>Result:</strong> Built cult following before single TV ad. Premium brand image.</p>
+        <p><strong>Lesson:</strong> Exclusivity + community = brand desire without traditional advertising.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">💳</span>14. CRED — Aspirational Advertising</div>
+        <p><strong>Strategy:</strong> Quirky IPL ads with celebrities. "Only for good credit score" exclusivity messaging.</p>
+        <p><strong>Result:</strong> 35M+ premium users, highest per-user spend app in India.</p>
+        <p><strong>Lesson:</strong> Premium positioning + entertainment-first ads = quality user acquisition.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🔴</span>15. YouTube Shorts India</div>
+        <p><strong>Strategy:</strong> Creator incentive programs, vernacular content push, partnerships with music labels.</p>
+        <p><strong>Result:</strong> 200B+ views/day globally, massive India adoption in 2022-24.</p>
+        <p><strong>Lesson:</strong> Platform + creator incentives + local content = rapid adoption.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🏪</span>16. D-Mart — Anti-Digital Strategy (Interesting!)</div>
+        <p><strong>Strategy:</strong> No major social media, no heavy digital ads — EDLP (Everyday Low Price) model.</p>
+        <p><strong>Result:</strong> Still India's most profitable retailer by square foot.</p>
+        <p><strong>Lesson:</strong> Word-of-mouth + genuine value > digital marketing hype. Know when NOT to advertise.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🎮</span>17. GoPro — User-Generated Content</div>
+        <p><strong>Strategy:</strong> Encouraged users to share GoPro videos → curated + reshared best content.</p>
+        <p><strong>Result:</strong> YouTube channel with 10M+ subscribers, majority content is user-created.</p>
+        <p><strong>Lesson:</strong> Product + UGC strategy = infinite free marketing content.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🧴</span>18. Mamaearth — D2C Digital First</div>
+        <p><strong>Strategy:</strong> Influencer marketing (nano + micro influencers), toxic-free ingredient transparency, Instagram-native brand.</p>
+        <p><strong>Result:</strong> ₹1,500 Cr revenue in 7 years. IPO listed.</p>
+        <p><strong>Lesson:</strong> Authentic brand values + right influencer tier + D2C model = fast growth.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🏡</span>19. Airbnb — SEO Content Strategy</div>
+        <p><strong>Strategy:</strong> City-specific landing pages (100,000+), neighborhood guides, travel blog content at scale.</p>
+        <p><strong>Result:</strong> 50%+ bookings via organic search. Reduced paid ad dependency drastically.</p>
+        <p><strong>Lesson:</strong> Programmatic SEO + user-generated content = sustainable traffic moat.</p>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🎯</span>20. Wakefit — Facebook Ads Mastery</div>
+        <p><strong>Strategy:</strong> Hyper-targeted Facebook ads to sleep-deprived professionals. Problem-aware messaging. Video testimonials.</p>
+        <p><strong>Result:</strong> ₹1,000 Cr+ revenue, started purely via digital marketing.</p>
+        <p><strong>Lesson:</strong> Niche audience + pain-point messaging + systematic testing = scalable D2C growth.</p>
+      </div>
+    </div>
+
+    <div class="box info"><div class="box-label">💡 Pattern Recognition</div><p>இந்த 20 case studies-ல common patterns: <span class="hl">Community building</span>, <span class="hl">Content-first approach</span>, <span class="hl">Hyper-targeting specific audiences</span>, <span class="hl">Authentic brand voice</span>, <span class="hl">Data-driven iteration</span>. ஒவ்வொரு brand-உம் ஒரு unique angle find பண்ணி execute பண்ணுச்சு.</p></div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m15')"><span class="arrow">←</span><div><small>Prev</small><span>Workflow</span></div></button>
+      <button class="nav-btn next" onclick="showPage('m17')"><div><small>Next</small><span>Learning Roadmap</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 17 — ROADMAP -->
+<div id="page-m17" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🗺️ Module 17 · Roadmap</div>
+    <h1>Learning & Career Roadmap</h1>
+    <p>Step-by-step execution roadmap — 0 to ₹1L/month income achieve பண்றதற்கான clear visual path.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">🎯</span><strong>Clear Milestones</strong></div>
+      <div class="stat-pill"><span class="icon">📅</span><strong>Month-by-Month</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>12-Month Digital Marketing Career Roadmap</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 1-2: Foundation</div><div class="tl-body">✅ This course complete பண்ணு. ✅ 1 free certification (Google Digital Garage or HubSpot). ✅ LinkedIn + Instagram profiles optimize. ✅ Industry news follow start பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 2-3: Skill Specialization</div><div class="tl-body">✅ ONE skill deep dive (Meta Ads or SEO or SMM). ✅ 2-3 mock/spec projects complete. ✅ Free tools master (Canva, ChatGPT, GA4). ✅ Portfolio page create (Notion or simple website).</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 3-4: First Clients</div><div class="tl-body">✅ Family/friend business free-ஆ help பண்ணு. ✅ Results + testimonial collect. ✅ Fiverr/Upwork profile create. ✅ First 5-10 cold DMs/emails send பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 4-6: Paid Clients</div><div class="tl-body">✅ First paid project (₹3,000-5,000). ✅ 2nd paid project. ✅ Case study document. ✅ Pricing structure finalize. ✅ ₹10,000-20,000/month first milestone!</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 6-9: Retainer Clients</div><div class="tl-body">✅ 2-3 monthly retainer clients (₹8,000-15,000/client). ✅ ₹25,000-45,000/month stable income. ✅ Second skill add (if SMM → add Meta Ads). ✅ Personal brand grow பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 9-12: Scale to ₹1L</div><div class="tl-body">✅ 4-5 retainer clients OR higher value clients. ✅ Package price increase (₹20,000-35,000/client). ✅ Systems + automation setup. ✅ ₹80,000-1,20,000/month goal achieve!</div></div>
+    </div>
+
+    <h2>Specialization Roadmaps</h2>
+    <div class="grid-2">
+      <div class="card"><div class="card-title"><span class="icon">📢</span>Performance Marketing Path</div>
+        <div class="timeline" style="margin:0">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 1: Learn</div><div class="tl-body">Google Ads Certification + Meta Blueprint. Practice with ₹1,000 personal budget.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 2: Do</div><div class="tl-body">2 free client projects. Document ROAS, leads, CPA results.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 3: Sell</div><div class="tl-body">₹15,000-30,000/month per client. Niche in one industry (real estate, education, etc.)</div></div>
+        </div>
+      </div>
+      <div class="card"><div class="card-title"><span class="icon">🔍</span>SEO Path</div>
+        <div class="timeline" style="margin:0">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 1: Learn</div><div class="tl-body">Moz SEO Guide + Semrush Academy. Start a personal blog.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 2: Do</div><div class="tl-body">Rank your blog for 5+ keywords. Guest post on industry blogs.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 3: Sell</div><div class="tl-body">₹10,000-25,000/month per client. Show ranking proof in portfolio.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Daily Learning Habit — 1 Hour/Day Plan</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Time</th><th>Activity</th><th>Duration</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Morning 7 AM</strong></td><td>Industry news (Neil Patel blog, Marketing Brew)</td><td>15 min</td></tr>
+        <tr><td><strong>Morning 7:15 AM</strong></td><td>Course/Tutorial (YouTube, free courses)</td><td>30 min</td></tr>
+        <tr><td><strong>Morning 7:45 AM</strong></td><td>Practice / Build portfolio</td><td>15 min</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box tip"><div class="box-label">✅ Success Mantra</div><p><span class="hl">Learn → Do → Document → Sell.</span> ஒவ்வொரு skill-உம் learn பண்ணினதும் immediately ஒரு project பண்ணு. Results document பண்ணு. அதை portfolio-ல வை. அதை sell பண்ணு. This cycle is unstoppable!</p></div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m16')"><span class="arrow">←</span><div><small>Prev</small><span>Case Studies</span></div></button>
+      <button class="nav-btn next" onclick="showPage('m18')"><div><small>Next</small><span>Interview Prep</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 18 — INTERVIEW PREP -->
+<div id="page-m18" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🎤 Module 18 · Interview</div>
+    <h1>Interview Prep & Practical Training</h1>
+    <p>Top interview questions, live portfolio presentation, salary negotiation, agency vs in-house — job ready ஆவோம்.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">💼</span><strong>Job Readiness</strong></div>
+      <div class="stat-pill"><span class="icon">💰</span><strong>Salary Negotiation</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Top 25 Interview Questions & Answers</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>#</th><th>Question</th><th>Key Answer Points</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Tell me about yourself as a digital marketer</td><td>Skills + experience + specific results + passion</td></tr>
+        <tr><td>2</td><td>What is ROAS and how do you optimize it?</td><td>Revenue/Ad Spend. Better creatives, targeting, landing pages</td></tr>
+        <tr><td>3</td><td>Explain the difference between SEO and SEM</td><td>SEO = organic/free, SEM = paid. Both needed.</td></tr>
+        <tr><td>4</td><td>How would you handle a drop in organic traffic?</td><td>GA4 check, GSC check, algorithm update, technical issues, content quality</td></tr>
+        <tr><td>5</td><td>What's your experience with Meta Ads?</td><td>Specific campaign, results, ROAS, learnings</td></tr>
+        <tr><td>6</td><td>How do you stay updated with digital marketing trends?</td><td>Blogs (Neil Patel, Moz, HubSpot), YouTube, Twitter/X, industry newsletters</td></tr>
+        <tr><td>7</td><td>What's the ideal posting frequency for Instagram?</td><td>Reels 3-5x/week, Stories daily, Carousels 2-3x/week</td></tr>
+        <tr><td>8</td><td>Explain a successful campaign you ran</td><td>Situation → Action → Result format. Specific numbers.</td></tr>
+        <tr><td>9</td><td>What is Quality Score in Google Ads?</td><td>1-10 score. CTR + Ad Relevance + Landing Page. Higher = lower CPC.</td></tr>
+        <tr><td>10</td><td>How would you increase email open rates?</td><td>Better subject lines, personalization, send time optimization, list hygiene</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Agency vs In-House — Comparison</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">🏢</div><div class="mc-title">Agency Job</div><div class="mc-desc">Multiple clients, fast learning, diverse skills. Fast-paced, multiple deadlines. ₹3-8L starting. Learn in 1-2 years: go agency first!</div></div>
+      <div class="mini-card"><div class="mc-icon">💼</div><div class="mc-title">In-House Job</div><div class="mc-desc">One brand focus, deeper strategy, better work-life balance. Higher salary, perks. ₹5-15L mid-level.</div></div>
+    </div>
+
+    <h2>Salary Negotiation Tips</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Research Market Rate</strong><p>LinkedIn Salary, Glassdoor, Naukri Salary tool use பண்ணி benchmark find பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Never Reveal Current Salary First</strong><p>"I'm looking for X based on my skills and market research" — anchor high.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Counter with Data</strong><p>"I brought 35% cost reduction in my previous role. I believe X salary reflects that value."</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Negotiate Full Package</strong><p>Base + Variable bonus + ESOPs + WFH + Learning budget — total package matter.</p></div></div>
+    </div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m17')"><span class="arrow">←</span><div><small>Prev</small><span>Roadmap</span></div></button>
+      <button class="nav-btn next" onclick="showPage('m19')"><div><small>Next</small><span>Advanced Marketing</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 19 — ADVANCED MARKETING -->
+<div id="page-m19" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">🚀 Module 19 · Advanced</div>
+    <h1>Advanced Marketing Strategies</h1>
+    <p>Growth Hacking, CRO, Neuromarketing, Viral Loops, Marketing Automation — expert-level strategies.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">🧠</span><strong>Psychology-Driven</strong></div>
+      <div class="stat-pill"><span class="icon">📈</span><strong>Growth Hacking</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Conversion Rate Optimization (CRO)</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Analyze Current State</strong><p>Heatmaps, session recordings, analytics — where users drop off?</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Form Hypothesis</strong><p>"CTA button color change ஆனா click rate increase ஆகும் because of visual contrast."</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>A/B Test</strong><p>50% control (original), 50% variant. Statistical significance achieve ஆக wait பண்ணு.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Implement Winner</strong><p>Winner = all traffic-க்கு. Start next test. CRO is a continuous cycle.</p></div></div>
+    </div>
+
+    <h2>Neuromarketing Principles</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">😱</div><div class="mc-title">Loss Aversion</div><div class="mc-desc">"Save ₹500" என்பது "Get ₹500 off"-ஐ விட powerful. People fear loss more than they desire gain.</div></div>
+      <div class="mini-card"><div class="mc-icon">⏰</div><div class="mc-title">Scarcity & Urgency</div><div class="mc-desc">"Only 3 left!" / "Offer ends tonight" — urgency creates action. Used by Amazon, Flipkart constantly.</div></div>
+      <div class="mini-card"><div class="mc-icon">👥</div><div class="mc-title">Social Proof</div><div class="mc-desc">"10,000 students enrolled" / "4.8 stars" — people follow the crowd automatically.</div></div>
+      <div class="mini-card"><div class="mc-icon">🎁</div><div class="mc-title">Reciprocity</div><div class="mc-desc">Free value கொடு → people feel obligated to give back (buy, refer). Fundamental psychology.</div></div>
+      <div class="mini-card"><div class="mc-icon">🏆</div><div class="mc-title">Authority</div><div class="mc-desc">Certifications, awards, media features — credibility increases conversions immediately.</div></div>
+      <div class="mini-card"><div class="mc-icon">🔒</div><div class="mc-title">Anchoring</div><div class="mc-desc">₹9,999 original price show பண்ணு, then ₹4,999. Second price always looks cheap by comparison.</div></div>
+    </div>
+
+    <h2>Viral Loops</h2>
+    <div class="box info"><div class="box-label">💡 Viral Loop Examples</div>
+    <ul>
+      <li><strong>Dropbox:</strong> "Refer a friend, both get 500MB free" → exponential growth</li>
+      <li><strong>PayPal:</strong> "₹100 for every referral" → rapid user acquisition</li>
+      <li><strong>Hotmail:</strong> "Get your free email at Hotmail" — every email = an ad</li>
+    </ul>
+    <p style="margin-top:10px">Key: Make sharing beneficial to BOTH parties. Viral coefficient > 1 = exponential growth.</p>
+    </div>
+
+    <h2>2026 Digital Marketing Trends</h2>
+    <div class="grid-2">
+      <div class="mini-card"><div class="mc-icon">🤖</div><div class="mc-title">AI-First Marketing</div><div class="mc-desc">AI agents autonomously create, test, optimize campaigns. Human = strategy only.</div></div>
+      <div class="mini-card"><div class="mc-icon">🎬</div><div class="mc-title">Short Video Dominance</div><div class="mc-desc">Reels, Shorts continue dominating. AI-generated video content rapidly increasing.</div></div>
+      <div class="mini-card"><div class="mc-icon">🔒</div><div class="mc-title">Privacy-First</div><div class="mc-desc">Third-party cookies dead. First-party data (email lists, owned audiences) = gold.</div></div>
+      <div class="mini-card"><div class="mc-icon">🌐</div><div class="mc-title">Hyper-Personalization</div><div class="mc-desc">Every ad, email, content personalized to individual behavior in real-time via AI.</div></div>
+    </div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m18')"><span class="arrow">←</span><div><small>Prev</small><span>Interview Prep</span></div></button>
+      <button class="nav-btn next" onclick="navClick('summary')"><div><small>Next</small><span>Course Summary</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- COURSE SUMMARY -->
+<div id="page-summary" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">📋 Summary · Course Complete Review</div>
+    <h1>Complete Course Summary</h1>
+    <p>All 19 modules-ல என்ன கற்றோம் — key takeaways, common mistakes, 2026 trends, 30-day action plan.</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">🎓</span><strong>19 Modules Covered</strong></div>
+      <div class="stat-pill"><span class="icon">🔮</span><strong>2026 Trends</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <h2>Complete Course Summary Table</h2>
+    <div class="table-wrap"><table><thead><tr><th>Module</th><th>Topic</th><th>Key Takeaway</th></tr></thead><tbody>
+      <tr><td><strong>01</strong></td><td>Intro to DM</td><td>Digital marketing = online channels use பண்ணி business grow பண்றது</td></tr>
+      <tr><td><strong>02</strong></td><td>Content Marketing</td><td>Value first, sell second. Hooks matter. AI-powered workflow saves 4+ hours.</td></tr>
+      <tr><td><strong>03</strong></td><td>Social Media</td><td>Platform-specific strategy. Consistency + engagement wins. Reels dominate.</td></tr>
+      <tr><td><strong>04</strong></td><td>SEO</td><td>Long-term free traffic. Keywords + quality content + backlinks. Takes 3-6 months.</td></tr>
+      <tr><td><strong>05</strong></td><td>Google Ads</td><td>Instant results. Quality Score = lower cost. Always test and scale winners.</td></tr>
+      <tr><td><strong>06</strong></td><td>Meta Ads</td><td>Audience targeting powerhouse. Funnel strategy + Pixel = essential for ROI.</td></tr>
+      <tr><td><strong>07</strong></td><td>Email Marketing</td><td>Owned channel. Automation + nurturing = 42x ROI average.</td></tr>
+      <tr><td><strong>08</strong></td><td>Affiliate Marketing</td><td>Passive income through promotion. Niche focus + SEO + honest reviews.</td></tr>
+      <tr><td><strong>09</strong></td><td>Ecommerce</td><td>Great photos + descriptions + reviews + retargeting = sales.</td></tr>
+      <tr><td><strong>10</strong></td><td>Analytics</td><td>Data பார்க்காம decision எடுக்காதே. Monthly review critical for growth.</td></tr>
+      <tr><td><strong>11</strong></td><td>AI in Marketing</td><td>AI = 10x productivity. Learn to use AI tools effectively.</td></tr>
+      <tr><td><strong>12</strong></td><td>Freelancing</td><td>Skills → Portfolio → Free clients → Paid clients → Retainers → Scale.</td></tr>
+      <tr><td><strong>13</strong></td><td>Career Paths</td><td>Performance Marketing = highest demand + salary in 2025-2026.</td></tr>
+      <tr><td><strong>14</strong></td><td>Tools</td><td>Free tools master பண்ணு. Canva+ChatGPT+GA4 = 90% of work done.</td></tr>
+      <tr><td><strong>15</strong></td><td>Workflow</td><td>Systematic onboarding + monthly reporting = professional client relationships.</td></tr>
+      <tr><td><strong>16</strong></td><td>Case Studies</td><td>Community + Content-first + Hyper-targeting = sustainable growth patterns.</td></tr>
+      <tr><td><strong>17</strong></td><td>Roadmap</td><td>Learn → Do → Document → Sell. 12 months to ₹1L/month is realistic.</td></tr>
+      <tr><td><strong>18</strong></td><td>Interview Prep</td><td>Numbers + Portfolio + Tools demo + Salary research = interview success.</td></tr>
+      <tr><td><strong>19</strong></td><td>Advanced</td><td>CRO + Neuromarketing + Viral loops = expert-level marketing mastery.</td></tr>
+    </tbody></table></div>
+
+    <h2>Common Beginner Mistakes to Avoid</h2>
+    <div class="box warning"><div class="box-label">❌ Critical Mistakes</div><ol>
+      <li>Everything at once learn பண்ண try பண்றது — one skill at a time focus பண்ணு</li>
+      <li>Certifications மட்டும் focus, practical skills இல்லாம</li>
+      <li>Results immediately expect பண்றது — marketing takes 3-6 months minimum</li>
+      <li>Target audience define பண்ணாம content create பண்றது</li>
+      <li>Contract இல்லாம, advance இல்லாம client work start பண்றது</li>
+      <li>One platform or one income source-ல மட்டும் depend பண்றது</li>
+      <li>Portfolio இல்லாம pitching — always show proof of work</li>
+    </ol></div>
+
+    <h2>Your 30-Day Action Plan</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 1 (Days 1-7)</div><div class="tl-body">✅ ONE service specialize பண்ணு. ✅ Google/HubSpot free course start. ✅ LinkedIn profile optimize. ✅ Industry accounts 10+ follow பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 2 (Days 8-14)</div><div class="tl-body">✅ 2 mock projects complete. ✅ Canva + ChatGPT workflow master. ✅ Instagram/LinkedIn daily posting start. ✅ Free certification complete.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 3 (Days 15-21)</div><div class="tl-body">✅ Portfolio page create (Notion or Carrd). ✅ First free client reach out. ✅ Fiverr profile setup. ✅ Case study draft write பண்ணு.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 4 (Days 22-30)</div><div class="tl-body">✅ 10 businesses cold DM/email send. ✅ First testimonial collect. ✅ First paid inquiry respond. ✅ Aim: First ₹3,000-5,000 project!</div></div>
+    </div>
+
+    <div class="box tip">
+      <div class="box-label">🎉 You Did It!</div>
+      <p>Digital Marketing Master Course complete பண்ணீங்க! Remember: <span class="hl">Knowledge + Action = Results</span>. இந்த course-ல இருக்குற knowledge போதும் — ஒரு successful digital marketing career build பண்ண. இப்போ go execute! நீங்கள் capable!</p>
+    </div>
+
+    <div class="module-nav">
+      <button class="nav-btn" onclick="showPage('m19')"><span class="arrow">←</span><div><small>Prev</small><span>Advanced Marketing</span></div></button>
+      <button class="nav-btn next" onclick="navClick('finaltest')"><div><small>Next</small><span>Final Cumulative Test</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL TEST PAGE -->
+<div id="page-finaltest" class="module-page">
+  <div class="module-hero">
+    <div class="module-tag">⭐ Final Assessment · All Modules</div>
+    <h1>Final Cumulative Test</h1>
+    <p>All 19 modules covering — இந்த test pass பண்ணினா course officially complete! Best of luck!</p>
+    <div class="hero-stats">
+      <div class="stat-pill"><span class="icon">📝</span><strong>20 Questions</strong></div>
+      <div class="stat-pill"><span class="icon">🎯</span><strong>Pass: 70%+</strong></div>
+      <div class="stat-pill"><span class="icon">⭐</span><strong>Full Course Test</strong></div>
+    </div>
+  </div>
+  <div class="module-content">
+    <div class="quiz-header" style="margin-bottom:32px">
+      <div class="quiz-icon" style="font-size:28px">🏆</div>
+      <div class="quiz-header-text">
+        <h3>Final Cumulative Assessment</h3>
+        <p>All 19 modules-ல இருந்து questions. 70% or above = Course Complete Certificate eligible! ஒவ்வொரு question-உம் கவனமாக படிங்க.</p>
+      </div>
+    </div>
+    <div id="final-quiz-questions"></div>
+    <button class="quiz-submit-btn" id="final-quiz-btn" onclick="submitFinalQuiz()" disabled style="font-size:16px;padding:16px 36px;margin-top:32px">Submit Final Test & See Results 🏆</button>
+    <div id="final-quiz-result" style="display:none"></div>
+
+    <div class="module-nav" style="margin-top:40px">
+      <button class="nav-btn" onclick="showPage('summary')"><span class="arrow">←</span><div><small>Back to</small><span>Course Summary</span></div></button>
+      <button class="nav-btn next" onclick="showPage('home')"><div><small>Back to</small><span>Course Overview</span></div><span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+</main><!-- /main -->
+
+<script>
+// ══════════════════════════════════════════════
+// QUIZ DATA — 5 Questions per module (modules 1-12)
+// ══════════════════════════════════════════════
+const QUIZ_DATA = {
+  m1: [
+    { q: "Digital Marketing என்றால் என்ன?", options: ["TV மற்றும் Radio மூலம் advertise பண்றது", "Internet மற்றும் digital channels மூலம் products/services promote பண்றது", "Print media மூலம் marketing பண்றது", "Door-to-door sales பண்றது"], correct: 1 },
+    { q: "Marketing Funnel-ல முதல் stage என்ன?", options: ["Purchase", "Consideration", "Awareness", "Loyalty"], correct: 2 },
+    { q: "ROI என்றால் என்ன?", options: ["Rate of Interest", "Return on Investment", "Revenue Over Income", "Rate of Impressions"], correct: 1 },
+    { q: "Traditional Marketing-ஐ விட Digital Marketing-ன் advantage என்ன?", options: ["More expensive", "Cannot measure results", "Precise targeting & real-time analytics", "Only national reach"], correct: 2 },
+    { q: "CTA என்றால் என்ன?", options: ["Content To Audience", "Call To Action", "Cost To Advertise", "Click Through Average"], correct: 1 }
+  ],
+  m2: [
+    { q: "Content Marketing-ல முக்கியமான approach என்ன?", options: ["Direct selling first", "Value first, sell second", "Only promotional content", "Price-based marketing only"], correct: 1 },
+    { q: "Viral content psychology-ல STEPPS என்று எந்த factor people-ஐ share பண்ண வைக்கிறது?", options: ["Spam", "Social Currency", "Simple text", "Short videos only"], correct: 1 },
+    { q: "Hook என்றால் என்ன?", options: ["Content-ன் last line", "Content-ன் middle section", "First 3 seconds-ல attention grab பண்றது", "Product description"], correct: 2 },
+    { q: "Content calendar ஏன் முக்கியம்?", options: ["More followers கிடைக்கும்", "Consistent posting for algorithm + planning", "More revenue automatically", "Less work needed"], correct: 1 },
+    { q: "AI Content workflow-ல ChatGPT என்ன பண்ண use ஆகுது?", options: ["Video editing", "Website hosting", "Copy writing, captions, scripts generate பண்ண", "Scheduling posts"], correct: 2 }
+  ],
+  m3: [
+    { q: "Instagram-ல engagement boost பண்ண best time என்ன?", options: ["Post பண்ணி 24 hours wait பண்ணு", "Post பண்ண first 30 minutes-ல maximum engagement generate பண்ணு", "Week-ல ஒரு முறை post பண்ணினால் போதும்", "Time matter இல்லை"], correct: 1 },
+    { q: "LinkedIn-ல எந்த audience best?", options: ["Teenagers", "Professionals 25+, B2B", "Children under 18", "Rural audience only"], correct: 1 },
+    { q: "Instagram profile optimize பண்ண என்ன வேண்டும்?", options: ["Random bio with emojis only", "Bio-ல keyword, CTA, link", "No profile photo", "Private account only"], correct: 1 },
+    { q: "Facebook platform India-ல எந்த audience-க்கு best?", options: ["18-25 urban youth", "35+ age group", "Only brands", "International audience"], correct: 1 },
+    { q: "Social Media Marketing-ல niche clarity ஏன் வேண்டும்?", options: ["More followers automatically", "Focused content strategy for specific audience", "Less work", "Algorithm requirement"], correct: 1 }
+  ],
+  m4: [
+    { q: "SEO-ல Google ranking process-ல first step என்ன?", options: ["Index", "Rank", "Crawl", "Optimize"], correct: 2 },
+    { q: "Long-tail keywords-ன் advantage என்ன?", options: ["Very high difficulty", "Low competition, targeted traffic", "No traffic", "Only for big websites"], correct: 1 },
+    { q: "On-Page SEO-ல என்ன include ஆகுது?", options: ["Backlinks only", "Title tags, Meta descriptions, Headings, Keywords", "Social media posts", "Email marketing"], correct: 1 },
+    { q: "Free SEO tools எது?", options: ["Only Semrush", "Google Search Console, Ubersuggest", "Only Ahrefs", "All are paid"], correct: 1 },
+    { q: "SEO results எத்தனை time-ல வரும்?", options: ["24 hours", "1 week", "3-6 months typically", "Immediately like paid ads"], correct: 2 }
+  ],
+  m5: [
+    { q: "Google Ads-ல Quality Score கூட்டினா என்ன ஆகும்?", options: ["Ad cost increases", "Ad never shows", "Lower CPC + better position", "No difference"], correct: 2 },
+    { q: "Ecommerce-க்கு best Google Ad type என்ன?", options: ["Display Ads only", "Shopping Ads", "YouTube Ads only", "Search Ads only"], correct: 1 },
+    { q: "Quality Score எதை based-ஆ calculate ஆகுது?", options: ["Budget + keywords only", "CTR + Ad Relevance + Landing Page Quality", "Impressions only", "Ad spend amount"], correct: 1 },
+    { q: "Beginner-க்கு best bidding strategy என்ன?", options: ["Target CPA", "Manual CPC", "Maximize Clicks", "Target ROAS"], correct: 2 },
+    { q: "Display Ads எதற்கு best?", options: ["High intent buyers only", "Brand awareness + retargeting", "Only B2B", "Email list building"], correct: 1 }
+  ],
+  m6: [
+    { q: "Meta Ads-ல Campaign level-ல என்ன set பண்றோம்?", options: ["Audience targeting", "Ad creative design", "Objective (Awareness/Traffic/Sales)", "Budget only"], correct: 2 },
+    { q: "Meta Pixel என்ன பண்ணுது?", options: ["Social media posts schedule பண்ணுது", "Website visitors track பண்ணி retargeting enable பண்ணுது", "Email list collect பண்ணுது", "SEO improve பண்ணுது"], correct: 1 },
+    { q: "Lookalike Audience என்றால் என்ன?", options: ["Existing customers list", "Similar people to best customers — Meta AI finds them", "Random people", "Only women audience"], correct: 1 },
+    { q: "Funnel-ன் Bottom stage-ல எந்த audience?", options: ["Cold interest-based", "Random people", "Hot — website visitors, cart abandoners", "New customers only"], correct: 2 },
+    { q: "Meta Ads A/B testing-ல என்ன test பண்றோம்?", options: ["Multiple variables once", "Only one variable at a time", "Budget changes only", "Audience size only"], correct: 1 }
+  ],
+  m7: [
+    { q: "Email Marketing-ல average ROI எவ்வளவு?", options: ["5x", "10x", "42x", "2x"], correct: 2 },
+    { q: "Email list owned channel ஏன்?", options: ["Free to use", "Algorithm change affect இல்லை, direct access to subscribers", "Most popular platform", "AI powered"], correct: 1 },
+    { q: "Good email open rate benchmark என்ன?", options: ["5-10%", "20-25%", "50-60%", "1-2%"], correct: 1 },
+    { q: "Welcome email sequence-ல Day 8 email-ல என்ன send பண்றோம்?", options: ["Company news", "Unsubscribe request", "Product/service offer with welcome discount", "Nothing important"], correct: 2 },
+    { q: "India-ல popular free email marketing tool எது?", options: ["ActiveCampaign", "Klaviyo", "Brevo (Sendinblue)", "Marketo"], correct: 2 }
+  ],
+  m8: [
+    { q: "Affiliate Marketing-ல commission எப்போது கிடைக்கும்?", options: ["Every click-க்கு", "Your link மூலம் purchase ஆனா", "Every impression-க்கு", "Monthly flat fee"], correct: 1 },
+    { q: "Affiliate Marketing-க்கு product தேவையா?", options: ["Yes, mandatory", "No, others' products promote பண்ணலாம்", "Only digital products", "Only physical products"], correct: 1 },
+    { q: "Highest commission affiliate programs எது?", options: ["Amazon Associates (0.5%)", "Physical products only", "ClickBank digital products (50-75%)", "Instagram affiliate"], correct: 2 },
+    { q: "Beginner affiliate marketing strategy என்ன?", options: ["Buy expensive ads immediately", "Amazon Associates + niche blog + SEO organic traffic", "Only social media DMs", "Cold calling"], correct: 1 },
+    { q: "Instagram-ல affiliate links share பண்ண best method?", options: ["Every post comment", "Link in bio + Linktree, Stories swipe-up", "Direct message everyone", "Paid ads only"], correct: 1 }
+  ],
+  m9: [
+    { q: "Cart abandonment recovery-ல first email எப்போது send பண்றோம்?", options: ["7 days later", "1 month later", "1 hour after abandonment", "Never, waste of time"], correct: 2 },
+    { q: "Amazon product ranking-ல most important factor என்ன?", options: ["Product color", "Sales velocity + reviews + keyword optimization", "Seller location", "Product size"], correct: 1 },
+    { q: "Product photography-ல Amazon/Flipkart-க்கு mandatory என்ன?", options: ["Colorful background", "White background, multiple angles", "Selfie-style photos", "Only one photo"], correct: 1 },
+    { q: "Ecommerce funnel-ல retention stage என்ன?", options: ["First product discovery", "Post-purchase emails, loyalty program, upsell", "Only checkout process", "Product photography"], correct: 1 },
+    { q: "Retargeting ads எதற்கு use பண்றோம்?", options: ["New cold audience reach பண்ண", "Website visitors-ஐ bring back பண்ண", "Competitors-ஐ target பண்ண", "Only organic reach"], correct: 1 }
+  ],
+  m10: [
+    { q: "Google Analytics 4-ல Bounce Rate என்றால் என்ன?", options: ["How fast website loads", "% of visitors who leave without action", "Total clicks per day", "Revenue per visitor"], correct: 1 },
+    { q: "Good Bounce Rate benchmark என்ன?", options: ["90% is ideal", "Less than 60% is good", "100% bounce rate excellent", "50-60% is too high"], correct: 1 },
+    { q: "Microsoft Clarity என்ன provide பண்ணுது?", options: ["Paid ad management", "Free heatmaps + session recordings", "Email marketing", "Social media management"], correct: 1 },
+    { q: "ROAS என்றால் என்ன?", options: ["Revenue Over All Sources", "Return on Ad Spend (Revenue/Ad Cost)", "Rate of Ad Success", "Reach Of All Segments"], correct: 1 },
+    { q: "Marketing analytics-ல monthly review ஏன் முக்கியம்?", options: ["வேண்டாம், automatic improve ஆகும்", "What's working and what's not identify பண்ணி optimize பண்ண", "Client reporting-க்கு மட்டும்", "Google require பண்றது"], correct: 1 }
+  ],
+  m11: [
+    { q: "AI tools use பண்றதால் marketing-ல main benefit என்ன?", options: ["Human marketers not needed", "10x productivity, faster execution", "Zero cost marketing", "100% accuracy always"], correct: 1 },
+    { q: "'AI உன் job எடுக்காது — ___ உன் job எடுப்பான்' blank-ல என்ன?", options: ["Another human", "A robot", "AI use பண்ற marketer", "Automation software"], correct: 2 },
+    { q: "AI image creation-க்கு best tool எது?", options: ["ChatGPT only", "Midjourney / DALL-E / Adobe Firefly", "Google Docs", "Canva only"], correct: 1 },
+    { q: "Marketing automation-ல Zapier என்ன பண்ணுது?", options: ["Email design create", "Apps connect பண்ணி automated workflows create", "SEO optimize", "Social media post"], correct: 1 },
+    { q: "AI tools-ல Content repurposing என்றால் என்ன?", options: ["Delete old content", "1 YouTube video → Blog → Captions → Twitter thread automatically convert", "Only text editing", "Translate to other languages"], correct: 1 }
+  ],
+  m12: [
+    { q: "Freelancing-ல client work start பண்ண முன்னாடி mandatory என்ன?", options: ["Free work for all clients", "Contract sign + 50% advance payment", "Only verbal agreement", "Portfolio not needed"], correct: 1 },
+    { q: "Retainer model என்றால் என்ன?", options: ["One-time project fee", "Monthly recurring payment for ongoing services", "Per-hour billing only", "Commission-based payment"], correct: 1 },
+    { q: "Client onboarding-ல discovery call-ல என்ன discuss பண்றோம்?", options: ["Only price negotiate", "Business goals, problems, audience, budget, timeline", "Social media passwords only", "Competition analysis"], correct: 1 },
+    { q: "Freelancing scope creep என்றால் என்ன?", options: ["Growing revenue", "Client agreed scope-க்கு outside extra work free-ஆ பண்றது", "Fast project delivery", "New service offering"], correct: 1 },
+    { q: "International payments-க்கு best tool India-ல எது?", options: ["Cash transfer", "Wise (lowest fees)", "Only PayPal", "Bitcoin"], correct: 1 }
+  ]
+};
+
+// ══════════════════════════════════════════════
+// FINAL TEST DATA — 20 Questions covering all modules
+// ══════════════════════════════════════════════
+const FINAL_QUIZ_DATA = [
+  { q: "Digital Marketing-ல Organic traffic என்றால் என்ன?", options: ["Paid ads traffic", "Free traffic through SEO, social media", "Email traffic", "Referral traffic only"], correct: 1 },
+  { q: "Content Marketing-ல '80-20 rule' என்ன சொல்கிறது?", options: ["80% ads, 20% content", "80% value content, 20% promotional content", "80% paid, 20% organic", "80% video, 20% text"], correct: 1 },
+  { q: "Instagram algorithm-ல first 30 minutes engagement important ஏன்?", options: ["Free reach கிடைக்கும்", "Maximum engagement = viral reach probability high", "Ads required", "Followers decrease பண்ணும்"], correct: 1 },
+  { q: "SEO-ல E-E-A-T என்றால் என்ன?", options: ["Every Email Adds Traffic", "Experience, Expertise, Authoritativeness, Trustworthiness", "Exact Element And Tag", "Email Engagement And Tracking"], correct: 1 },
+  { q: "Google Ads-ல CPC என்றால் என்ன?", options: ["Content Per Click", "Cost Per Click", "Conversion Per Campaign", "Click Per Customer"], correct: 1 },
+  { q: "Meta Ads-ல Custom Audience என்ன?", options: ["Random new people", "Your existing contacts — website visitors, email list, followers", "Competitor audience", "Only men or women"], correct: 1 },
+  { q: "Email Marketing-ல list hygiene என்ன?", options: ["Making emails pretty", "Regularly removing inactive/bounced emails for better deliverability", "Adding more emails daily", "Only sending newsletters"], correct: 1 },
+  { q: "Affiliate Marketing commission structure-ல best type எது?", options: ["Pay-per-click only", "Pay-per-sale (highest commission)", "Pay-per-impression", "Monthly flat fee"], correct: 1 },
+  { q: "Ecommerce-ல AOV என்றால் என்ன?", options: ["Ad On Value", "Average Order Value", "Annual Online Volume", "All Orders Verified"], correct: 1 },
+  { q: "Google Analytics-ல Traffic Source பார்க்க ஏன் முக்கியம்?", options: ["Website design improve பண்ண", "Best performing channels-ல more invest பண்ண", "Server performance check", "Employee tracking"], correct: 1 },
+  { q: "AI tools-ல Workflow automation-க்கு popular tool எது?", options: ["Canva", "Zapier / Make.com", "Mailchimp", "Semrush"], correct: 1 },
+  { q: "Freelancing-ல retainer client-ஓட advantage என்ன?", options: ["More work, less pay", "Stable monthly income, predictable cashflow", "One-time project only", "No contract needed"], correct: 1 },
+  { q: "Career-ல Performance Marketing Manager salary range என்ன?", options: ["₹1-3L/year", "₹6L-18L/year", "₹50K-1L/year", "₹25L-50L always"], correct: 1 },
+  { q: "Digital marketing tools-ல FREE tool எது?", options: ["Semrush Pro", "Ahrefs", "Google Analytics 4", "Hootsuite Enterprise"], correct: 2 },
+  { q: "Client monthly report-ல என்ன include பண்றோம்?", options: ["Only invoice", "Performance metrics + wins + next month plan", "Only social media follower count", "Password changes"], correct: 1 },
+  { q: "Zerodha marketing strategy unique என்ன?", options: ["TV ads heavily invested", "Zero advertising spend — free education content only", "Celebrity endorsements", "Door-to-door sales"], correct: 1 },
+  { q: "12-month freelancing roadmap-ல Month 1-2 main focus என்ன?", options: ["Immediately find clients", "Foundation — skill building + certifications", "Build agency immediately", "Hire employees"], correct: 1 },
+  { q: "Interview-ல salary negotiate பண்ண best strategy?", options: ["Accept first offer always", "Research market rate + anchor high + negotiate with data", "Never negotiate", "Ask for double immediately"], correct: 1 },
+  { q: "Neuromarketing-ல Loss Aversion என்றால் என்ன?", options: ["People love winning prizes", "People fear losing more than they desire gaining", "Loss of internet connection", "Ad budget loss"], correct: 1 },
+  { q: "2026 Digital Marketing trend-ல most important என்ன?", options: ["Print media comeback", "AI-First Marketing + Short Video + Privacy-First data", "Radio advertising", "Door hangers"], correct: 1 }
+];
+
+// ══════════════════════════════════════════════
+// STATE MANAGEMENT
+// ══════════════════════════════════════════════
+const PASSING_SCORE = 80; // 80% to pass modules 1-12
+const FINAL_PASSING_SCORE = 70;
+const MODULES_1_TO_12 = ['m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','m12'];
+const CAREER_MODULES = ['m13','m14','m15','m16','m17','m18','m19'];
+
+let moduleState = {};
+// moduleState[id] = { passed: bool, score: number }
+
+// Save/load from localStorage
+function saveState() {
+  try { localStorage.setItem('dmCourseState', JSON.stringify(moduleState)); } catch(e) {}
+}
+function loadState() {
+  try {
+    const s = localStorage.getItem('dmCourseState');
+    if (s) moduleState = JSON.parse(s);
+  } catch(e) { moduleState = {}; }
+}
+
+function isModulePassed(id) {
+  return moduleState[id] && moduleState[id].passed;
+}
+
+function isModuleUnlocked(id) {
+  if (id === 'home' || id === 'm1') return true;
+  const order = ['home','m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','m12',
+    'm13','m14','m15','m16','m17','m18','m19','summary','finaltest'];
+  const idx = order.indexOf(id);
+  if (idx <= 1) return true;
+  // Modules 2-12: prev module must be passed
+  if (MODULES_1_TO_12.includes(id)) {
+    const prev = order[idx - 1];
+    return isModulePassed(prev);
+  }
+  // Career modules & summary & finaltest: all 12 core modules must be passed
+  const all12Passed = MODULES_1_TO_12.every(m => isModulePassed(m));
+  return all12Passed;
+}
+
+// ══════════════════════════════════════════════
+// QUIZ RENDERING
+// ══════════════════════════════════════════════
+function renderQuiz(moduleId) {
+  const questions = QUIZ_DATA[moduleId];
+  if (!questions) return;
+  const container = document.getElementById('quiz-' + moduleId + '-questions');
+  if (!container) return;
+  container.innerHTML = '';
+  questions.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-question';
+    div.innerHTML = `
+      <div class="q-num">${qi + 1}</div>
+      <p class="q-text">${q.q}</p>
+      <div class="quiz-options" id="opts-${moduleId}-${qi}">
+        ${q.options.map((opt, oi) => `
+          <div class="quiz-option" id="opt-${moduleId}-${qi}-${oi}" onclick="selectOption('${moduleId}', ${qi}, ${oi})">
+            <div class="quiz-option-radio"></div>
+            <span>${opt}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+let quizAnswers = {}; // { moduleId: { qi: selectedOption } }
+
+function selectOption(moduleId, qi, oi) {
+  if (!quizAnswers[moduleId]) quizAnswers[moduleId] = {};
+  if (document.getElementById('quiz-' + moduleId + '-result').style.display === 'flex') return;
+  quizAnswers[moduleId][qi] = oi;
+  
+  const questions = QUIZ_DATA[moduleId];
+  // Update UI
+  const opts = document.querySelectorAll(`[id^="opt-${moduleId}-${qi}-"]`);
+  opts.forEach((o, i) => {
+    o.classList.toggle('selected', i === oi);
+  });
+  
+  // Enable submit if all answered
+  const allAnswered = questions.every((_, idx) => quizAnswers[moduleId][idx] !== undefined);
+  const btn = document.getElementById('quiz-' + moduleId + '-btn');
+  if (btn) btn.disabled = !allAnswered;
+}
+
+function submitQuiz(moduleId) {
+  const questions = QUIZ_DATA[moduleId];
+  const answers = quizAnswers[moduleId] || {};
+  let correct = 0;
+  questions.forEach((q, qi) => {
+    const selected = answers[qi];
+    const opts = document.querySelectorAll(`[id^="opt-${moduleId}-${qi}-"]`);
+    opts.forEach((o, i) => {
+      o.classList.add('answered');
+      if (i === q.correct) o.classList.add('correct');
+      else if (i === selected && i !== q.correct) o.classList.add('wrong');
+    });
+    if (selected === q.correct) correct++;
+  });
+  
+  const score = Math.round((correct / questions.length) * 100);
+  const passed = score >= PASSING_SCORE;
+  
+  if (passed) {
+    moduleState[moduleId] = { passed: true, score };
+    saveState();
+    unlockNext(moduleId);
+  }
+  
+  const resultEl = document.getElementById('quiz-' + moduleId + '-result');
+  resultEl.className = 'quiz-result ' + (passed ? 'pass' : 'fail');
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = passed
+    ? `<div class="quiz-result-icon">🎉</div>
+       <h3>Excellent! You Passed!</h3>
+       <div class="score-badge">${correct}/${questions.length} Correct</div>
+       <p>Score: <strong>${score}%</strong> — ${score >= 95 ? 'Outstanding!' : score >= 80 ? 'Great job!' : 'Passed!'}</p>
+       <p style="color:var(--pass-color);font-weight:600;margin-top:8px">✅ Next module unlocked!</p>`
+    : `<div class="quiz-result-icon">😔</div>
+       <h3>Not Quite There Yet</h3>
+       <div class="score-badge">${correct}/${questions.length} Correct</div>
+       <p>Score: <strong>${score}%</strong> — Need <strong>${PASSING_SCORE}%</strong> to pass.</p>
+       <p style="color:var(--muted)">Content-ஐ மீண்டும் படிக்கவும், பிறகு retry பண்ணுங்க!</p>
+       <button class="retry-btn" onclick="retryQuiz('${moduleId}')">🔄 Retry Test</button>`;
+  
+  const btn = document.getElementById('quiz-' + moduleId + '-btn');
+  if (btn) btn.disabled = true;
+  
+  updateNavButtons();
+  updateSidebar();
+}
+
+function retryQuiz(moduleId) {
+  quizAnswers[moduleId] = {};
+  renderQuiz(moduleId);
+  const resultEl = document.getElementById('quiz-' + moduleId + '-result');
+  resultEl.style.display = 'none';
+  resultEl.className = 'quiz-result';
+  const btn = document.getElementById('quiz-' + moduleId + '-btn');
+  if (btn) btn.disabled = true;
+}
+
+function unlockNext(moduleId) {
+  // Modules 1-11 unlock next module
+  const map = { m1:'m2', m2:'m3', m3:'m4', m4:'m5', m5:'m6', m6:'m7', m7:'m8', m8:'m9', m9:'m10', m10:'m11', m11:'m12' };
+  // m12 unlocks all career modules
+  if (moduleId === 'm12') {
+    CAREER_MODULES.forEach(m => {
+      // unlock passthrough
+    });
+    // also unlock summary and finaltest
+  }
+}
+
+// ══════════════════════════════════════════════
+// FINAL QUIZ
+// ══════════════════════════════════════════════
+function renderFinalQuiz() {
+  const container = document.getElementById('final-quiz-questions');
+  if (!container) return;
+  container.innerHTML = '';
+  FINAL_QUIZ_DATA.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-question';
+    div.innerHTML = `
+      <div class="q-num">${qi + 1}</div>
+      <p class="q-text">${q.q}</p>
+      <div class="quiz-options" id="final-opts-${qi}">
+        ${q.options.map((opt, oi) => `
+          <div class="quiz-option" id="final-opt-${qi}-${oi}" onclick="selectFinalOption(${qi}, ${oi})">
+            <div class="quiz-option-radio"></div>
+            <span>${opt}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+let finalAnswers = {};
+function selectFinalOption(qi, oi) {
+  if (document.getElementById('final-quiz-result').style.display === 'flex' || 
+      document.getElementById('final-quiz-result').style.display === 'block') return;
+  finalAnswers[qi] = oi;
+  const opts = document.querySelectorAll(`[id^="final-opt-${qi}-"]`);
+  opts.forEach((o, i) => o.classList.toggle('selected', i === oi));
+  const allAnswered = FINAL_QUIZ_DATA.every((_, idx) => finalAnswers[idx] !== undefined);
+  document.getElementById('final-quiz-btn').disabled = !allAnswered;
+}
+
+function submitFinalQuiz() {
+  let correct = 0;
+  FINAL_QUIZ_DATA.forEach((q, qi) => {
+    const selected = finalAnswers[qi];
+    const opts = document.querySelectorAll(`[id^="final-opt-${qi}-"]`);
+    opts.forEach((o, i) => {
+      o.classList.add('answered');
+      if (i === q.correct) o.classList.add('correct');
+      else if (i === selected && i !== q.correct) o.classList.add('wrong');
+    });
+    if (selected === q.correct) correct++;
+  });
+  
+  const total = FINAL_QUIZ_DATA.length;
+  const score = Math.round((correct / total) * 100);
+  const passed = score >= FINAL_PASSING_SCORE;
+  
+  let grade, gradeClass;
+  if (score >= 90) { grade = 'A+'; gradeClass = 'grade-A'; }
+  else if (score >= 80) { grade = 'A'; gradeClass = 'grade-A'; }
+  else if (score >= 70) { grade = 'B'; gradeClass = 'grade-B'; }
+  else if (score >= 60) { grade = 'C'; gradeClass = 'grade-C'; }
+  else { grade = 'D'; gradeClass = 'grade-D'; }
+  
+  let circleClass = score >= 90 ? 'excellent' : score >= 75 ? 'good' : score >= 60 ? 'average' : 'poor';
+  let message = score >= 90 ? '🌟 Outstanding! Expert-level knowledge!' 
+    : score >= 80 ? '🎉 Excellent performance! Well done!'
+    : score >= 70 ? '✅ Good job! Course completed!'
+    : score >= 60 ? '📚 Almost there! Review weak areas.'
+    : '💪 Keep learning! Retry after reviewing.';
+  
+  const resultEl = document.getElementById('final-quiz-result');
+  resultEl.style.display = 'block';
+  resultEl.innerHTML = `
+    <div class="results-dashboard">
+      <div class="results-title">${passed ? '🏆 Course Complete!' : '📚 Keep Learning!'}</div>
+      <div class="score-badge ${gradeClass}" style="margin:16px auto;display:inline-flex">Grade: ${grade}</div>
+      <div class="results-score-circle ${circleClass}" style="color:${score>=75?'var(--pass-color)':score>=60?'var(--accent)':'var(--fail-color)'}">
+        <div class="score-pct">${score}%</div>
+        <div class="score-label">SCORE</div>
+      </div>
+      <div class="results-stats-row">
+        <div class="result-stat"><div class="result-stat-val" style="color:var(--pass-color)">${correct}</div><div class="result-stat-key">Correct</div></div>
+        <div class="result-stat"><div class="result-stat-val" style="color:var(--fail-color)">${total-correct}</div><div class="result-stat-key">Wrong</div></div>
+        <div class="result-stat"><div class="result-stat-val">${total}</div><div class="result-stat-key">Total</div></div>
+        <div class="result-stat"><div class="result-stat-val" style="color:var(--accent)">${score}%</div><div class="result-stat-key">Percentage</div></div>
+      </div>
+      <p style="font-size:16px;font-weight:600;color:var(--text);margin:8px 0">${message}</p>
+      ${passed 
+        ? '<p style="color:var(--muted);margin-top:12px">Digital Marketing Master Course-ஐ successfully complete பண்ணீங்க! Author: <strong>Hemamalini Yuvaraj</strong> wishes you all the best! 🌟</p>'
+        : '<p style="color:var(--muted);margin-top:12px">Content-ஐ மீண்டும் review பண்ணி retry பண்ணுங்க. நீங்கள் succeed ஆவீங்க!</p><button class="retry-btn" onclick="retryFinalQuiz()" style="margin-top:12px">🔄 Retry Final Test</button>'}
+    </div>
+  `;
+  
+  document.getElementById('final-quiz-btn').disabled = true;
+  document.getElementById('main').scrollTo({ top: document.getElementById('final-quiz-result').offsetTop - 100, behavior: 'smooth' });
+}
+
+function retryFinalQuiz() {
+  finalAnswers = {};
+  renderFinalQuiz();
+  document.getElementById('final-quiz-result').style.display = 'none';
+  document.getElementById('final-quiz-btn').disabled = true;
+}
+
+// ══════════════════════════════════════════════
+// NAVIGATION & PAGE MANAGEMENT
+// ══════════════════════════════════════════════
+function showPage(id) {
+  document.querySelectorAll('.module-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  
+  document.getElementById('page-' + id)?.classList.add('active');
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  
+  updateProgress();
+  document.getElementById('main').scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+function navClick(id) {
+  if (!isModuleUnlocked(id)) {
+    showLockedMessage(id);
+    return;
+  }
+  showPage(id);
+}
+
+function showLockedMessage(id) {
+  // Briefly show alert
+  const el = document.getElementById('page-' + id);
+  if (!el) return;
+  document.querySelectorAll('.module-page').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('main').scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+function updateProgress() {
+  const total = ['home','m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','m12',
+    'm13','m14','m15','m16','m17','m18','m19','summary','finaltest'];
+  const passed = total.filter(id => id === 'home' || isModulePassed(id)).length;
+  const pct = Math.round((passed / total.length) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = passed + ' / ' + total.length + ' completed';
+}
+
+function updateSidebar() {
+  const all = ['m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','m12',
+    'm13','m14','m15','m16','m17','m18','m19','summary','finaltest'];
+  all.forEach(id => {
+    const navEl = document.getElementById('nav-' + id);
+    const cardEl = document.getElementById('card-' + id);
+    const unlocked = isModuleUnlocked(id);
+    const passed = isModulePassed(id);
+    
+    if (navEl) {
+      navEl.classList.toggle('locked', !unlocked);
+      navEl.classList.toggle('completed', passed);
+      const lockIcon = navEl.querySelector('.lock-icon');
+      if (lockIcon) lockIcon.style.display = unlocked ? 'none' : '';
+      const numEl = navEl.querySelector('.num');
+      if (numEl && passed) numEl.textContent = '✅';
+    }
+    if (cardEl) {
+      cardEl.classList.toggle('locked-card', !unlocked);
+      const lockBadge = cardEl.querySelector('.lock-badge');
+      if (lockBadge) lockBadge.style.display = unlocked ? 'none' : '';
+    }
+  });
+}
+
+function updateNavButtons() {
+  MODULES_1_TO_12.forEach((id, idx) => {
+    const btnEl = document.getElementById('btn-next-' + id);
+    if (btnEl) btnEl.disabled = !isModulePassed(id);
+  });
+  // m12 next button
+  const m12btn = document.getElementById('btn-next-m12');
+  if (m12btn) m12btn.disabled = !isModulePassed('m12');
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+document.getElementById('main').addEventListener('click', (e) => {
+  if (!e.target.closest('#sidebar')) {
+    document.getElementById('sidebar').classList.remove('open');
+  }
+});
+
+// ══════════════════════════════════════════════
+// LOCKED PAGE CONTENT — override pages
+// ══════════════════════════════════════════════
+function injectLockedOverlays() {
+  const lockedPages = ['m13','m14','m15','m16','m17','m18','m19','summary','finaltest'];
+  lockedPages.forEach(id => {
+    const page = document.getElementById('page-' + id);
+    if (!page) return;
+    // Add locked overlay at top
+    const overlay = document.createElement('div');
+    overlay.id = 'locked-overlay-' + id;
+    overlay.className = 'locked-overlay';
+    overlay.innerHTML = `
+      <div class="locked-overlay-icon">🔒</div>
+      <h2>இந்த Module Locked!</h2>
+      <p>முதல் 12 modules-ல உள்ள அனைத்து chapter tests-உம் 80% pass பண்ணினால் மட்டுமே இந்த module unlock ஆகும்.</p>
+      <p style="color:var(--accent);font-weight:600">Complete Modules 1-12 tests to unlock Career & Tools section →</p>
+      <button class="start-btn" onclick="showPage('m1')" style="margin-top:16px">Start from Module 1 →</button>
+    `;
+    page.insertBefore(overlay, page.firstChild);
+  });
+}
+
+function updateLockedOverlays() {
+  const lockedPages = ['m13','m14','m15','m16','m17','m18','m19','summary','finaltest'];
+  lockedPages.forEach(id => {
+    const overlay = document.getElementById('locked-overlay-' + id);
+    if (!overlay) return;
+    overlay.style.display = isModuleUnlocked(id) ? 'none' : 'block';
+  });
+}
+
+// ══════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════
+loadState();
+
+// Render all quizzes
+MODULES_1_TO_12.forEach(id => renderQuiz(id));
+renderFinalQuiz();
+injectLockedOverlays();
+updateSidebar();
+updateNavButtons();
+updateLockedOverlays();
+updateProgress();
+</script>
+</body>
+</html>
