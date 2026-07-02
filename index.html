@@ -1227,12 +1227,12 @@ td strong { color: var(--heading); }
 </head>
 <body>
 
-<button class="hamburger" onclick="toggleSidebar()">☰</button>
+<button class="hamburger" onclick="toggleSidebar()">≡</button>
 
 <!-- SIDEBAR -->
 <aside id="sidebar">
   <div class="sidebar-header">
-    <div class="logo-badge">DM Master</div>
+    <div class="logo-badge">QUIX</div>
     <div class="sidebar-title">Digital Marketing<br>Complete Course</div>
     <div class="sidebar-subtitle">Zero → Advanced · English Version</div>
     <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
@@ -1240,7 +1240,7 @@ td strong { color: var(--heading); }
   </div>
   <nav id="sidebarNav">
     <div class="nav-section-label">Start Here</div>
-    <div class="nav-item active" id="nav-home" onclick="showPage('home')"><span class="num">🏠</span>Course Overview</div>
+    <div class="nav-item active" id="nav-home" onclick="showPage('home')"><span class="num">H</span>Course Overview</div>
     <div class="nav-section-label">Core Modules (1-12)</div>
     <div class="nav-item" id="nav-m1" onclick="navClick('m1')"><span class="num">01</span>Intro to Digital Marketing</div>
     <div class="nav-item" id="nav-m2" onclick="navClick('m2')"><span class="num">02</span>Content Marketing</div>
@@ -1255,16 +1255,16 @@ td strong { color: var(--heading); }
     <div class="nav-item" id="nav-m11" onclick="navClick('m11')"><span class="num">11</span>AI in Marketing</div>
     <div class="nav-item" id="nav-m12" onclick="navClick('m12')"><span class="num">12</span>Freelancing</div>
     <div class="nav-section-label">Career & Tools (Locked)</div>
-    <div class="nav-item locked" id="nav-m13" onclick="navClick('m13')"><span class="num">13</span>Career Paths<span class="lock-icon">🔒</span></div>
-    <div class="nav-item locked" id="nav-m14" onclick="navClick('m14')"><span class="num">14</span>Tools Master List<span class="lock-icon">🔒</span></div>
-    <div class="nav-item locked" id="nav-m15" onclick="navClick('m15')"><span class="num">15</span>Freelancing Workflow<span class="lock-icon">🔒</span></div>
-    <div class="nav-item locked" id="nav-m16" onclick="navClick('m16')"><span class="num">16</span>20 Case Studies<span class="lock-icon">🔒</span></div>
-    <div class="nav-item locked" id="nav-m17" onclick="navClick('m17')"><span class="num">17</span>Learning Roadmap<span class="lock-icon">🔒</span></div>
-    <div class="nav-item locked" id="nav-m18" onclick="navClick('m18')"><span class="num">18</span>Interview Prep<span class="lock-icon">🔒</span></div>
-    <div class="nav-item locked" id="nav-m19" onclick="navClick('m19')"><span class="num">19</span>Advanced Marketing<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-m13" onclick="navClick('m13')"><span class="num">13</span>Career Paths<span class="lock-icon">L</span></div>
+    <div class="nav-item locked" id="nav-m14" onclick="navClick('m14')"><span class="num">14</span>Tools Master List<span class="lock-icon">L</span></div>
+    <div class="nav-item locked" id="nav-m15" onclick="navClick('m15')"><span class="num">15</span>Freelancing Workflow<span class="lock-icon">L</span></div>
+    <div class="nav-item locked" id="nav-m16" onclick="navClick('m16')"><span class="num">16</span>20 Case Studies<span class="lock-icon">L</span></div>
+    <div class="nav-item locked" id="nav-m17" onclick="navClick('m17')"><span class="num">17</span>Learning Roadmap<span class="lock-icon">L</span></div>
+    <div class="nav-item locked" id="nav-m18" onclick="navClick('m18')"><span class="num">18</span>Interview Prep<span class="lock-icon">L</span></div>
+    <div class="nav-item locked" id="nav-m19" onclick="navClick('m19')"><span class="num">19</span>Advanced Marketing<span class="lock-icon">L</span></div>
     <div class="nav-section-label">Final</div>
-    <div class="nav-item locked" id="nav-summary" onclick="navClick('summary')"><span class="num">📋</span>Course Summary<span class="lock-icon">🔒</span></div>
-    <div class="nav-item locked" id="nav-finaltest" onclick="navClick('finaltest')"><span class="num">⭐</span>Final Test<span class="lock-icon">🔒</span></div>
+    <div class="nav-item locked" id="nav-summary" onclick="navClick('summary')"><span class="num">S</span>Course Summary<span class="lock-icon">L</span></div>
+    <div class="nav-item locked" id="nav-finaltest" onclick="navClick('finaltest')"><span class="num">F</span>Final Test<span class="lock-icon">L</span></div>
   </nav>
 </aside>
 
@@ -1283,27 +1283,27 @@ td strong { color: var(--heading); }
     <button class="start-btn" onclick="showPage('m1')">▶ Start Learning →</button>
   </div>
   <div class="modules-grid" id="homeGrid">
-    <div class="module-card" id="card-m1" onclick="navClick('m1')"><div class="mc-emoji">🌐</div><div class="mc-num">Module 01</div><div class="mc-name">Intro to Digital Marketing</div></div>
-    <div class="module-card" id="card-m2" onclick="navClick('m2')"><div class="mc-emoji">✍️</div><div class="mc-num">Module 02</div><div class="mc-name">Content Marketing</div></div>
-    <div class="module-card" id="card-m3" onclick="navClick('m3')"><div class="mc-emoji">📱</div><div class="mc-num">Module 03</div><div class="mc-name">Social Media Marketing</div></div>
-    <div class="module-card" id="card-m4" onclick="navClick('m4')"><div class="mc-emoji">🔍</div><div class="mc-num">Module 04</div><div class="mc-name">SEO — Search Engine Optimization</div></div>
-    <div class="module-card" id="card-m5" onclick="navClick('m5')"><div class="mc-emoji">📢</div><div class="mc-num">Module 05</div><div class="mc-name">Google Ads & SEM</div></div>
-    <div class="module-card" id="card-m6" onclick="navClick('m6')"><div class="mc-emoji">🎯</div><div class="mc-num">Module 06</div><div class="mc-name">Meta Ads (Facebook & Instagram)</div></div>
-    <div class="module-card" id="card-m7" onclick="navClick('m7')"><div class="mc-emoji">📧</div><div class="mc-num">Module 07</div><div class="mc-name">Email Marketing</div></div>
-    <div class="module-card" id="card-m8" onclick="navClick('m8')"><div class="mc-emoji">🔗</div><div class="mc-num">Module 08</div><div class="mc-name">Affiliate Marketing</div></div>
-    <div class="module-card" id="card-m9" onclick="navClick('m9')"><div class="mc-emoji">🛒</div><div class="mc-num">Module 09</div><div class="mc-name">Ecommerce Marketing</div></div>
-    <div class="module-card" id="card-m10" onclick="navClick('m10')"><div class="mc-emoji">📊</div><div class="mc-num">Module 10</div><div class="mc-name">Analytics & Data Tracking</div></div>
-    <div class="module-card" id="card-m11" onclick="navClick('m11')"><div class="mc-emoji">🤖</div><div class="mc-num">Module 11</div><div class="mc-name">AI in Digital Marketing</div></div>
-    <div class="module-card" id="card-m12" onclick="navClick('m12')"><div class="mc-emoji">💼</div><div class="mc-num">Module 12</div><div class="mc-name">Freelancing & Client Work</div></div>
-    <div class="module-card locked-card" id="card-m13" onclick="navClick('m13')"><div class="lock-badge">🔒</div><div class="mc-emoji">💰</div><div class="mc-num">Module 13</div><div class="mc-name">Digital Marketing Careers</div></div>
-    <div class="module-card locked-card" id="card-m14" onclick="navClick('m14')"><div class="lock-badge">🔒</div><div class="mc-emoji">🛠️</div><div class="mc-num">Module 14</div><div class="mc-name">Tools Master List</div></div>
-    <div class="module-card locked-card" id="card-m15" onclick="navClick('m15')"><div class="lock-badge">🔒</div><div class="mc-emoji">⚙️</div><div class="mc-num">Module 15</div><div class="mc-name">Freelancing Workflow</div></div>
-    <div class="module-card locked-card" id="card-m16" onclick="navClick('m16')"><div class="lock-badge">🔒</div><div class="mc-emoji">📖</div><div class="mc-num">Module 16</div><div class="mc-name">20 Real Case Studies</div></div>
-    <div class="module-card locked-card" id="card-m17" onclick="navClick('m17')"><div class="lock-badge">🔒</div><div class="mc-emoji">🗺️</div><div class="mc-num">Module 17</div><div class="mc-name">Learning Roadmap</div></div>
-    <div class="module-card locked-card" id="card-m18" onclick="navClick('m18')"><div class="lock-badge">🔒</div><div class="mc-emoji">🎤</div><div class="mc-num">Module 18</div><div class="mc-name">Interview Prep</div></div>
-    <div class="module-card locked-card" id="card-m19" onclick="navClick('m19')"><div class="lock-badge">🔒</div><div class="mc-emoji">🚀</div><div class="mc-num">Module 19</div><div class="mc-name">Advanced Marketing</div></div>
-    <div class="module-card locked-card" id="card-summary" onclick="navClick('summary')"><div class="lock-badge">🔒</div><div class="mc-emoji">📋</div><div class="mc-num">Summary</div><div class="mc-name">Course Summary</div></div>
-    <div class="module-card locked-card" id="card-finaltest" onclick="navClick('finaltest')"><div class="lock-badge">🔒</div><div class="mc-emoji">⭐</div><div class="mc-num">Final</div><div class="mc-name">Final Cumulative Test</div></div>
+    <div class="module-card" id="card-m1" onclick="navClick('m1')"><div class="mc-emoji"></div><div class="mc-num">Module 01</div><div class="mc-name">Intro to Digital Marketing</div></div>
+    <div class="module-card" id="card-m2" onclick="navClick('m2')"><div class="mc-emoji"></div><div class="mc-num">Module 02</div><div class="mc-name">Content Marketing</div></div>
+    <div class="module-card" id="card-m3" onclick="navClick('m3')"><div class="mc-emoji"></div><div class="mc-num">Module 03</div><div class="mc-name">Social Media Marketing</div></div>
+    <div class="module-card" id="card-m4" onclick="navClick('m4')"><div class="mc-emoji"></div><div class="mc-num">Module 04</div><div class="mc-name">SEO — Search Engine Optimization</div></div>
+    <div class="module-card" id="card-m5" onclick="navClick('m5')"><div class="mc-emoji"></div><div class="mc-num">Module 05</div><div class="mc-name">Google Ads & SEM</div></div>
+    <div class="module-card" id="card-m6" onclick="navClick('m6')"><div class="mc-emoji"></div><div class="mc-num">Module 06</div><div class="mc-name">Meta Ads (Facebook & Instagram)</div></div>
+    <div class="module-card" id="card-m7" onclick="navClick('m7')"><div class="mc-emoji"></div><div class="mc-num">Module 07</div><div class="mc-name">Email Marketing</div></div>
+    <div class="module-card" id="card-m8" onclick="navClick('m8')"><div class="mc-emoji"></div><div class="mc-num">Module 08</div><div class="mc-name">Affiliate Marketing</div></div>
+    <div class="module-card" id="card-m9" onclick="navClick('m9')"><div class="mc-emoji"></div><div class="mc-num">Module 09</div><div class="mc-name">Ecommerce Marketing</div></div>
+    <div class="module-card" id="card-m10" onclick="navClick('m10')"><div class="mc-emoji"></div><div class="mc-num">Module 10</div><div class="mc-name">Analytics & Data Tracking</div></div>
+    <div class="module-card" id="card-m11" onclick="navClick('m11')"><div class="mc-emoji"></div><div class="mc-num">Module 11</div><div class="mc-name">AI in Digital Marketing</div></div>
+    <div class="module-card" id="card-m12" onclick="navClick('m12')"><div class="mc-emoji"></div><div class="mc-num">Module 12</div><div class="mc-name">Freelancing & Client Work</div></div>
+    <div class="module-card locked-card" id="card-m13" onclick="navClick('m13')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Module 13</div><div class="mc-name">Digital Marketing Careers</div></div>
+    <div class="module-card locked-card" id="card-m14" onclick="navClick('m14')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Module 14</div><div class="mc-name">Tools Master List</div></div>
+    <div class="module-card locked-card" id="card-m15" onclick="navClick('m15')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Module 15</div><div class="mc-name">Freelancing Workflow</div></div>
+    <div class="module-card locked-card" id="card-m16" onclick="navClick('m16')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Module 16</div><div class="mc-name">20 Real Case Studies</div></div>
+    <div class="module-card locked-card" id="card-m17" onclick="navClick('m17')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Module 17</div><div class="mc-name">Learning Roadmap</div></div>
+    <div class="module-card locked-card" id="card-m18" onclick="navClick('m18')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Module 18</div><div class="mc-name">Interview Prep</div></div>
+    <div class="module-card locked-card" id="card-m19" onclick="navClick('m19')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Module 19</div><div class="mc-name">Advanced Marketing</div></div>
+    <div class="module-card locked-card" id="card-summary" onclick="navClick('summary')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Summary</div><div class="mc-name">Course Summary</div></div>
+    <div class="module-card locked-card" id="card-finaltest" onclick="navClick('finaltest')"><div class="lock-badge">L</div><div class="mc-emoji"></div><div class="mc-num">Final</div><div class="mc-name">Final Cumulative Test</div></div>
   </div>
 </div>
 
@@ -1312,13 +1312,13 @@ td strong { color: var(--heading); }
 ══════════════════════════════════════════════════ -->
 <div id="page-m1" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">🌐 Module 01 · Foundation</div>
+    <div class="module-tag">Module 01 · Foundation</div>
     <h1>Introduction to Digital Marketing</h1>
     <p>What is Digital Marketing, why learn it, and how businesses use it — all explained simply here.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">⏱️</span><strong>Beginner</strong> Level</div>
-      <div class="stat-pill"><span class="icon">📚</span><strong>Foundation</strong> Module</div>
-      <div class="stat-pill"><span class="icon">🎯</span><strong>Core Concepts</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Beginner</strong> Level</div>
+      <div class="stat-pill"><span class="icon"></span><strong>Foundation</strong> Module</div>
+      <div class="stat-pill"><span class="icon"></span><strong>Core Concepts</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -1327,7 +1327,7 @@ td strong { color: var(--heading); }
     <p><span class="hl">Digital Marketing</span> means using digital channels like the internet, mobile phones, social media, and websites to promote products or services. Simply put — it's advertising your product online.</p>
 
     <div class="box info">
-      <div class="box-label">💡 Simple Example</div>
+      <div class="box-label">Simple Example</div>
       <p>Zomato posts funny memes on Instagram → that's free traffic. When you search "food near me" on Google, a Zomato ad appears → that's paid traffic. Both are Digital Marketing!</p>
     </div>
 
@@ -1340,7 +1340,7 @@ td strong { color: var(--heading); }
           <tr><td><strong>Cost</strong></td><td>Very High (TV ad = ₹1 lakh+)</td><td>Low (FB ad = ₹100 से शुरू)</td></tr>
           <tr><td><strong>Targeting</strong></td><td>Broad (everyone sees it)</td><td>Precise (age, city, interest-wise)</td></tr>
           <tr><td><strong>Tracking</strong></td><td>Hard to measure results</td><td>Real-time analytics available</td></tr>
-          <tr><td><strong>Reach</strong></td><td>Local / National</td><td>Global 🌍</td></tr>
+          <tr><td><strong>Reach</strong></td><td>Local / National</td><td>Global</td></tr>
           <tr><td><strong>Speed</strong></td><td>Slow (weeks to prepare)</td><td>Fast (launch in minutes)</td></tr>
         </tbody>
       </table>
@@ -1348,21 +1348,21 @@ td strong { color: var(--heading); }
 
     <h2>Digital Marketing Ecosystem</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">🔍</div><div class="mc-title">SEO</div><div class="mc-desc">Ranking on Google for free. Optimizing blogs and websites.</div></div>
-      <div class="mini-card"><div class="mc-icon">📢</div><div class="mc-title">SEM / Paid Ads</div><div class="mc-desc">Running paid ads on Google and Facebook.</div></div>
-      <div class="mini-card"><div class="mc-icon">📱</div><div class="mc-title">Social Media</div><div class="mc-desc">Building an audience on Instagram, LinkedIn, YouTube.</div></div>
-      <div class="mini-card"><div class="mc-icon">✍️</div><div class="mc-title">Content Marketing</div><div class="mc-desc">Attracting people by delivering value through Blogs, Reels, and Videos.</div></div>
-      <div class="mini-card"><div class="mc-icon">📧</div><div class="mc-title">Email Marketing</div><div class="mc-desc">Sending direct emails to subscribers to sell products/services.</div></div>
-      <div class="mini-card"><div class="mc-icon">🤝</div><div class="mc-title">Affiliate Marketing</div><div class="mc-desc">Promoting others' products and earning a commission.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">SEO</div><div class="mc-desc">Ranking on Google for free. Optimizing blogs and websites.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">SEM / Paid Ads</div><div class="mc-desc">Running paid ads on Google and Facebook.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Social Media</div><div class="mc-desc">Building an audience on Instagram, LinkedIn, YouTube.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Content Marketing</div><div class="mc-desc">Attracting people by delivering value through Blogs, Reels, and Videos.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Email Marketing</div><div class="mc-desc">Sending direct emails to subscribers to sell products/services.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Affiliate Marketing</div><div class="mc-desc">Promoting others' products and earning a commission.</div></div>
     </div>
 
     <h2>Marketing Funnel — Customer Journey</h2>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>🔭 Awareness (Tofu)</strong><p>Customers first hear about you through Instagram ads or YouTube videos.</p></div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>🤔 Interest (Mofu)</strong><p>Customers search for more information about the product. They visit websites and read blogs.</p></div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>💭 Consideration</strong><p>They compare options, read reviews, and try free demos.</p></div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>🛒 Purchase (Bofu)</strong><p>They make a purchase! Conversion happens.</p></div></div>
-      <div class="step"><div class="step-num">5</div><div class="step-content"><strong>❤️ Loyalty & Advocacy</strong><p>Happy customers make repeat purchases and recommend to friends.</p></div></div>
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Awareness (Tofu)</strong><p>Customers first hear about you through Instagram ads or YouTube videos.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Interest (Mofu)</strong><p>Customers search for more information about the product. They visit websites and read blogs.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Consideration</strong><p>They compare options, read reviews, and try free demos.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Purchase (Bofu)</strong><p>They make a purchase! Conversion happens.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><strong>Loyalty & Advocacy</strong><p>Happy customers make repeat purchases and recommend to friends.</p></div></div>
     </div>
 
     <h2>Key Terms — Beginner Must Know</h2>
@@ -1381,7 +1381,7 @@ td strong { color: var(--heading); }
     </div>
 
     <div class="box warning">
-      <div class="box-label">⚠️ Beginner Mistakes — Avoid These</div>
+      <div class="box-label">Beginner Mistakes — Avoid These</div>
       <ul>
         <li>Starting marketing without defining your target audience</li>
         <li>Expecting immediate results (SEO takes 3-6 months)</li>
@@ -1392,7 +1392,7 @@ td strong { color: var(--heading); }
     <!-- QUIZ MODULE 1 -->
     <div class="quiz-section" id="quiz-m1">
       <div class="quiz-header">
-        <div class="quiz-icon">📝</div>
+        <div class="quiz-icon"></div>
         <div class="quiz-header-text">
           <h3>Module 1 Chapter Test</h3>
           <p>Score 80% or above to unlock Module 2. Read carefully before answering!</p>
@@ -1413,25 +1413,25 @@ td strong { color: var(--heading); }
 <!-- MODULE 2 — CONTENT MARKETING -->
 <div id="page-m2" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">✍️ Module 02 · Content</div>
+    <div class="module-tag">Module 02 · Content</div>
     <h1>Content Marketing</h1>
     <p>Content is King! Storytelling, Copywriting, Viral Psychology — learn it all in this module.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">⏱️</span><strong>Beginner→Mid</strong> Level</div>
-      <div class="stat-pill"><span class="icon">🛠️</span><strong>Canva, ChatGPT, CapCut</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Beginner→Mid</strong> Level</div>
+      <div class="stat-pill"><span class="icon"></span><strong>Canva, ChatGPT, CapCut</strong></div>
     </div>
   </div>
   <div class="module-content">
     <h2>What is Content Marketing?</h2>
     <p>Instead of directly saying "Buy My Product!", <span class="hl">valuable content</span> Content Marketing is about attracting an audience with valuable content, building trust, and then selling.</p>
-    <div class="box info"><div class="box-label">💡 Real Example</div><p>To sell Philips blades — they write a blog like "Men's grooming tips for summer." While reading, Philips blades get naturally recommended. That's Content Marketing!</p></div>
+    <div class="box info"><div class="box-label">Real Example</div><p>To sell Philips blades — they write a blog like "Men's grooming tips for summer." While reading, Philips blades get naturally recommended. That's Content Marketing!</p></div>
     <h2>Content Pillars Framework</h2>
     <div class="grid-3">
-      <div class="mini-card"><div class="mc-icon">🎓</div><div class="mc-title">Educational</div><div class="mc-desc">How-to guides, tips, tutorials. Builds trust.</div></div>
-      <div class="mini-card"><div class="mc-icon">😂</div><div class="mc-title">Entertainment</div><div class="mc-desc">Memes, funny content. Generates reach & shares.</div></div>
-      <div class="mini-card"><div class="mc-icon">🙌</div><div class="mc-title">Inspirational</div><div class="mc-desc">Success stories, quotes. Creates emotional connection.</div></div>
-      <div class="mini-card"><div class="mc-icon">🛒</div><div class="mc-title">Promotional</div><div class="mc-desc">Product features, offers. Drives direct sales.</div></div>
-      <div class="mini-card"><div class="mc-icon">🤝</div><div class="mc-title">Community</div><div class="mc-desc">User stories, polls, Q&A. Engagement boost.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Educational</div><div class="mc-desc">How-to guides, tips, tutorials. Builds trust.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Entertainment</div><div class="mc-desc">Memes, funny content. Generates reach & shares.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Inspirational</div><div class="mc-desc">Success stories, quotes. Creates emotional connection.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Promotional</div><div class="mc-desc">Product features, offers. Drives direct sales.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Community</div><div class="mc-desc">User stories, polls, Q&A. Engagement boost.</div></div>
     </div>
     <h2>Copywriting Hooks</h2>
     <div class="table-wrap">
@@ -1447,10 +1447,10 @@ td strong { color: var(--heading); }
     </div>
     <h2>Viral Content Psychology — STEPPS</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">🌟</div><div class="mc-title">Social Currency</div><div class="mc-desc">People share things that make them look good / smart.</div></div>
-      <div class="mini-card"><div class="mc-icon">❤️</div><div class="mc-title">Emotion</div><div class="mc-desc">High-arousal emotions (awe, anger, excitement) drive sharing.</div></div>
-      <div class="mini-card"><div class="mc-icon">💎</div><div class="mc-title">Practical Value</div><div class="mc-desc">Useful tips, hacks people want to share.</div></div>
-      <div class="mini-card"><div class="mc-icon">📖</div><div class="mc-title">Stories</div><div class="mc-desc">Narratives carry messages, people remember stories.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Social Currency</div><div class="mc-desc">People share things that make them look good / smart.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Emotion</div><div class="mc-desc">High-arousal emotions (awe, anger, excitement) drive sharing.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Practical Value</div><div class="mc-desc">Useful tips, hacks people want to share.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Stories</div><div class="mc-desc">Narratives carry messages, people remember stories.</div></div>
     </div>
     <h2>AI Content Creation Workflow</h2>
     <div class="code-block">
@@ -1463,7 +1463,7 @@ Time saved: 4 hours → 45 minutes!</div>
     <div class="box warning"><div class="box-label">⚠️ Avoid</div><ul><li>Posting only promotional content without providing value</li><li>Posting inconsistently (the algorithm penalizes this)</li><li>Ending posts without a CTA</li></ul></div>
 
     <div class="quiz-section" id="quiz-m2">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 2 Chapter Test</h3><p>Score 80% or above to unlock Module 3!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 2 Chapter Test</h3><p>Score 80% or above to unlock Module 3!</p></div></div>
       <div id="quiz-m2-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m2-btn" onclick="submitQuiz('m2')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m2-result"></div>
@@ -1478,12 +1478,12 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 3 — SMM -->
 <div id="page-m3" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">📱 Module 03 · SMM</div>
+    <div class="module-tag">Module 03 · SMM</div>
     <h1>Social Media Marketing</h1>
     <p>Instagram, LinkedIn, YouTube, Facebook — platform-by-platform strategies, algorithms, and growth hacks, all here.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">📊</span><strong>Engagement & Growth</strong></div>
-      <div class="stat-pill"><span class="icon">🤳</span><strong>Multi-Platform</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Engagement & Growth</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Multi-Platform</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -1513,10 +1513,10 @@ Time saved: 4 hours → 45 minutes!</div>
       <li><span class="hl">Content:</span> Professional insights, case studies, industry news</li>
       <li><span class="hl">Engage:</span> Comment on posts from industry leaders daily</li>
     </ul>
-    <div class="box tip"><div class="box-label">✅ Instagram Algorithm Hack</div><p>Maximum engagement in the first 30 minutes makes a Reel go viral. Immediately after posting — share with friends and ask for comments and saves!</p></div>
+    <div class="box tip"><div class="box-label">Instagram Algorithm Hack</div><p>Maximum engagement in the first 30 minutes makes a Reel go viral. Immediately after posting — share with friends and ask for comments and saves!</p></div>
 
     <div class="quiz-section" id="quiz-m3">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 3 Chapter Test</h3><p>Score 80% or above to unlock Module 4!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 3 Chapter Test</h3><p>Score 80% or above to unlock Module 4!</p></div></div>
       <div id="quiz-m3-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m3-btn" onclick="submitQuiz('m3')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m3-result"></div>
@@ -1531,12 +1531,12 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 4 — SEO -->
 <div id="page-m4" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">🔍 Module 04 · SEO</div>
+    <div class="module-tag">Module 04 · SEO</div>
     <h1>SEO — Search Engine Optimization</h1>
     <p>Ranking on Google's first page, keyword research, on-page, off-page, technical SEO — a long-term free traffic strategy.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">📈</span><strong>Long-term Traffic</strong></div>
-      <div class="stat-pill"><span class="icon">🆓</span><strong>Free Organic</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Long-term Traffic</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Free Organic</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -1548,8 +1548,8 @@ Time saved: 4 hours → 45 minutes!</div>
     </div>
     <h2>SEO Types</h2>
     <div class="grid-3">
-      <div class="mini-card"><div class="mc-icon">📄</div><div class="mc-title">On-Page SEO</div><div class="mc-desc">Title tags, Meta descriptions, Headings (H1-H6), Keyword placement, Image alt text, Internal linking.</div></div>
-      <div class="mini-card"><div class="mc-icon">🔗</div><div class="mc-title">Off-Page SEO</div><div class="mc-desc">Backlinks, Guest posts, Social signals, Brand mentions. Builds authority.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">On-Page SEO</div><div class="mc-desc">Title tags, Meta descriptions, Headings (H1-H6), Keyword placement, Image alt text, Internal linking.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Off-Page SEO</div><div class="mc-desc">Backlinks, Guest posts, Social signals, Brand mentions. Builds authority.</div></div>
       <div class="mini-card"><div class="mc-icon">⚙️</div><div class="mc-title">Technical SEO</div><div class="mc-desc">Site speed, Mobile-friendly, SSL, Sitemap, Schema markup. Foundation is important.</div></div>
     </div>
     <h2>Keyword Research Strategy</h2>
@@ -1563,10 +1563,10 @@ Time saved: 4 hours → 45 minutes!</div>
         </tbody>
       </table>
     </div>
-    <div class="box info"><div class="box-label">💡 Free SEO Tools</div><ul><li>Google Search Console — free, official Google tool</li><li>Ubersuggest — keyword ideas, difficulty score</li><li>AnswerThePublic — question-based keywords</li><li>Ahrefs Free Version — basic backlink analysis</li></ul></div>
+    <div class="box info"><div class="box-label">Free SEO Tools</div><ul><li>Google Search Console — free, official Google tool</li><li>Ubersuggest — keyword ideas, difficulty score</li><li>AnswerThePublic — question-based keywords</li><li>Ahrefs Free Version — basic backlink analysis</li></ul></div>
 
     <div class="quiz-section" id="quiz-m4">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 4 Chapter Test</h3><p>Score 80% or above to unlock Module 5!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 4 Chapter Test</h3><p>Score 80% or above to unlock Module 5!</p></div></div>
       <div id="quiz-m4-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m4-btn" onclick="submitQuiz('m4')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m4-result"></div>
@@ -1581,24 +1581,24 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 5 — GOOGLE ADS -->
 <div id="page-m5" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">📢 Module 05 · Paid Search</div>
+    <div class="module-tag">Module 05 · Paid Search</div>
     <h1>Google Ads & SEM</h1>
     <p>Search Ads, Display Ads, YouTube Ads, Quality Score, Bidding strategies — mastering Google Ads.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">⚡</span><strong>Instant Results</strong></div>
-      <div class="stat-pill"><span class="icon">🎯</span><strong>Intent-Based Targeting</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Instant Results</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Intent-Based Targeting</strong></div>
     </div>
   </div>
   <div class="module-content">
     <h2>Types of Google Ads</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">🔍</div><div class="mc-title">Search Ads</div><div class="mc-desc">Text ads for people searching on Google. High intent audience. Best for "Near me" queries.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Search Ads</div><div class="mc-desc">Text ads for people searching on Google. High intent audience. Best for "Near me" queries.</div></div>
       <div class="mini-card"><div class="mc-icon">🖼️</div><div class="mc-title">Display Ads</div><div class="mc-desc">Banner ads on websites. Great for brand awareness and powerful for retargeting campaigns.</div></div>
       <div class="mini-card"><div class="mc-icon">▶️</div><div class="mc-title">YouTube Ads</div><div class="mc-desc">Video ads before/during YouTube videos. Skippable, Non-skippable, Bumper ads.</div></div>
-      <div class="mini-card"><div class="mc-icon">🛒</div><div class="mc-title">Shopping Ads</div><div class="mc-desc">Shows product images + price. Perfect for Ecommerce. Requires Google Merchant Center.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Shopping Ads</div><div class="mc-desc">Shows product images + price. Perfect for Ecommerce. Requires Google Merchant Center.</div></div>
     </div>
     <h2>Quality Score — Most Important Metric</h2>
-    <div class="box info"><div class="box-label">💡 Quality Score = CTR + Ad Relevance + Landing Page Quality</div><p>High Quality Score (7-10) = Lower CPC + Better ad position. Low Quality Score = Pay more, show less. Better ad copy + landing page = money saved!</p></div>
+    <div class="box info"><div class="box-label">Quality Score = CTR + Ad Relevance + Landing Page Quality</div><p>High Quality Score (7-10) = Lower CPC + Better ad position. Low Quality Score = Pay more, show less. Better ad copy + landing page = money saved!</p></div>
     <h2>Bidding Strategies</h2>
     <div class="table-wrap">
       <table>
@@ -1613,7 +1613,7 @@ Time saved: 4 hours → 45 minutes!</div>
     </div>
 
     <div class="quiz-section" id="quiz-m5">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 5 Chapter Test</h3><p>Score 80% or above to unlock Module 6!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 5 Chapter Test</h3><p>Score 80% or above to unlock Module 6!</p></div></div>
       <div id="quiz-m5-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m5-btn" onclick="submitQuiz('m5')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m5-result"></div>
@@ -1628,12 +1628,12 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 6 — META ADS -->
 <div id="page-m6" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">🎯 Module 06 · Meta Ads</div>
+    <div class="module-tag">Module 06 · Meta Ads</div>
     <h1>Meta Ads (Facebook & Instagram)</h1>
     <p>Audience targeting, Campaign structure, A/B testing, Pixel — mastering ads on the Meta platform.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">👥</span><strong>Audience Targeting</strong></div>
-      <div class="stat-pill"><span class="icon">🔄</span><strong>Retargeting Power</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Audience Targeting</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Retargeting Power</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -1643,12 +1643,12 @@ Time saved: 4 hours → 45 minutes!</div>
     Ad Level → Creative (Image/Video), Copy, CTA</div>
     <h2>Audience Targeting Types</h2>
     <div class="grid-3">
-      <div class="mini-card"><div class="mc-icon">🎯</div><div class="mc-title">Interest-Based</div><div class="mc-desc">Target by age, city, and interests. Beginners should start here.</div></div>
-      <div class="mini-card"><div class="mc-icon">👥</div><div class="mc-title">Custom Audience</div><div class="mc-desc">Retarget website visitors, email list subscribers, and Instagram followers.</div></div>
-      <div class="mini-card"><div class="mc-icon">🔍</div><div class="mc-title">Lookalike Audience</div><div class="mc-desc">Meta AI finds new people who look like your best customers.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Interest-Based</div><div class="mc-desc">Target by age, city, and interests. Beginners should start here.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Custom Audience</div><div class="mc-desc">Retarget website visitors, email list subscribers, and Instagram followers.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Lookalike Audience</div><div class="mc-desc">Meta AI finds new people who look like your best customers.</div></div>
     </div>
     <h2>Meta Pixel</h2>
-    <div class="box info"><div class="box-label">💡 What is Meta Pixel?</div><p>A code installed on your website. It tracks who visited, what they did, and who purchased — enabling retargeting & lookalike audiences. <strong>Essential for Ecommerce!</strong></p></div>
+    <div class="box info"><div class="box-label">What is Meta Pixel?</div><p>A code installed on your website. It tracks who visited, what they did, and who purchased — enabling retargeting & lookalike audiences. <strong>Essential for Ecommerce!</strong></p></div>
     <h2>Funnel Strategy</h2>
     <div class="table-wrap">
       <table>
@@ -1662,7 +1662,7 @@ Time saved: 4 hours → 45 minutes!</div>
     </div>
 
     <div class="quiz-section" id="quiz-m6">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 6 Chapter Test</h3><p>Score 80% or above to unlock Module 7!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 6 Chapter Test</h3><p>Score 80% or above to unlock Module 7!</p></div></div>
       <div id="quiz-m6-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m6-btn" onclick="submitQuiz('m6')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m6-result"></div>
@@ -1677,10 +1677,10 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 7 — EMAIL MARKETING -->
 <div id="page-m7" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">📧 Module 07 · Email</div>
+    <div class="module-tag">Module 07 · Email</div>
     <h1>Email Marketing</h1>
     <p>List building, automation, copywriting, funnels — spend ₹1 on email and get ₹42 in return!</p>
-    <div class="hero-stats"><div class="stat-pill"><span class="icon">📈</span><strong>42x ROI (Average)</strong></div><div class="stat-pill"><span class="icon">🤖</span><strong>Automation</strong></div></div>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon"></span><strong>42x ROI (Average)</strong></div><div class="stat-pill"><span class="icon"></span><strong>Automation</strong></div></div>
   </div>
   <div class="module-content">
     <h2>Why Email Marketing?</h2>
@@ -1709,7 +1709,7 @@ Time saved: 4 hours → 45 minutes!</div>
     </div>
 
     <div class="quiz-section" id="quiz-m7">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 7 Chapter Test</h3><p>Score 80% or above to unlock Module 8!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 7 Chapter Test</h3><p>Score 80% or above to unlock Module 8!</p></div></div>
       <div id="quiz-m7-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m7-btn" onclick="submitQuiz('m7')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m7-result"></div>
@@ -1724,10 +1724,10 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 8 — AFFILIATE -->
 <div id="page-m8" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">🔗 Module 08 · Passive Income</div>
+    <div class="module-tag">Module 08 · Passive Income</div>
     <h1>Affiliate Marketing</h1>
     <p>Earn commissions by promoting products — Amazon, Flipkart, digital products, and more.</p>
-    <div class="hero-stats"><div class="stat-pill"><span class="icon">💰</span><strong>Passive Income</strong></div><div class="stat-pill"><span class="icon">🚫</span><strong>No Product Needed</strong></div></div>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon"></span><strong>Passive Income</strong></div><div class="stat-pill"><span class="icon"></span><strong>No Product Needed</strong></div></div>
   </div>
   <div class="module-content">
     <h2>How Affiliate Marketing Works</h2>
@@ -1750,10 +1750,10 @@ Time saved: 4 hours → 45 minutes!</div>
         </tbody>
       </table>
     </div>
-    <div class="box tip"><div class="box-label">✅ Beginner Strategy</div><p>First join Amazon Associates → Select a niche → Create YouTube review videos + write blogs → Earn passive income through organic SEO traffic. ₹10,000-30,000/month possible within 6-12 months!</p></div>
+    <div class="box tip"><div class="box-label">Beginner Strategy</div><p>First join Amazon Associates → Select a niche → Create YouTube review videos + write blogs → Earn passive income through organic SEO traffic. ₹10,000-30,000/month possible within 6-12 months!</p></div>
 
     <div class="quiz-section" id="quiz-m8">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 8 Chapter Test</h3><p>Score 80% or above to unlock Module 9!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 8 Chapter Test</h3><p>Score 80% or above to unlock Module 9!</p></div></div>
       <div id="quiz-m8-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m8-btn" onclick="submitQuiz('m8')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m8-result"></div>
@@ -1768,10 +1768,10 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 9 — ECOMMERCE -->
 <div id="page-m9" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">🛒 Module 09 · Ecommerce</div>
+    <div class="module-tag">Module 09 · Ecommerce</div>
     <h1>Ecommerce Marketing</h1>
     <p>Product photos, Shopify, Amazon, conversion optimization, cart abandonment — growing your online store.</p>
-    <div class="hero-stats"><div class="stat-pill"><span class="icon">📦</span><strong>Product Marketing</strong></div><div class="stat-pill"><span class="icon">💳</span><strong>CRO</strong></div></div>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon"></span><strong>Product Marketing</strong></div><div class="stat-pill"><span class="icon"></span><strong>CRO</strong></div></div>
   </div>
   <div class="module-content">
     <h2>Ecommerce Funnel</h2>
@@ -1802,7 +1802,7 @@ Time saved: 4 hours → 45 minutes!</div>
     </ul>
 
     <div class="quiz-section" id="quiz-m9">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 9 Chapter Test</h3><p>Score 80% or above to unlock Module 10!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 9 Chapter Test</h3><p>Score 80% or above to unlock Module 10!</p></div></div>
       <div id="quiz-m9-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m9-btn" onclick="submitQuiz('m9')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m9-result"></div>
@@ -1817,10 +1817,10 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 10 — ANALYTICS -->
 <div id="page-m10" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">📊 Module 10 · Data</div>
+    <div class="module-tag">Module 10 · Data</div>
     <h1>Analytics & Data Tracking</h1>
     <p>Google Analytics 4, Heatmaps, KPIs, Data interpretation — how to make data-driven decisions.</p>
-    <div class="hero-stats"><div class="stat-pill"><span class="icon">📈</span><strong>Data-Driven Decisions</strong></div><div class="stat-pill"><span class="icon">🆓</span><strong>Free Tools Available</strong></div></div>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon"></span><strong>Data-Driven Decisions</strong></div><div class="stat-pill"><span class="icon"></span><strong>Free Tools Available</strong></div></div>
   </div>
   <div class="module-content">
     <h2>Google Analytics 4 Key Metrics</h2>
@@ -1838,13 +1838,13 @@ Time saved: 4 hours → 45 minutes!</div>
     </div>
     <h2>Marketing KPIs</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">💰</div><div class="mc-title">Revenue KPIs</div><div class="mc-desc">Total revenue, AOV, CLV, ROAS.</div></div>
-      <div class="mini-card"><div class="mc-icon">📢</div><div class="mc-title">Ads KPIs</div><div class="mc-desc">CTR, CPC, CPM, CPA, ROAS, Quality Score.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Revenue KPIs</div><div class="mc-desc">Total revenue, AOV, CLV, ROAS.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Ads KPIs</div><div class="mc-desc">CTR, CPC, CPM, CPA, ROAS, Quality Score.</div></div>
     </div>
-    <div class="box info"><div class="box-label">💡 Free Tools</div><ul><li><span class="hl">Google Analytics 4</span> — full website analytics</li><li><span class="hl">Google Search Console</span> — SEO performance</li><li><span class="hl">Microsoft Clarity</span> — Free heatmaps + recordings</li></ul></div>
+    <div class="box info"><div class="box-label">Free Tools</div><ul><li><span class="hl">Google Analytics 4</span> — full website analytics</li><li><span class="hl">Google Search Console</span> — SEO performance</li><li><span class="hl">Microsoft Clarity</span> — Free heatmaps + recordings</li></ul></div>
 
     <div class="quiz-section" id="quiz-m10">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 10 Chapter Test</h3><p>Score 80% or above to unlock Module 11!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 10 Chapter Test</h3><p>Score 80% or above to unlock Module 11!</p></div></div>
       <div id="quiz-m10-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m10-btn" onclick="submitQuiz('m10')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m10-result"></div>
@@ -1859,10 +1859,10 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 11 — AI IN MARKETING -->
 <div id="page-m11" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">🤖 Module 11 · Future Skills</div>
+    <div class="module-tag">Module 11 · Future Skills</div>
     <h1>AI in Digital Marketing</h1>
     <p>ChatGPT, Claude, Midjourney, Runway — work 10x faster using AI. Future marketers must learn these skills today.</p>
-    <div class="hero-stats"><div class="stat-pill"><span class="icon">⚡</span><strong>10x Productivity</strong></div><div class="stat-pill"><span class="icon">🔮</span><strong>Future-Proof Skills</strong></div></div>
+    <div class="hero-stats"><div class="stat-pill"><span class="icon"></span><strong>10x Productivity</strong></div><div class="stat-pill"><span class="icon"></span><strong>Future-Proof Skills</strong></div></div>
   </div>
   <div class="module-content">
     <h2>AI Tools by Category</h2>
@@ -1883,12 +1883,12 @@ Time saved: 4 hours → 45 minutes!</div>
     <div class="code-block">Ad Copy: "Write 5 Facebook ad headlines for a digital marketing course ₹4,999. Target: 20-30 year old freshers in Tamil Nadu. Format: pain point + solution + CTA."</div>
     <div class="grid-2">
       <div class="mini-card"><div class="mc-icon">⚠️</div><div class="mc-title">Affected Jobs</div><div class="mc-desc">Basic copywriting, data entry, simple graphic design, generic social media management.</div></div>
-      <div class="mini-card"><div class="mc-icon">🚀</div><div class="mc-title">Growing Jobs</div><div class="mc-desc">AI Prompt Engineer, Performance Marketer, AI Content Director, Marketing Strategist.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Growing Jobs</div><div class="mc-desc">AI Prompt Engineer, Performance Marketer, AI Content Director, Marketing Strategist.</div></div>
     </div>
-    <div class="box tip"><div class="box-label">✅ Career Advice</div><p>Learn to use AI tools to speed up your work. <strong>AI won't take your job — but a marketer who uses AI will!</strong></p></div>
+    <div class="box tip"><div class="box-label">Career Advice</div><p>Learn to use AI tools to speed up your work. <strong>AI won't take your job — but a marketer who uses AI will!</strong></p></div>
 
     <div class="quiz-section" id="quiz-m11">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 11 Chapter Test</h3><p>Score 80% or above to unlock Module 12!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 11 Chapter Test</h3><p>Score 80% or above to unlock Module 12!</p></div></div>
       <div id="quiz-m11-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m11-btn" onclick="submitQuiz('m11')" disabled>Submit Test →</button>
       <div class="quiz-result" id="quiz-m11-result"></div>
@@ -1903,12 +1903,12 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 12 — FREELANCING -->
 <div id="page-m12" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">💼 Module 12 · Income · MOST IMPORTANT</div>
+    <div class="module-tag">Module 12 · Income · MOST IMPORTANT</div>
     <h1>Freelancing & Client Work</h1>
     <p>Getting your first client, pricing, proposals, cold DMs — a complete guide to starting freelancing from zero and earning monthly income.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">🚀</span><strong>Start from Zero</strong></div>
-      <div class="stat-pill"><span class="icon">💰</span><strong>₹30K-1L/month Possible</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Start from Zero</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>₹30K-1L/month Possible</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -1946,7 +1946,7 @@ Time saved: 4 hours → 45 minutes!</div>
     </ul></div>
 
     <div class="quiz-section" id="quiz-m12">
-      <div class="quiz-header"><div class="quiz-icon">📝</div><div class="quiz-header-text"><h3>Module 12 Chapter Test — FINAL CORE TEST</h3><p>Score 80% to unlock the Career & Tools section (Modules 13-19)!</p></div></div>
+      <div class="quiz-header"><div class="quiz-icon"></div><div class="quiz-header-text"><h3>Module 12 Chapter Test — FINAL CORE TEST</h3><p>Score 80% to unlock the Career & Tools section (Modules 13-19)!</p></div></div>
       <div id="quiz-m12-questions"></div>
       <button class="quiz-submit-btn" id="quiz-m12-btn" onclick="submitQuiz('m12')" disabled>Submit Test & Unlock Career Modules →</button>
       <div class="quiz-result" id="quiz-m12-result"></div>
@@ -1961,30 +1961,30 @@ Time saved: 4 hours → 45 minutes!</div>
 <!-- MODULE 13 — CAREER PATHS -->
 <div id="page-m13" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">💰 Module 13 · Career</div>
+    <div class="module-tag">Module 13 · Career</div>
     <h1>Digital Marketing Careers</h1>
     <p>Career paths, salary insights, job market trends, interview strategies — complete career guidance.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">💼</span><strong>Job Roles</strong></div>
-      <div class="stat-pill"><span class="icon">💰</span><strong>Salary Guide</strong></div>
-      <div class="stat-pill"><span class="icon">📈</span><strong>Growth Trends</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Job Roles</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Salary Guide</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Growth Trends</strong></div>
     </div>
   </div>
   <div class="module-content">
     <h2>Digital Marketing Career Paths</h2>
 
     <div class="salary-card">
-      <div class="salary-role">🎯 Performance Marketing Manager</div>
+      <div class="salary-role">Performance Marketing Manager</div>
       <div class="salary-range">₹6L - ₹18L per year</div>
       <div class="salary-note">Demand: Very High | Google Ads + Meta Ads specialist. MNCs and D2C brands are hiring.</div>
     </div>
     <div class="salary-card">
-      <div class="salary-role">🔍 SEO Specialist / Manager</div>
+      <div class="salary-role">SEO Specialist / Manager</div>
       <div class="salary-range">₹4L - ₹12L per year</div>
       <div class="salary-note">Demand: High | Content + Technical SEO. Remote work opportunities available.</div>
     </div>
     <div class="salary-card">
-      <div class="salary-role">📱 Social Media Manager</div>
+      <div class="salary-role">Social Media Manager</div>
       <div class="salary-range">₹3L - ₹9L per year</div>
       <div class="salary-note">Demand: High | Instagram, LinkedIn, YouTube management. Agency or in-house.</div>
     </div>
@@ -1994,7 +1994,7 @@ Time saved: 4 hours → 45 minutes!</div>
       <div class="salary-note">Demand: Growing | AI tools knowledge = higher salary.</div>
     </div>
     <div class="salary-card">
-      <div class="salary-role">📊 Digital Marketing Manager</div>
+      <div class="salary-role">Digital Marketing Manager</div>
       <div class="salary-range">₹8L - ₹25L per year</div>
       <div class="salary-note">Demand: Very High | Full strategy ownership. 3-5 years experience needed.</div>
     </div>
@@ -2010,10 +2010,10 @@ Time saved: 4 hours → 45 minutes!</div>
 
     <h2>2025-2026 Job Market Trends</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">🔥</div><div class="mc-title">Hottest Skills</div><div class="mc-desc">Performance Marketing, AI-powered marketing, Data Analytics, Video Marketing, WhatsApp Marketing.</div></div>
-      <div class="mini-card"><div class="mc-icon">💼</div><div class="mc-title">Top Hiring Companies</div><div class="mc-desc">D2C brands, EdTech startups, HealthTech, Fintech, E-commerce giants (Meesho, Nykaa, Blinkit).</div></div>
-      <div class="mini-card"><div class="mc-icon">🌍</div><div class="mc-title">Remote Work</div><div class="mc-desc">60%+ digital marketing jobs allow remote/hybrid. Possibility to work for global clients.</div></div>
-      <div class="mini-card"><div class="mc-icon">📈</div><div class="mc-title">Salary Growth</div><div class="mc-desc">25-35% annual salary growth typical for performance marketers in growing companies.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Hottest Skills</div><div class="mc-desc">Performance Marketing, AI-powered marketing, Data Analytics, Video Marketing, WhatsApp Marketing.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Top Hiring Companies</div><div class="mc-desc">D2C brands, EdTech startups, HealthTech, Fintech, E-commerce giants (Meesho, Nykaa, Blinkit).</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Remote Work</div><div class="mc-desc">60%+ digital marketing jobs allow remote/hybrid. Possibility to work for global clients.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Salary Growth</div><div class="mc-desc">25-35% annual salary growth typical for performance marketers in growing companies.</div></div>
     </div>
 
     <h2>Interview Preparation Guide</h2>
@@ -2030,7 +2030,7 @@ Time saved: 4 hours → 45 minutes!</div>
       </table>
     </div>
 
-    <div class="box tip"><div class="box-label">✅ Interview Pro Tips</div><ul>
+    <div class="box tip"><div class="box-label">Interview Pro Tips</div><ul>
       <li>Share your portfolio link — have a "Here's a real project I did" example ready</li>
       <li>Speak in numbers — "10% CTR improvement, 30% CPA reduction" type results</li>
       <li>Be ready to demo your hands-on tools knowledge</li>
@@ -2051,8 +2051,8 @@ Time saved: 4 hours → 45 minutes!</div>
     <h1>Digital Marketing Tools Master List</h1>
     <p>Free vs Paid tools, category-wise breakdown — a comprehensive list of tools every marketer must master.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">🆓</span><strong>Free Tools Available</strong></div>
-      <div class="stat-pill"><span class="icon">💸</span><strong>Paid Tools Guide</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Free Tools Available</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Paid Tools Guide</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -2128,7 +2128,7 @@ Time saved: 4 hours → 45 minutes!</div>
       </tbody>
     </table></div>
 
-    <div class="box tip"><div class="box-label">✅ Beginner Tool Stack (Free)</div><p>Start here: <span class="hl">Canva + ChatGPT + Meta Business Suite + Buffer + Google Analytics + Mailchimp</span> — just these tools alone will complete 90% of tasks. Master the free tools first, then learn paid ones!</p></div>
+    <div class="box tip"><div class="box-label">Beginner Tool Stack (Free)</div><p>Start here: <span class="hl">Canva + ChatGPT + Meta Business Suite + Buffer + Google Analytics + Mailchimp</span> — just these tools alone will complete 90% of tasks. Master the free tools first, then learn paid ones!</p></div>
 
     <div class="module-nav">
       <button class="nav-btn" onclick="showPage('m13')"><span class="arrow">←</span><div><small>Prev</small><span>Career Paths</span></div></button>
@@ -2144,8 +2144,8 @@ Time saved: 4 hours → 45 minutes!</div>
     <h1>Freelancing Workflow & Client Reporting</h1>
     <p>Client onboarding, monthly reporting templates, project management, scaling strategies — a complete workflow to become a professional freelancer.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">📋</span><strong>Templates</strong></div>
-      <div class="stat-pill"><span class="icon">🔄</span><strong>Workflows</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Templates</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Workflows</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -2163,7 +2163,7 @@ Time saved: 4 hours → 45 minutes!</div>
 
     <h2>Monthly Client Report Template</h2>
     <div class="card">
-      <div class="card-title"><span class="icon">📊</span>Monthly Report Template Structure</div>
+      <div class="card-title"><span class="icon"></span>Monthly Report Template Structure</div>
       <div class="code-block">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [CLIENT NAME] — Digital Marketing Report
 [Month Year]
@@ -2216,12 +2216,12 @@ Prepared by: [Your Name]
 
     <h2>Payment & Contract Terms</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">🇮🇳</div><div class="mc-title">Domestic Payment</div><div class="mc-desc">UPI (GPay, PhonePe), Bank Transfer, Razorpay invoice. Fast, free, easy. Always get receipt.</div></div>
-      <div class="mini-card"><div class="mc-icon">🌍</div><div class="mc-title">International Payment</div><div class="mc-desc">Wise (best rates), PayPal, Payoneer, Fiverr Revenue Card. Prefer Wise — lowest fees.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Domestic Payment</div><div class="mc-desc">UPI (GPay, PhonePe), Bank Transfer, Razorpay invoice. Fast, free, easy. Always get receipt.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">International Payment</div><div class="mc-desc">Wise (best rates), PayPal, Payoneer, Fiverr Revenue Card. Prefer Wise — lowest fees.</div></div>
     </div>
 
     <h2>Cold DM Template (Instagram)</h2>
-    <div class="code-block">"Hi [Business Name]! 👋
+    <div class="code-block">"Hi [Business Name]!
 
 I checked out [Business]'s Instagram page — looks great!
 
@@ -2229,7 +2229,7 @@ There's an opportunity to double your reach and customer enquiries with a few sm
 
 I specialize in Social Media Marketing for local businesses in [City]. Can we hop on a quick 5-min call?
 
-No commitment needed — just sharing what's working for similar businesses. 🙌"</div>
+No commitment needed — just sharing what's working for similar businesses."</div>
 
     <div class="module-nav">
       <button class="nav-btn" onclick="showPage('m14')"><span class="arrow">←</span><div><small>Prev</small><span>Tools List</span></div></button>
@@ -2241,44 +2241,44 @@ No commitment needed — just sharing what's working for similar businesses. �
 <!-- MODULE 16 — 20 CASE STUDIES -->
 <div id="page-m16" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">📖 Module 16 · Real Examples</div>
+    <div class="module-tag">Module 16 · Real Examples</div>
     <h1>20 Digital Marketing Case Studies</h1>
     <p>Real-world examples — how India & global brands used digital marketing to succeed, explained in detail.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">🇮🇳</span><strong>India Focus</strong></div>
-      <div class="stat-pill"><span class="icon">🌍</span><strong>Global Examples</strong></div>
-      <div class="stat-pill"><span class="icon">📊</span><strong>20 Cases</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>India Focus</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Global Examples</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>20 Cases</strong></div>
     </div>
   </div>
   <div class="module-content">
 
     <div class="grid-2">
-      <div class="card"><div class="card-title"><span class="icon">🍕</span>1. Zomato — Meme Marketing</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>1. Zomato — Meme Marketing</div>
         <p><strong>Strategy:</strong> Posting savage, funny, relatable memes on Twitter/X.</p>
         <p><strong>Result:</strong> Millions of impressions with zero ad spend. The brand became super relatable to young audiences.</p>
         <p><strong>Lesson:</strong> Brand personality + humor = organic viral reach.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🛒</span>2. Meesho — Tier-2 Targeting</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>2. Meesho — Tier-2 Targeting</div>
         <p><strong>Strategy:</strong> Vernacular language ads targeting small-town India, WhatsApp marketing, Facebook groups.</p>
         <p><strong>Result:</strong> 150M+ users, mostly from non-metro cities.</p>
         <p><strong>Lesson:</strong> Underserved markets + local language = massive growth.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">💄</span>3. Nykaa — Content Commerce</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>3. Nykaa — Content Commerce</div>
         <p><strong>Strategy:</strong> YouTube tutorials, beauty blogs, influencer collaborations, email newsletters.</p>
         <p><strong>Result:</strong> ₹5,000 Cr+ revenue, content-driven brand loyalty.</p>
         <p><strong>Lesson:</strong> Educational content → trust → purchase.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🚗</span>4. Ola — Referral Marketing</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>4. Ola — Referral Marketing</div>
         <p><strong>Strategy:</strong> "Refer a friend, both get free rides" viral loop + aggressive app install ads.</p>
         <p><strong>Result:</strong> Rapid user acquisition at low CAC in Indian market.</p>
         <p><strong>Lesson:</strong> Referral incentives reduce acquisition cost drastically.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🎓</span>5. BYJU'S — Video Ad Strategy</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>5. BYJU'S — Video Ad Strategy</div>
         <p><strong>Strategy:</strong> Long YouTube ads with emotional storytelling. Parent-targeted Facebook ads.</p>
         <p><strong>Result:</strong> India's most valued edtech, ₹1.5L Cr valuation at peak.</p>
         <p><strong>Lesson:</strong> Emotional ads that address parent fears → high conversion in education.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🏠</span>6. OYO Rooms — Performance Marketing</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>6. OYO Rooms — Performance Marketing</div>
         <p><strong>Strategy:</strong> Location-based search ads, retargeting website visitors, dynamic pricing ads.</p>
         <p><strong>Result:</strong> 80+ countries, millions of bookings through digital channels.</p>
         <p><strong>Lesson:</strong> Geo-targeted + intent-based advertising = high ROI in hospitality.</p>
@@ -2288,74 +2288,74 @@ No commitment needed — just sharing what's working for similar businesses. �
         <p><strong>Result:</strong> Strong community of 5M+ Instagram followers, organic brand ambassadors.</p>
         <p><strong>Lesson:</strong> Community-led marketing > paid advertising alone.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">💰</span>8. Zerodha — Content-First FinTech</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>8. Zerodha — Content-First FinTech</div>
         <p><strong>Strategy:</strong> Free education (Varsity), blogs, YouTube — zero traditional advertising.</p>
         <p><strong>Result:</strong> India's largest broker with ₹0 marketing budget for years.</p>
         <p><strong>Lesson:</strong> Genuinely helpful content = the best marketing for trust-based industries.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🍫</span>9. Cadbury — Personalization Campaign</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>9. Cadbury — Personalization Campaign</div>
         <p><strong>Strategy:</strong> "Not Just a Cadbury Ad" — AI tool used to insert local shop owner's face & name in ads.</p>
         <p><strong>Result:</strong> 90%+ engagement increase. Thousands of local businesses featured.</p>
         <p><strong>Lesson:</strong> Hyper-personalization at scale = massive engagement.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🌊</span>10. Amul — Real-Time Marketing</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>10. Amul — Real-Time Marketing</div>
         <p><strong>Strategy:</strong> Amul Girl topical ads on every trending news event — posted within hours.</p>
         <p><strong>Result:</strong> 70+ years of relevance, massive organic reach without paid social.</p>
         <p><strong>Lesson:</strong> Real-time, relevant content = sustained organic brand presence.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">💻</span>11. Dropbox — Product-Led Growth</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>11. Dropbox — Product-Led Growth</div>
         <p><strong>Strategy:</strong> "Refer friends, get free storage" — built viral loop into product itself.</p>
         <p><strong>Result:</strong> 3900% growth in 15 months, 4M users in just 12 months.</p>
         <p><strong>Lesson:</strong> Viral coefficient > 1 = exponential organic growth without ad spend.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🎵</span>12. Spotify India — Podcast Marketing</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>12. Spotify India — Podcast Marketing</div>
         <p><strong>Strategy:</strong> "India ko sunao" campaign, vernacular podcast discovery, hyper-local content.</p>
         <p><strong>Result:</strong> 100M+ Indian users, beating JioSaavn in urban markets.</p>
         <p><strong>Lesson:</strong> Localization + original content partnerships = market penetration.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">📱</span>13. OnePlus — Community Marketing</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>13. OnePlus — Community Marketing</div>
         <p><strong>Strategy:</strong> "Invite-only" launch, fan forums, Reddit engagement, influencer seeding.</p>
         <p><strong>Result:</strong> Built cult following before single TV ad. Premium brand image.</p>
         <p><strong>Lesson:</strong> Exclusivity + community = brand desire without traditional advertising.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">💳</span>14. CRED — Aspirational Advertising</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>14. CRED — Aspirational Advertising</div>
         <p><strong>Strategy:</strong> Quirky IPL ads with celebrities. "Only for good credit score" exclusivity messaging.</p>
         <p><strong>Result:</strong> 35M+ premium users, highest per-user spend app in India.</p>
         <p><strong>Lesson:</strong> Premium positioning + entertainment-first ads = quality user acquisition.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🔴</span>15. YouTube Shorts India</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>15. YouTube Shorts India</div>
         <p><strong>Strategy:</strong> Creator incentive programs, vernacular content push, partnerships with music labels.</p>
         <p><strong>Result:</strong> 200B+ views/day globally, massive India adoption in 2022-24.</p>
         <p><strong>Lesson:</strong> Platform + creator incentives + local content = rapid adoption.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🏪</span>16. D-Mart — Anti-Digital Strategy (Interesting!)</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>16. D-Mart — Anti-Digital Strategy (Interesting!)</div>
         <p><strong>Strategy:</strong> No major social media, no heavy digital ads — EDLP (Everyday Low Price) model.</p>
         <p><strong>Result:</strong> Still India's most profitable retailer by square foot.</p>
         <p><strong>Lesson:</strong> Word-of-mouth + genuine value > digital marketing hype. Know when NOT to advertise.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🎮</span>17. GoPro — User-Generated Content</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>17. GoPro — User-Generated Content</div>
         <p><strong>Strategy:</strong> Encouraged users to share GoPro videos → curated + reshared best content.</p>
         <p><strong>Result:</strong> YouTube channel with 10M+ subscribers, majority content is user-created.</p>
         <p><strong>Lesson:</strong> Product + UGC strategy = infinite free marketing content.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🧴</span>18. Mamaearth — D2C Digital First</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>18. Mamaearth — D2C Digital First</div>
         <p><strong>Strategy:</strong> Influencer marketing (nano + micro influencers), toxic-free ingredient transparency, Instagram-native brand.</p>
         <p><strong>Result:</strong> ₹1,500 Cr revenue in 7 years. IPO listed.</p>
         <p><strong>Lesson:</strong> Authentic brand values + right influencer tier + D2C model = fast growth.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🏡</span>19. Airbnb — SEO Content Strategy</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>19. Airbnb — SEO Content Strategy</div>
         <p><strong>Strategy:</strong> City-specific landing pages (100,000+), neighborhood guides, travel blog content at scale.</p>
         <p><strong>Result:</strong> 50%+ bookings via organic search. Reduced paid ad dependency drastically.</p>
         <p><strong>Lesson:</strong> Programmatic SEO + user-generated content = sustainable traffic moat.</p>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🎯</span>20. Wakefit — Facebook Ads Mastery</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>20. Wakefit — Facebook Ads Mastery</div>
         <p><strong>Strategy:</strong> Hyper-targeted Facebook ads to sleep-deprived professionals. Problem-aware messaging. Video testimonials.</p>
         <p><strong>Result:</strong> ₹1,000 Cr+ revenue, started purely via digital marketing.</p>
         <p><strong>Lesson:</strong> Niche audience + pain-point messaging + systematic testing = scalable D2C growth.</p>
       </div>
     </div>
 
-    <div class="box info"><div class="box-label">💡 Pattern Recognition</div><p>Common patterns across these 20 case studies: <span class="hl">Community building</span>, <span class="hl">Content-first approach</span>, <span class="hl">Hyper-targeting specific audiences</span>, <span class="hl">Authentic brand voice</span>, <span class="hl">Data-driven iteration</span>. Every brand found a unique angle and executed it.</p></div>
+    <div class="box info"><div class="box-label">Pattern Recognition</div><p>Common patterns across these 20 case studies: <span class="hl">Community building</span>, <span class="hl">Content-first approach</span>, <span class="hl">Hyper-targeting specific audiences</span>, <span class="hl">Authentic brand voice</span>, <span class="hl">Data-driven iteration</span>. Every brand found a unique angle and executed it.</p></div>
 
     <div class="module-nav">
       <button class="nav-btn" onclick="showPage('m15')"><span class="arrow">←</span><div><small>Prev</small><span>Workflow</span></div></button>
@@ -2371,31 +2371,31 @@ No commitment needed — just sharing what's working for similar businesses. �
     <h1>Learning & Career Roadmap</h1>
     <p>Step-by-step execution roadmap — a clear visual path to achieve 0 to ₹1L/month income.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">🎯</span><strong>Clear Milestones</strong></div>
-      <div class="stat-pill"><span class="icon">📅</span><strong>Month-by-Month</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Clear Milestones</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Month-by-Month</strong></div>
     </div>
   </div>
   <div class="module-content">
     <h2>12-Month Digital Marketing Career Roadmap</h2>
     <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 1-2: Foundation</div><div class="tl-body">✅ Complete this course. ✅ Get 1 free certification (Google Digital Garage or HubSpot). ✅ Optimize LinkedIn + Instagram profiles. ✅ Start following industry news.</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 2-3: Skill Specialization</div><div class="tl-body">✅ ONE skill deep dive (Meta Ads or SEO or SMM). ✅ 2-3 mock/spec projects complete. ✅ Free tools master (Canva, ChatGPT, GA4). ✅ Portfolio page create (Notion or simple website).</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 3-4: First Clients</div><div class="tl-body">✅ Help a family/friend's business for free. ✅ Collect results + testimonials. ✅ Create a Fiverr/Upwork profile. ✅ Send first 5-10 cold DMs/emails.</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 4-6: Paid Clients</div><div class="tl-body">✅ First paid project (₹3,000-5,000). ✅ 2nd paid project. ✅ Document case study. ✅ Finalize pricing structure. ✅ First milestone: ₹10,000-20,000/month!</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 6-9: Retainer Clients</div><div class="tl-body">✅ 2-3 monthly retainer clients (₹8,000-15,000/client). ✅ ₹25,000-45,000/month stable income. ✅ Add a second skill (if SMM → add Meta Ads). ✅ Grow your personal brand.</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 9-12: Scale to ₹1L</div><div class="tl-body">✅ 4-5 retainer clients OR higher value clients. ✅ Increase package price (₹20,000-35,000/client). ✅ Set up systems + automation. ✅ Achieve goal: ₹80,000-1,20,000/month!</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 1-2: Foundation</div><div class="tl-body">Complete this course. Get 1 free certification (Google Digital Garage or HubSpot). Optimize LinkedIn + Instagram profiles. Start following industry news.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 2-3: Skill Specialization</div><div class="tl-body">ONE skill deep dive (Meta Ads or SEO or SMM). 2-3 mock/spec projects complete. Free tools master (Canva, ChatGPT, GA4). Portfolio page create (Notion or simple website).</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 3-4: First Clients</div><div class="tl-body">Help a family/friend's business for free. Collect results + testimonials. Create a Fiverr/Upwork profile. Send first 5-10 cold DMs/emails.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 4-6: Paid Clients</div><div class="tl-body">First paid project (₹3,000-5,000). 2nd paid project. Document case study. Finalize pricing structure. First milestone: ₹10,000-20,000/month!</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 6-9: Retainer Clients</div><div class="tl-body">2-3 monthly retainer clients (₹8,000-15,000/client). ₹25,000-45,000/month stable income. Add a second skill (if SMM → add Meta Ads). Grow your personal brand.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Month 9-12: Scale to ₹1L</div><div class="tl-body">4-5 retainer clients OR higher value clients. Increase package price (₹20,000-35,000/client). Set up systems + automation. Achieve goal: ₹80,000-1,20,000/month!</div></div>
     </div>
 
     <h2>Specialization Roadmaps</h2>
     <div class="grid-2">
-      <div class="card"><div class="card-title"><span class="icon">📢</span>Performance Marketing Path</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>Performance Marketing Path</div>
         <div class="timeline" style="margin:0">
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 1: Learn</div><div class="tl-body">Google Ads Certification + Meta Blueprint. Practice with ₹1,000 personal budget.</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 2: Do</div><div class="tl-body">2 free client projects. Document ROAS, leads, CPA results.</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 3: Sell</div><div class="tl-body">₹15,000-30,000/month per client. Niche in one industry (real estate, education, etc.)</div></div>
         </div>
       </div>
-      <div class="card"><div class="card-title"><span class="icon">🔍</span>SEO Path</div>
+      <div class="card"><div class="card-title"><span class="icon"></span>SEO Path</div>
         <div class="timeline" style="margin:0">
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 1: Learn</div><div class="tl-body">Moz SEO Guide + Semrush Academy. Start a personal blog.</div></div>
           <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Level 2: Do</div><div class="tl-body">Rank your blog for 5+ keywords. Guest post on industry blogs.</div></div>
@@ -2414,7 +2414,7 @@ No commitment needed — just sharing what's working for similar businesses. �
       </tbody>
     </table></div>
 
-    <div class="box tip"><div class="box-label">✅ Success Mantra</div><p><span class="hl">Learn → Do → Document → Sell.</span> As soon as you learn a skill, immediately do a project. Document the results. Put it in your portfolio. Sell it. This cycle is unstoppable!</p></div>
+    <div class="box tip"><div class="box-label">Success Mantra</div><p><span class="hl">Learn → Do → Document → Sell.</span> As soon as you learn a skill, immediately do a project. Document the results. Put it in your portfolio. Sell it. This cycle is unstoppable!</p></div>
 
     <div class="module-nav">
       <button class="nav-btn" onclick="showPage('m16')"><span class="arrow">←</span><div><small>Prev</small><span>Case Studies</span></div></button>
@@ -2426,12 +2426,12 @@ No commitment needed — just sharing what's working for similar businesses. �
 <!-- MODULE 18 — INTERVIEW PREP -->
 <div id="page-m18" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">🎤 Module 18 · Interview</div>
+    <div class="module-tag">Module 18 · Interview</div>
     <h1>Interview Prep & Practical Training</h1>
     <p>Top interview questions, live portfolio presentation, salary negotiation, agency vs in-house — let's get job ready.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">💼</span><strong>Job Readiness</strong></div>
-      <div class="stat-pill"><span class="icon">💰</span><strong>Salary Negotiation</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Job Readiness</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Salary Negotiation</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -2454,8 +2454,8 @@ No commitment needed — just sharing what's working for similar businesses. �
 
     <h2>Agency vs In-House — Comparison</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">🏢</div><div class="mc-title">Agency Job</div><div class="mc-desc">Multiple clients, fast learning, diverse skills. Fast-paced, multiple deadlines. ₹3-8L starting. Learn in 1-2 years: go agency first!</div></div>
-      <div class="mini-card"><div class="mc-icon">💼</div><div class="mc-title">In-House Job</div><div class="mc-desc">One brand focus, deeper strategy, better work-life balance. Higher salary, perks. ₹5-15L mid-level.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Agency Job</div><div class="mc-desc">Multiple clients, fast learning, diverse skills. Fast-paced, multiple deadlines. ₹3-8L starting. Learn in 1-2 years: go agency first!</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">In-House Job</div><div class="mc-desc">One brand focus, deeper strategy, better work-life balance. Higher salary, perks. ₹5-15L mid-level.</div></div>
     </div>
 
     <h2>Salary Negotiation Tips</h2>
@@ -2476,12 +2476,12 @@ No commitment needed — just sharing what's working for similar businesses. �
 <!-- MODULE 19 — ADVANCED MARKETING -->
 <div id="page-m19" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">🚀 Module 19 · Advanced</div>
+    <div class="module-tag">Module 19 · Advanced</div>
     <h1>Advanced Marketing Strategies</h1>
     <p>Growth Hacking, CRO, Neuromarketing, Viral Loops, Marketing Automation — expert-level strategies.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">🧠</span><strong>Psychology-Driven</strong></div>
-      <div class="stat-pill"><span class="icon">📈</span><strong>Growth Hacking</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Psychology-Driven</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Growth Hacking</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -2495,16 +2495,16 @@ No commitment needed — just sharing what's working for similar businesses. �
 
     <h2>Neuromarketing Principles</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">😱</div><div class="mc-title">Loss Aversion</div><div class="mc-desc">"Save ₹500" is more powerful than "Get ₹500 off". People fear loss more than they desire gain.</div></div>
-      <div class="mini-card"><div class="mc-icon">⏰</div><div class="mc-title">Scarcity & Urgency</div><div class="mc-desc">"Only 3 left!" / "Offer ends tonight" — urgency creates action. Used constantly by Amazon and Flipkart.</div></div>
-      <div class="mini-card"><div class="mc-icon">👥</div><div class="mc-title">Social Proof</div><div class="mc-desc">"10,000 students enrolled" / "4.8 stars" — people follow the crowd automatically.</div></div>
-      <div class="mini-card"><div class="mc-icon">🎁</div><div class="mc-title">Reciprocity</div><div class="mc-desc">Give free value → people feel obligated to give back (buy, refer). Fundamental psychology.</div></div>
-      <div class="mini-card"><div class="mc-icon">🏆</div><div class="mc-title">Authority</div><div class="mc-desc">Certifications, awards, media features — credibility increases conversions immediately.</div></div>
-      <div class="mini-card"><div class="mc-icon">🔒</div><div class="mc-title">Anchoring</div><div class="mc-desc">Show ₹9,999 as the original price, then ₹4,999. The second price always looks cheap by comparison.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Loss Aversion</div><div class="mc-desc">"Save ₹500" is more powerful than "Get ₹500 off". People fear loss more than they desire gain.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Scarcity & Urgency</div><div class="mc-desc">"Only 3 left!" / "Offer ends tonight" — urgency creates action. Used constantly by Amazon and Flipkart.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Social Proof</div><div class="mc-desc">"10,000 students enrolled" / "4.8 stars" — people follow the crowd automatically.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Reciprocity</div><div class="mc-desc">Give free value → people feel obligated to give back (buy, refer). Fundamental psychology.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Authority</div><div class="mc-desc">Certifications, awards, media features — credibility increases conversions immediately.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Anchoring</div><div class="mc-desc">Show ₹9,999 as the original price, then ₹4,999. The second price always looks cheap by comparison.</div></div>
     </div>
 
     <h2>Viral Loops</h2>
-    <div class="box info"><div class="box-label">💡 Viral Loop Examples</div>
+    <div class="box info"><div class="box-label">Viral Loop Examples</div>
     <ul>
       <li><strong>Dropbox:</strong> "Refer a friend, both get 500MB free" → exponential growth</li>
       <li><strong>PayPal:</strong> "₹100 for every referral" → rapid user acquisition</li>
@@ -2515,10 +2515,10 @@ No commitment needed — just sharing what's working for similar businesses. �
 
     <h2>2026 Digital Marketing Trends</h2>
     <div class="grid-2">
-      <div class="mini-card"><div class="mc-icon">🤖</div><div class="mc-title">AI-First Marketing</div><div class="mc-desc">AI agents autonomously create, test, optimize campaigns. Human = strategy only.</div></div>
-      <div class="mini-card"><div class="mc-icon">🎬</div><div class="mc-title">Short Video Dominance</div><div class="mc-desc">Reels, Shorts continue dominating. AI-generated video content rapidly increasing.</div></div>
-      <div class="mini-card"><div class="mc-icon">🔒</div><div class="mc-title">Privacy-First</div><div class="mc-desc">Third-party cookies dead. First-party data (email lists, owned audiences) = gold.</div></div>
-      <div class="mini-card"><div class="mc-icon">🌐</div><div class="mc-title">Hyper-Personalization</div><div class="mc-desc">Every ad, email, content personalized to individual behavior in real-time via AI.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">AI-First Marketing</div><div class="mc-desc">AI agents autonomously create, test, optimize campaigns. Human = strategy only.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Short Video Dominance</div><div class="mc-desc">Reels, Shorts continue dominating. AI-generated video content rapidly increasing.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Privacy-First</div><div class="mc-desc">Third-party cookies dead. First-party data (email lists, owned audiences) = gold.</div></div>
+      <div class="mini-card"><div class="mc-icon"></div><div class="mc-title">Hyper-Personalization</div><div class="mc-desc">Every ad, email, content personalized to individual behavior in real-time via AI.</div></div>
     </div>
 
     <div class="module-nav">
@@ -2531,12 +2531,12 @@ No commitment needed — just sharing what's working for similar businesses. �
 <!-- COURSE SUMMARY -->
 <div id="page-summary" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">📋 Summary · Course Complete Review</div>
+    <div class="module-tag">Summary · Course Complete Review</div>
     <h1>Complete Course Summary</h1>
     <p>What we learned across all 19 modules — key takeaways, common mistakes, 2026 trends, and a 30-day action plan.</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">🎓</span><strong>19 Modules Covered</strong></div>
-      <div class="stat-pill"><span class="icon">🔮</span><strong>2026 Trends</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>19 Modules Covered</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>2026 Trends</strong></div>
     </div>
   </div>
   <div class="module-content">
@@ -2564,7 +2564,7 @@ No commitment needed — just sharing what's working for similar businesses. �
     </tbody></table></div>
 
     <h2>Common Beginner Mistakes to Avoid</h2>
-    <div class="box warning"><div class="box-label">❌ Critical Mistakes</div><ol>
+    <div class="box warning"><div class="box-label">Critical Mistakes</div><ol>
       <li>Trying to learn everything at once — focus on one skill at a time</li>
       <li>Only focusing on certifications without practical skills</li>
       <li>Expecting immediate results — marketing takes at least 3-6 months</li>
@@ -2576,14 +2576,14 @@ No commitment needed — just sharing what's working for similar businesses. �
 
     <h2>Your 30-Day Action Plan</h2>
     <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 1 (Days 1-7)</div><div class="tl-body">✅ Specialize in ONE service. ✅ Start a free Google/HubSpot course. ✅ Optimize your LinkedIn profile. ✅ Follow 10+ industry accounts.</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 2 (Days 8-14)</div><div class="tl-body">✅ Complete 2 mock projects. ✅ Master the Canva + ChatGPT workflow. ✅ Start daily posting on Instagram/LinkedIn. ✅ Complete a free certification.</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 3 (Days 15-21)</div><div class="tl-body">✅ Create a portfolio page (Notion or Carrd). ✅ Reach out to your first free client. ✅ Set up a Fiverr profile. ✅ Write a case study draft.</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 4 (Days 22-30)</div><div class="tl-body">✅ Send cold DMs/emails to 10 businesses. ✅ Collect your first testimonial. ✅ Respond to your first paid inquiry. ✅ Aim: First ₹3,000-5,000 project!</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 1 (Days 1-7)</div><div class="tl-body">Specialize in ONE service. Start a free Google/HubSpot course. Optimize your LinkedIn profile. Follow 10+ industry accounts.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 2 (Days 8-14)</div><div class="tl-body">Complete 2 mock projects. Master the Canva + ChatGPT workflow. Start daily posting on Instagram/LinkedIn. Complete a free certification.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 3 (Days 15-21)</div><div class="tl-body">Create a portfolio page (Notion or Carrd). Reach out to your first free client. Set up a Fiverr profile. Write a case study draft.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-title">Week 4 (Days 22-30)</div><div class="tl-body">Send cold DMs/emails to 10 businesses. Collect your first testimonial. Respond to your first paid inquiry. Aim: First ₹3,000-5,000 project!</div></div>
     </div>
 
     <div class="box tip">
-      <div class="box-label">🎉 You Did It!</div>
+      <div class="box-label">You Did It!</div>
       <p>You've completed the Digital Marketing Master Course! Remember: <span class="hl">Knowledge + Action = Results</span>. The knowledge in this course is enough to build a successful digital marketing career. Now go execute! You are capable!</p>
     </div>
 
@@ -2597,25 +2597,25 @@ No commitment needed — just sharing what's working for similar businesses. �
 <!-- FINAL TEST PAGE -->
 <div id="page-finaltest" class="module-page">
   <div class="module-hero">
-    <div class="module-tag">⭐ Final Assessment · All Modules</div>
+    <div class="module-tag">Final Assessment · All Modules</div>
     <h1>Final Cumulative Test</h1>
     <p>Covering all 19 modules — pass this test and the course is officially complete! Best of luck!</p>
     <div class="hero-stats">
-      <div class="stat-pill"><span class="icon">📝</span><strong>20 Questions</strong></div>
-      <div class="stat-pill"><span class="icon">🎯</span><strong>Pass: 70%+</strong></div>
-      <div class="stat-pill"><span class="icon">⭐</span><strong>Full Course Test</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>20 Questions</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Pass: 70%+</strong></div>
+      <div class="stat-pill"><span class="icon"></span><strong>Full Course Test</strong></div>
     </div>
   </div>
   <div class="module-content">
     <div class="quiz-header" style="margin-bottom:32px">
-      <div class="quiz-icon" style="font-size:28px">🏆</div>
+      <div class="quiz-icon" style="font-size:28px"></div>
       <div class="quiz-header-text">
         <h3>Final Cumulative Assessment</h3>
         <p>Questions from all 19 modules. 70% or above = eligible for Course Completion Certificate! Read each question carefully.</p>
       </div>
     </div>
     <div id="final-quiz-questions"></div>
-    <button class="quiz-submit-btn" id="final-quiz-btn" onclick="submitFinalQuiz()" disabled style="font-size:16px;padding:16px 36px;margin-top:32px">Submit Final Test & See Results 🏆</button>
+    <button class="quiz-submit-btn" id="final-quiz-btn" onclick="submitFinalQuiz()" disabled style="font-size:16px;padding:16px 36px;margin-top:32px">Submit Final Test & See Results</button>
     <div id="final-quiz-result" style="display:none"></div>
 
     <div class="module-nav" style="margin-top:40px">
@@ -2862,17 +2862,17 @@ function submitQuiz(moduleId) {
   resultEl.className = 'quiz-result ' + (passed ? 'pass' : 'fail');
   resultEl.style.display = 'block';
   resultEl.innerHTML = passed
-    ? `<div class="quiz-result-icon">🎉</div>
+    ? `<div class="quiz-result-icon"></div>
        <h3>Excellent! You Passed!</h3>
        <div class="score-badge">${correct}/${questions.length} Correct</div>
        <p>Score: <strong>${score}%</strong> — ${score >= 95 ? 'Outstanding!' : score >= 80 ? 'Great job!' : 'Passed!'}</p>
-       <p style="color:var(--pass-color);font-weight:600;margin-top:8px">✅ Next module unlocked!</p>`
-    : `<div class="quiz-result-icon">😔</div>
+       <p style="color:var(--pass-color);font-weight:600;margin-top:8px">Next module unlocked!</p>`
+    : `<div class="quiz-result-icon"></div>
        <h3>Not Quite There Yet</h3>
        <div class="score-badge">${correct}/${questions.length} Correct</div>
        <p>Score: <strong>${score}%</strong> — Need <strong>${PASSING_SCORE}%</strong> to pass.</p>
        <p style="color:var(--muted)">Review the content again and retry!</p>
-       <button class="retry-btn" onclick="retryQuiz('${moduleId}')">🔄 Retry Test</button>`;
+       <button class="retry-btn" onclick="retryQuiz('${moduleId}')">Retry Test</button>`;
   
   const btn = document.getElementById('quiz-' + moduleId + '-btn');
   if (btn) btn.disabled = true;
@@ -2965,17 +2965,17 @@ function submitFinalQuiz() {
   else { grade = 'D'; gradeClass = 'grade-D'; }
   
   let circleClass = score >= 90 ? 'excellent' : score >= 75 ? 'good' : score >= 60 ? 'average' : 'poor';
-  let message = score >= 90 ? '🌟 Outstanding! Expert-level knowledge!' 
-    : score >= 80 ? '🎉 Excellent performance! Well done!'
-    : score >= 70 ? '✅ Good job! Course completed!'
-    : score >= 60 ? '📚 Almost there! Review weak areas.'
-    : '💪 Keep learning! Retry after reviewing.';
+  let message = score >= 90 ? 'Outstanding! Expert-level knowledge!' 
+    : score >= 80 ? 'Excellent performance! Well done!'
+    : score >= 70 ? 'Good job! Course completed!'
+    : score >= 60 ? 'Almost there! Review weak areas.'
+    : 'Keep learning! Retry after reviewing.';
   
   const resultEl = document.getElementById('final-quiz-result');
   resultEl.style.display = 'block';
   resultEl.innerHTML = `
     <div class="results-dashboard">
-      <div class="results-title">${passed ? '🏆 Course Complete!' : '📚 Keep Learning!'}</div>
+      <div class="results-title">${passed ? 'Course Complete!' : 'Keep Learning!'}</div>
       <div class="score-badge ${gradeClass}" style="margin:16px auto;display:inline-flex">Grade: ${grade}</div>
       <div class="results-score-circle ${circleClass}" style="color:${score>=75?'var(--pass-color)':score>=60?'var(--accent)':'var(--fail-color)'}">
         <div class="score-pct">${score}%</div>
@@ -2989,8 +2989,8 @@ function submitFinalQuiz() {
       </div>
       <p style="font-size:16px;font-weight:600;color:var(--text);margin:8px 0">${message}</p>
       ${passed 
-        ? '<p style="color:var(--muted);margin-top:12px">You have successfully completed the Digital Marketing Master Course! Author: <strong>Hemamalini Yuvaraj</strong> wishes you all the best! 🌟</p>'
-        : '<p style="color:var(--muted);margin-top:12px">Review the content and retry. You will succeed!</p><button class="retry-btn" onclick="retryFinalQuiz()" style="margin-top:12px">🔄 Retry Final Test</button>'}
+        ? '<p style="color:var(--muted);margin-top:12px">You have successfully completed the Digital Marketing Master Course! Author: <strong>Hemamalini Yuvaraj</strong> wishes you all the best!</p>'
+        : '<p style="color:var(--muted);margin-top:12px">Review the content and retry. You will succeed!</p><button class="retry-btn" onclick="retryFinalQuiz()" style="margin-top:12px">Retry Final Test</button>'}
     </div>
   `;
   
@@ -3063,7 +3063,7 @@ function updateSidebar() {
       const lockIcon = navEl.querySelector('.lock-icon');
       if (lockIcon) lockIcon.style.display = unlocked ? 'none' : '';
       const numEl = navEl.querySelector('.num');
-      if (numEl && passed) numEl.textContent = '✅';
+      if (numEl && passed) numEl.textContent = '';
     }
     if (cardEl) {
       cardEl.classList.toggle('locked-card', !unlocked);
@@ -3106,7 +3106,7 @@ function injectLockedOverlays() {
     overlay.id = 'locked-overlay-' + id;
     overlay.className = 'locked-overlay';
     overlay.innerHTML = `
-      <div class="locked-overlay-icon">🔒</div>
+      <div class="locked-overlay-icon"></div>
       <h2>This Module is Locked!</h2>
       <p>You must pass all chapter tests in the first 12 modules with 80% or above to unlock this module.</p>
       <p style="color:var(--accent);font-weight:600">Complete Modules 1-12 tests to unlock Career & Tools section →</p>
